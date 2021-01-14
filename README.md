@@ -38,10 +38,14 @@
 
 ### Screenshots
 
-<img alt="App image" src="fastlane/metadata/android/en-US/images/raw_screenshots/app_1.jpg" width="15%">
-<img alt="App image" src="fastlane/metadata/android/en-US/images/raw_screenshots/app_2.jpg" width="15%">
-<img alt="App image" src="fastlane/metadata/android/en-US/images/raw_screenshots/app_3.jpg" width="15%">
-<img alt="App image" src="fastlane/metadata/android/en-US/images/raw_screenshots/app_4.jpg" width="15%">
+<div style="display:flex;">
+<img alt="App image" src="fastlane/metadata/android/en-US/images/phoneScreenshots/app_1.jpg" width="25%">
+<img alt="App image" src="fastlane/metadata/android/en-US/images/phoneScreenshots/app_2.jpg" width="25%">
+<img alt="App image" src="fastlane/metadata/android/en-US/images/phoneScreenshots/app_3.jpg" width="25%">
+<img alt="App image" src="fastlane/metadata/android/en-US/images/phoneScreenshots/app_4.jpg" width="25%">
+<img alt="App image" src="fastlane/metadata/android/en-US/images/phoneScreenshots/app_5.jpg" width="25%">
+<img alt="App image" src="fastlane/metadata/android/en-US/images/phoneScreenshots/app_6.jpg" width="25%">
+</div>
 
 ## Contributing :busts_in_silhouette:
 
