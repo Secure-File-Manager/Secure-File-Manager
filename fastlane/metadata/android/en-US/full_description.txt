@@ -1,0 +1,16 @@
+Open source file manager for keeping your files in safe.
+
+Features
+ - hiding files
+ - encrypting files
+ - Create or extract encrypted Zip files
+ - lock app - password or biometric authentication *(optional)*
+ - additional security features
+   - disable screenshots *(optional)*
+   - disabling thumbnails *(optional)*
+   - clear cached thumbnails
+   - set destination for creating media files *(photo / video)*
+   - checksum *(MD5, SHA1, SHA256, SHA512)*
+
+This app is open-source:
+https://github.com/Secure-File-Manager/Secure-File-Manager

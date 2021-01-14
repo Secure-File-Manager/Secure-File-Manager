@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/authenticate_coordinator_layout"
+    android:layout_width="match_parent"
+    android:filterTouchesWhenObscured="true"
+    android:layout_height="match_parent"
+    android:layout_gravity="center">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:drawablePadding="@dimen/medium_margin"
+            android:text="@string/prompt_info_title"
+            android:textSize="@dimen/extra_big_text_size"
+            android:textStyle="bold"
+            app:drawableTopCompat="@drawable/ic_lock_open_white_vector_big" />
+
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/authenticate_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/big_margin"
+            android:contentDescription="@string/authenticate"
+            android:layout_gravity="bottom|end"
+            android:text="@string/authenticate"
+            android:textSize="@dimen/big_text_size"
+            app:icon="@drawable/ic_lock_open_white_vector" />
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

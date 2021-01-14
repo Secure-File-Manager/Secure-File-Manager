@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/manage_favorites_wrapper"
+    android:layout_width="match_parent"
+    android:filterTouchesWhenObscured="true"
+    android:layout_height="wrap_content">
+
+    <com.securefilemanager.app.views.MyRecyclerView
+        android:id="@+id/manage_favorites_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        app:layoutManager="com.securefilemanager.app.views.MyLinearLayoutManager" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/manage_favorites_placeholder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/activity_margin"
+        android:layout_marginBottom="@dimen/small_margin"
+        android:alpha="0.8"
+        android:gravity="center"
+        android:lineSpacingExtra="@dimen/tiny_margin"
+        android:paddingStart="@dimen/activity_margin"
+        android:paddingTop="@dimen/activity_margin"
+        android:paddingEnd="@dimen/activity_margin"
+        android:textSize="@dimen/bigger_text_size"
+        android:textStyle="italic"
+        android:text="@string/favorites_activity_placeholder"
+        android:visibility="gone" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/manage_favorites_placeholder_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/manage_favorites_placeholder"
+        android:layout_centerHorizontal="true"
+        android:background="?attr/selectableItemBackground"
+        android:gravity="center"
+        android:padding="@dimen/normal_margin"
+        android:text="@string/add_favorites"
+        android:textSize="@dimen/bigger_text_size"
+        android:visibility="gone" />
+
+</RelativeLayout>

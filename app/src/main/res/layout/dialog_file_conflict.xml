@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/conflict_dialog_holder"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/activity_margin"
+    android:paddingTop="@dimen/activity_margin"
+    android:paddingRight="@dimen/activity_margin">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/conflict_dialog_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/small_margin"
+        android:paddingTop="@dimen/small_margin"
+        android:paddingRight="@dimen/small_margin"
+        android:paddingBottom="@dimen/activity_margin"
+        tools:text="File already exists" />
+
+    <RadioGroup
+        android:id="@+id/conflict_dialog_radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/medium_margin">
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/conflict_dialog_radio_skip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:paddingTop="@dimen/normal_margin"
+            android:paddingBottom="@dimen/normal_margin"
+            android:text="@string/skip" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/conflict_dialog_radio_overwrite"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/normal_margin"
+            android:paddingBottom="@dimen/normal_margin"
+            android:text="@string/overwrite" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/conflict_dialog_radio_merge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/normal_margin"
+            android:paddingBottom="@dimen/normal_margin"
+            android:text="@string/merge" />
+
+        <com.google.android.material.radiobutton.MaterialRadioButton
+            android:id="@+id/conflict_dialog_radio_keep_both"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/normal_margin"
+            android:paddingBottom="@dimen/normal_margin"
+            android:text="@string/keep_both" />
+
+    </RadioGroup>
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/conflict_dialog_apply_to_all"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        android:paddingTop="@dimen/activity_margin"
+        android:paddingBottom="@dimen/activity_margin"
+        android:text="@string/apply_to_all" />
+
+</LinearLayout>

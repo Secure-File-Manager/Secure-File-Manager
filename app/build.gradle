@@ -1,0 +1,90 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: "org.owasp.dependencycheck"
+apply plugin: 'com.mikepenz.aboutlibraries.plugin'
+
+android {
+    compileSdkVersion rootProject.compileSdkVersion
+    buildToolsVersion '30.0.3'
+
+    defaultConfig {
+        applicationId "com.securefilemanager.app"
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+        versionCode 1
+        versionName "0.1.0 beta"
+    }
+
+    buildTypes {
+        debug {
+            applicationIdSuffix ".debug"
+        }
+
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            ndk {
+                debugSymbolLevel 'SYMBOL_TABLE'
+            }
+        }
+    }
+
+    sourceSets {
+        main.kotlin.srcDirs += 'src/main/kotlin'
+        main.java.srcDirs += 'src/main/kotlin'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    // Kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version"
+
+    // AndroidX
+    implementation "androidx.activity:activity-ktx:$activity_version"
+    implementation "androidx.appcompat:appcompat:$appcompat_version"
+    implementation "androidx.biometric:biometric:$biometric_version"
+    implementation "androidx.cardview:cardview:$cardview_version"
+    implementation "androidx.constraintlayout:constraintlayout:$constraintlayout_version"
+    implementation "androidx.core:core-ktx:$ktx_version"
+    implementation "androidx.documentfile:documentfile:$documentfile_version"
+    implementation "androidx.exifinterface:exifinterface:$exifinterface_version"
+    implementation "androidx.fragment:fragment-ktx:$fragment_version"
+    implementation "androidx.lifecycle:lifecycle-process:$lifecycle_version"
+    implementation "androidx.localbroadcastmanager:localbroadcastmanager:1.0.0"
+    implementation "androidx.preference:preference-ktx:$preference_version"
+    implementation "androidx.recyclerview:recyclerview:$recyclerview_version"
+    implementation "androidx.security:security-crypto:$security_crypto_version"
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:$swiperefreshlayout_version"
+
+    // Google
+    implementation "com.google.android.material:material:$material_version"
+
+    // Other
+    implementation "com.github.AppIntro:AppIntro:$appintro_version"
+    implementation "com.lambdapioneer.argon2kt:argon2kt:$argon2_version"
+    implementation "com.getkeepsafe.taptargetview:taptargetview:$taptargetview_version"
+    implementation "com.github.srikanth-lingala:zip4j:$zip4j_version"
+    implementation "com.mikepenz:aboutlibraries-core:$aboutlibraries_version"
+    implementation "com.mikepenz:aboutlibraries:$aboutlibraries_version"
+
+    // Glide
+    implementation "com.github.bumptech.glide:glide:$glide_version"
+    kapt "com.github.bumptech.glide:compiler:$glide_version"
+    annotationProcessor "com.github.bumptech.glide:compiler:$glide_version"
+}

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dialog_holder"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_margin"
+    android:paddingTop="@dimen/medium_margin"
+    android:paddingRight="@dimen/activity_margin">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/file_path_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_margin"
+        android:text="@string/path"
+        android:textSize="@dimen/smaller_text_size" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/file_path"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/file_path_label"
+        android:paddingStart="@dimen/activity_margin"
+        android:paddingTop="@dimen/small_margin"
+        android:paddingEnd="@dimen/small_margin"
+        android:paddingBottom="@dimen/activity_margin"
+        tools:text="/storage/emulated/0" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/file_name_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/file_path"
+        android:layout_marginTop="@dimen/small_margin"
+        android:text="@string/filename"
+        android:textSize="@dimen/smaller_text_size" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/file_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/file_name_label"
+        android:layout_marginStart="@dimen/normal_margin"
+        android:layout_marginEnd="@dimen/medium_margin"
+        android:layout_toStartOf="@+id/file_extension"
+        android:inputType="textCapSentences"
+        android:singleLine="true"
+        android:textCursorDrawable="@null"
+        android:textSize="@dimen/normal_text_size" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/file_extension"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/file_name_label"
+        android:layout_alignTop="@+id/file_name"
+        android:layout_alignBottom="@+id/file_name"
+        android:layout_alignParentEnd="true"
+        android:gravity="center_vertical"
+        android:text=".zip"
+        android:textSize="@dimen/normal_text_size"
+        tools:ignore="HardcodedText" />
+
+    <Switch
+        android:id="@+id/password_switch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/file_name"
+        android:layout_marginTop="@dimen/small_margin"
+        android:text="@string/password"
+        android:textSize="@dimen/smaller_text_size" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/password_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/password_switch"
+        app:passwordToggleEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/normal_margin"
+            android:layout_marginBottom="@dimen/activity_margin"
+            android:hint="@string/password_hint"
+            android:inputType="textPassword"
+            android:singleLine="true"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/normal_text_size" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/password_again_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/password_layout"
+        app:passwordToggleEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/password_again"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/normal_margin"
+            android:layout_marginBottom="@dimen/activity_margin"
+            android:hint="@string/password_again_hint"
+            android:inputType="textPassword"
+            android:singleLine="true"
+            android:textCursorDrawable="@null"
+            android:textSize="@dimen/normal_text_size" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+</RelativeLayout>

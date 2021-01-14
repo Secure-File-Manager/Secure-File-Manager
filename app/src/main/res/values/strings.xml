@@ -1,0 +1,372 @@
+<resources>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="checksum">Checksum</string>
+    <string name="save_as">Save as</string>
+    <string name="an_error_occurred">An error occurred: %s</string>
+    <string name="open_with">Open with</string>
+    <string name="no_app_found">No valid app found</string>
+    <string name="set_as">Set as</string>
+    <string name="value_copied_to_clipboard">Value copied to clipboard</string>
+    <string name="download">Download</string>
+    <string name="folder_empty">Folder is empty</string>
+    <string name="description">Open source file manager for keeping your files in safe</string>
+    <string name="clear">Clear</string>
+
+    <!-- Favorites -->
+    <string name="favorites">Favorites</string>
+    <string name="add_favorites">Add favorites</string>
+    <string name="add_to_favorites">Add to favorites</string>
+    <string name="remove_from_favorites">Remove from favorites</string>
+    <string name="manage_favorites">Manage favorites</string>
+    <string name="go_to_favorite">Go to favorite</string>
+    <string name="favorites_activity_placeholder">You can add frequently used folders to favorites for easy access from anywhere.</string>
+
+    <!-- Search -->
+    <string name="search">Search</string>
+    <string name="type_2_characters">Type in at least 2 characters to start the search.</string>
+
+    <!-- Filters -->
+    <string name="filter">Filter</string>
+    <string name="no_items_found">No items found.</string>
+
+    <!-- Permissions -->
+    <string name="no_storage_permissions">Storage permission is required</string>
+
+    <!-- Renaming -->
+    <string name="source_file_doesnt_exist">Source file %s doesn\'t exist</string>
+    <string name="prepend_filenames">Prepend filenames</string>
+    <string name="append_filenames">Append filenames</string>
+    <string name="string_to_add">String to add</string>
+
+    <!-- Copy / Move -->
+    <string name="move">Move</string>
+    <string name="copy_to">Copy to</string>
+    <string name="move_to">Move to</string>
+    <string name="invalid_destination">Could not write to the selected destination</string>
+    <string name="source_and_destination_same">Source and destination cannot be the same</string>
+    <string name="copying">Copying…</string>
+    <string name="copying_success">Files copied successfully</string>
+    <string name="copy_move_failed">An error occurred</string>
+    <string name="copying_success_partial">Some files could not be copied</string>
+    <string name="moving">Moving…</string>
+    <string name="moving_success">Files moved successfully</string>
+    <string name="moving_success_partial">Some files could not be moved</string>
+    <string name="encrypting">Encrypting…</string>
+    <string name="encrypting_success">Files encrypted successfully</string>
+    <string name="encryption_failed">An error occurred</string>
+    <string name="encrypting_success_partial">Some files could not be encrypted</string>
+    <string name="decrypting">Decrypting…</string>
+    <string name="decrypting_success">Files decrypted successfully</string>
+    <string name="decryption_failed">An error occurred</string>
+    <string name="decrypting_success_partial">Some files could not be decrypted</string>
+    <string name="hiding">Hiding…</string>
+    <string name="hiding_success">Files hidden successfully</string>
+    <string name="hiding_success_partial">Some files could not be hidden</string>
+    <string name="unhiding">Unhiding…</string>
+    <string name="unhiding_success">Files unhidden successfully</string>
+    <string name="unhiding_success_partial">Some files could not be unhidden</string>
+    <string name="could_not_create_folder">Could not create folder %s</string>
+    <string name="could_not_create_file">Could not create file %s</string>
+    <string name="no_space">The destination does not have enough space available.\nRequired %1$s, available %2$s</string>
+    <string name="saving">Saving…</string>
+    <string name="file_saved">File saved successfully</string>
+
+    <!-- Create new -->
+    <string name="create_new">Create new</string>
+    <string name="folder">Folder</string>
+    <string name="file">File</string>
+    <string name="create_new_folder">Create new folder</string>
+    <string name="name_taken">A file or folder with that name already exists</string>
+    <string name="invalid_name">The name contains invalid characters</string>
+    <string name="empty_name">Please enter a name</string>
+    <string name="unknown_error_occurred">An unknown error occurred</string>
+
+    <!-- Password authentication -->
+    <string name="invalid_password">Invalid password</string>
+    <string name="password_not_match">Passwords do not match</string>
+    <string name="invalid_password_pattern">Password must contain 8 characters and at least one number and one letter</string>
+    <string name="password_hint">Password</string>
+    <string name="password_again_hint">Password verification</string>
+
+    <!-- File operation conflicts -->
+    <string name="file_already_exists">File \"%s\" already exists</string>
+    <string name="folder_already_exists">Folder \"%s\" already exists</string>
+    <string name="merge">Merge</string>
+    <string name="keep_both">Keep both</string>
+    <string name="overwrite">Overwrite</string>
+    <string name="skip">Skip</string>
+    <string name="apply_to_all">Apply to all</string>
+
+    <!-- File picker -->
+    <string name="select_folder">Select a folder</string>
+    <string name="select_file">Select a file</string>
+    <string name="confirm_storage_access_title">Confirm external storage access</string>
+    <string name="confirm_storage_access_text">Please choose the top folder of the SD card on the next screen, to grant write access</string>
+    <string name="confirm_storage_access_text_sd">If you don\'t see the SD card, try this</string>
+    <string name="confirm_selection">Confirm selection</string>
+    <string name="tutorial_hide_description"><![CDATA[Here you can confirm destination for file in the hidden storage.<br/> <small><i>Tip: You can create folders in the hidden storage for better organization of the hidden files</small></i>]]></string>
+
+    <plurals name="items">
+        <item quantity="one">%d item</item>
+        <item quantity="other">%d items</item>
+    </plurals>
+
+    <plurals name="delete_items">
+        <item quantity="one">%d item</item>
+        <item quantity="other">%d items</item>
+    </plurals>
+
+    <!-- Storages -->
+    <string name="select_storage">Select storage</string>
+    <string name="internal">Internal</string>
+    <string name="hidden">Hidden</string>
+    <string name="sd_card">SD Card</string>
+    <string name="wrong_root_selected">Wrong folder selected, please select the root folder of your SD card</string>
+    <string name="sd_card_usb_same">SD card and USB device paths cannot be the same</string>
+
+    <!-- File properties -->
+    <string name="properties">Properties</string>
+    <string name="path">Path</string>
+    <string name="items_selected">Items selected</string>
+    <string name="direct_children_count">Direct children count</string>
+    <string name="files_count">Total files count</string>
+    <string name="resolution">Resolution</string>
+    <string name="duration">Duration</string>
+    <string name="artist">Artist</string>
+    <string name="album">Album</string>
+    <string name="focal_length">Focal length</string>
+    <string name="exposure_time">Exposure time</string>
+    <string name="iso_speed">ISO speed</string>
+    <string name="f_number">F-number</string>
+    <string name="camera">Camera</string>
+    <string name="exif">EXIF</string>
+    <string name="song_title">Song title</string>
+    <string name="gps_coordinates">GPS coordinates</string>
+    <string name="altitude">Altitude</string>
+
+    <!-- Actionbar items -->
+    <string name="delete">Delete</string>
+    <string name="remove">Remove</string>
+    <string name="rename">Rename</string>
+    <string name="share">Share</string>
+    <string name="share_via">Share via</string>
+    <string name="select_all">Select all</string>
+    <string name="hide">Hide</string>
+    <string name="unhide">Unhide</string>
+    <string name="encrypt">Encrypt</string>
+    <string name="decrypt">Decrypt</string>
+    <string name="maximum_share_reached">You cannot share this much content at once</string>
+    <string name="create_shortcut">Create shortcut</string>
+
+    <!-- Sorting -->
+    <string name="sort_by">Sort by</string>
+    <string name="name">Name</string>
+    <string name="size">Size</string>
+    <string name="last_modified">Last modified</string>
+    <string name="date_taken">Date taken</string>
+    <string name="filename">Filename</string>
+    <string name="extension">Extension</string>
+    <string name="ascending">Ascending</string>
+    <string name="descending">Descending</string>
+    <string name="use_for_this_folder">Use for this folder only</string>
+
+    <!-- Confirmation dialog -->
+    <string name="proceed_with_deletion">Are you sure you want to proceed with the deletion?</string>
+    <string name="deletion_confirmation">Are you sure you want to delete %s?</string>
+    <string name="share_hidden_file_confirmation">Are you sure you want to share %s from hidden storage?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <!-- Authentication -->
+    <string name="authenticate">Authenticate</string>
+    <string name="app_unlocked_notification">App is unlocked. Tap to lock app.</string>
+    <string name="prompt_info_title">App is locked</string>
+    <string name="prompt_info_use_app_password">Use app password</string>
+    <string name="password_setup_title">Setup app password</string>
+    <string name="password_remove">Remove</string>
+    <string name="lock_app">Lock app</string>
+    <string name="authentication_service_description">Service to handle unlocking of the app</string>
+    <string name="lock_receiver_description">Receiver to lock the app at boot and shutdown</string>
+
+    <!-- Settings -->
+    <string name="settings">Settings</string>
+    <string name="manage_storage">Manage storage</string>
+    <string name="settings_general">General</string>
+    <string name="font_size">Font size</string>
+    <string name="app_system_settings">App system settings</string>
+    <string name="small">Small</string>
+    <string name="medium">Medium</string>
+    <string name="large">Large</string>
+    <string name="extra_large">Extra large</string>
+    <string name="keep_last_modified_title">Keep old last-modified</string>
+    <string name="keep_last_modified_summary_off">Keep old last-modified value at file operations is disabled</string>
+    <string name="keep_last_modified_summary_on">Keep old last-modified value at file operations is enabled</string>
+    <string name="keep_after_encryption_operation_title">Keep source file</string>
+    <string name="keep_after_encryption_operation_summary_off">Keep source file after encryption/decryption is disabled</string>
+    <string name="keep_after_encryption_operation_summary_on">Keep source file after encryption/decryption is enabled</string>
+    <string name="disable_screenshots_title">Block screenshots</string>
+    <string name="disable_screenshots_summary_off">Block screenshots in the recent list and inside the app is disabled</string>
+    <string name="disable_screenshots_summary_on">Block screenshots in the recent list and inside the app is enabled</string>
+    <string name="show_media_thumbnail_title">Show media thumbnail</string>
+    <string name="show_media_thumbnail_summary_off">Show media thumbnail is disabled</string>
+    <string name="show_media_thumbnail_summary_on">Show media thumbnail is enabled</string>
+    <string name="media_thumbnail_clear_title">Clear media thumbnail cache</string>
+    <string name="media_thumbnail_clear_cleared">Cache cleared</string>
+    <string name="app_data_cleared">App data cleared</string>
+    <string name="app_data_error">Error occurred when app data was deleting</string>
+    <string name="app_lock_title">Lock app access</string>
+    <string name="app_lock_summary_off">Lock app access is disabled</string>
+    <string name="app_lock_summary_on">Lock app access is enabled</string>
+    <string name="app_lock_summary_on_warning">Password or biometric authentication is not set</string>
+    <string name="app_lock_summary_on_warning_biometric">Biometric authenticator is not specified or available</string>
+    <string name="use_biometric_authentication_title">Use biometric</string>
+    <string name="use_biometric_authentication_summary_off">Use also biometric authentication is disabled</string>
+    <string name="use_biometric_authentication_summary_on">Use also biometric authentication is enabled</string>
+    <string name="use_biometric_authentication_summary_on_warning">Biometric authenticator is not specified or available</string>
+    <string name="use_24_hour_time_format_title">Use 24-hour time format</string>
+    <string name="use_24_hour_time_format_title_summary_off">24-hour time format is disabled</string>
+    <string name="use_24_hour_time_format_title_summary_on">24-hour time format is enabled</string>
+    <string name="change_date_and_time_format_title">Change date and time format</string>
+    <string name="set_app_password_title">Set app password</string>
+    <string name="set_app_password_summary_on">Password is set</string>
+    <string name="set_app_password_summary_off">Password is not set</string>
+    <string name="app_open_biometric_settings_summary">Biometric authenticator is not specified, click to open settings</string>
+    <string name="app_lock_info_summary">Biometric authentication is significantly less secure than a password. To improve the security of your files is recommended using only a password to restrict app access. But you can use both.</string>
+
+    <!-- Setting sections -->
+    <string name="security">Security</string>
+    <string name="file_operations">File operations</string>
+
+    <string name="app_name">Secure File Manager Beta</string>
+    <string name="app_launcher_name">Secure File</string>
+    <string name="press_back_again">Press back again to exit</string>
+    <string name="go_to_home_folder">Go to home folder</string>
+    <string name="set_as_home_folder">Set as home folder</string>
+    <string name="home_folder_updated">Home folder updated</string>
+    <string name="copy_path">Copy path to clipboard</string>
+    <string name="path_copied">Path copied</string>
+    <string name="select_audio_file">Please select an audio file</string>
+
+    <!-- Open as -->
+    <string name="open_as">Open as</string>
+    <string name="text_file">Text file</string>
+    <string name="image_file">Image file</string>
+    <string name="audio_file">Audio file</string>
+    <string name="video_file">Video file</string>
+    <string name="other_file">Other file</string>
+
+    <!-- Compression -->
+    <string name="password">Password</string>
+    <string name="compress">Create zip</string>
+    <string name="decompress">Extract</string>
+    <string name="compress_as">Create zip</string>
+    <string name="compressing">Creating zip…</string>
+    <string name="starting">Starting…</string>
+    <string name="decompressing">Extracting…</string>
+    <string name="canceling">Canceling…</string>
+    <string name="compression_successful">Creating zip successful</string>
+    <string name="decompression_successful">Extraction successful</string>
+    <string name="compressing_failed">Creating zip failed</string>
+    <string name="decompressing_failed">Extraction failed</string>
+    <string name="decompress_password_title">Password to %s</string>
+    <string name="decompress_conflicts">Can\'t extract file, because file "%s" is in conflict</string>
+    <string name="compression_action_collision">Only one creation of zip is allowed at once</string>
+    <string name="stop">Stop</string>
+    <string name="compression_receiver_description">Receiver for ZipManagerService to handle notification actions</string>
+    <string name="compression_service_description">Service to handle zip files creation or extraction of zip</string>
+
+    <!-- About -->
+    <string name="about">About</string>
+    <string name="about_tab_about">About</string>
+    <string name="about_tab_libraries">Libraries</string>
+    <string name="about_label_changelog">Changelog</string>
+    <string name="about_label_privacy_policy">Privacy Policy</string>
+    <string name="about_label_license">License</string>
+    <string name="about_label_gnu">GNU License</string>
+    <string name="about_label_source">Source code</string>
+    <string name="about_label_version">Version</string>
+    <string name="about_label_faq">FAQ</string>
+    <string name="about_label_contribute">Contribute</string>
+    <string name="about_label_faq_long">Frequently asked questions</string>
+    <string name="about_title_authors">Authors</string>
+    <string name="about_label_main_developer">Main developer</string>
+    <string name="about_label_original_author">Author of the original app</string>
+    <string name="about_label_original_app">Original App</string>
+
+    <!-- Intro -->
+    <string name="introduction">Introduction</string>
+
+    <string name="intro_permission_title">Welcome!</string>
+    <string name="intro_permission_summary">This app requires storage permission. Without this permission, the app will be useless.</string>
+    <string name="intro_permission_summary2">If you clicked "deny &amp; don't ask again", you can only allow the storage permission from the app system settings.</string>
+    <string name="intro_permission_permission_enabled">Storage permission is enabled!</string>
+    <string name="intro_permission_button_permission_text">Allow storage permission</string>
+    <string name="intro_permission_button_settings_text">Open app system settings</string>
+    <string name="intro_permission_illegally_request_next_page">Please allow the storage permission to continue</string>
+
+    <string name="intro_hiding_title">Hiding files feature</string>
+    <string name="intro_hiding_summary">This icon means, that selected files will be moved to the hidden storage.</string>
+    <string name="intro_hiding_summary2">The icon means, that selected files will be moved from the hidden storage to a selected destination.</string>
+    <string name="intro_hiding_info"><![CDATA[Files in the hidden storage are accessible <b>only</b> to this app.]]></string>
+    <string name="intro_hiding_warning">WARNING: If you uninstall this app or clear app storage, you will also remove all your hidden secrets!</string>
+
+    <string name="intro_encrypting_title">Encrypting files feature</string>
+    <string name="intro_encrypting_summary">This icon means, that selected files will be encrypted.</string>
+    <string name="intro_encrypting_summary2">This icon means, that selected files will be decrypted.</string>
+    <string name="intro_encrypting_info_1"><![CDATA[Files are encrypted <b>without password</b> with key saved securely in your device <i>(in the AndroidKeyStore)</i>.]]></string>
+    <string name="intro_encrypting_info_2"><![CDATA[The encryption make possible, that an encrypted files could not be read by an unauthorized person.]]></string>
+    <string name="intro_encrypting_warning">WARNING: If you uninstall this app, you will not be able to decrypt your encrypted secrets never again!</string>
+
+    <string name="intro_lock_title">Lock app setup</string>
+    <string name="intro_lock_warning">Enabling lock app access is highly recommended to keep your secrets safe.</string>
+
+    <string name="intro_other_title">Other features</string>
+    <string name="intro_other_feature_encrypted_zip"><![CDATA[Create or extract zip files or <b>encrypted</b> zip files.]]></string>
+    <string name="feature_media_saving"><![CDATA[Create a photo or video to a specified destination.<br/> <small><i>(E.g.: directly take a media file to hidden storage)</i></small>]]></string>
+
+    <!-- Password prompt dialog -->
+    <string name="password_prompt_title">Enter password</string>
+
+    <!-- Tutorial -->
+    <string name="tutorial">Tutorial</string>
+
+    <string name="breadcrumb_title">Change storage</string>
+    <string name="breadcrumb_desc"><![CDATA[Here you can change storage.<br/> <small><i>(E.g.: change to hidden storage)</i></small>]]></string>
+
+    <string name="file_title">File operations</string>
+    <string name="file_desc">The press on file will open it.\nLong press on it will trigger manipulation mode.</string>
+
+    <string name="hide_title">Hide file</string>
+    <string name="hide_desc">After long press on a file, you can hide it with this icon.</string>
+
+    <string name="encrypt_title">Encrypt file</string>
+    <string name="encrypt_desc">After long press on a file, you can encrypt it with this icon.</string>
+
+    <string name="more_menu_title">More file operations</string>
+    <string name="more_menu_desc"><![CDATA[After long press on a file, you can find more file operations here.<br/> <small><i>(E.g.: create zip, create encrypted zip, move, copy, rename, etc…)</i></small>]]></string>
+
+    <string name="video_title">Create video</string>
+    <string name="video_desc"><![CDATA[Created video is saved to the current directory.<br/> <small><i>(E.g.: save video directly do hidden storage, to prevent a Google Photos sync)</i></small>]]></string>
+
+    <string name="photo_title">Create photo</string>
+    <string name="photo_desc"><![CDATA[Created photo is saved to the current directory.<br/> <small><i>(E.g.: save photo directly do hidden storage, to prevent a Google Photos sync)</i></small>]]></string>
+
+    <string name="hide_fab_title">Hidden storage</string>
+    <string name="hide_fab_desc">Go to hidden storage</string>
+
+    <string name="new_file_title">Create new</string>
+    <string name="new_file_desc">Create a new file or directory</string>
+
+    <!-- Beta warning -->
+    <string name="beta_warning">This is a beta version of the app. This means you should not use this app with important files. The developers of this app are not responsible for your data lose or corruption!</string>
+
+    <!-- App data confirmation dialog -->
+    <string name="app_data_clear_title">Clear app data</string>
+    <string name="app_data_clear_summary"><![CDATA[This will clear all your <b>hidden files</b>, setting, cache, and other app data. Also you will be not able to <b>decrypt</b> encrypted files, which are encrypted with this app.]]></string>
+    <string name="app_data_clear_confirmation_1">Tap again if you are sure you want to delete hidden files</string>
+    <string name="app_data_clear_confirmation_2">Tap again if you know, that you will not be able to decrypt encrypted file with this app</string>
+    <string name="app_data_clear_confirmation_3">Tap again if you are sure you want delete settings</string>
+    <string name="app_data_clear_confirmation_4">Tap again to confirm app data delete</string>
+
+</resources>

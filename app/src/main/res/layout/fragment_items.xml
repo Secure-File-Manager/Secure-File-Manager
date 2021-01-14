@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/items_holder"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/items_swipe_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/items_wrapper"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/items_empty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:text="@string/folder_empty"
+                android:textSize="@dimen/extra_big_text_size"
+                android:textStyle="bold"
+                android:visibility="invisible"
+                app:drawableTopCompat="@drawable/ic_package_vector_normal" />
+
+            <com.securefilemanager.app.views.Breadcrumbs
+                android:id="@+id/breadcrumbs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/activity_margin" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/items_placeholder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/breadcrumbs"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:paddingLeft="@dimen/activity_margin"
+                android:paddingRight="@dimen/activity_margin"
+                android:text="@string/no_items_found"
+                android:textSize="@dimen/bigger_text_size"
+                android:visibility="gone" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/items_placeholder_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/items_placeholder"
+                android:layout_centerHorizontal="true"
+                android:background="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:padding="@dimen/activity_margin"
+                android:text="@string/type_2_characters"
+                android:textSize="@dimen/bigger_text_size"
+                android:visibility="gone" />
+
+            <com.securefilemanager.app.views.MyRecyclerView
+                android:id="@+id/items_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/breadcrumbs"
+                android:clipToPadding="false"
+                android:scrollbars="none"
+                app:layoutManager="com.securefilemanager.app.views.MyLinearLayoutManager" />
+
+            <com.securefilemanager.app.views.FastScroller
+                android:id="@+id/items_fastscroller"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/breadcrumbs"
+                android:layout_alignParentEnd="true"
+                android:paddingStart="@dimen/normal_margin"
+                android:paddingEnd="0dp">
+
+                <include layout="@layout/fastscroller_handle_vertical" />
+
+            </com.securefilemanager.app.views.FastScroller>
+        </RelativeLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <LinearLayout
+        android:id="@+id/filepicker_fabs_holder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="@dimen/activity_margin"
+        android:orientation="vertical">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/camera_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="@dimen/activity_margin"
+            android:layout_marginBottom="@dimen/medium_margin"
+            android:src="@drawable/ic_videocam_vector"
+            android:contentDescription="@string/video_title"
+            app:fabSize="mini" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/photo_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="@dimen/activity_margin"
+            android:layout_marginBottom="@dimen/activity_margin"
+            android:src="@drawable/ic_camera_white_vector"
+            android:contentDescription="@string/photo_title"
+            app:fabSize="mini" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/hide_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="@dimen/activity_margin"
+            android:layout_marginBottom="@dimen/activity_margin"
+            android:contentDescription="@string/new_file_title"
+            android:src="@drawable/ic_hide_white_vector" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/items_fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="@dimen/activity_margin"
+            android:contentDescription="@string/new_file_title"
+            android:src="@drawable/ic_plus_vector" />
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
