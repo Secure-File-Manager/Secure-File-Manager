@@ -1,1 +1,1 @@
-Open source file manager for keeping your files in safe
+File manager for keeping your files in safe
