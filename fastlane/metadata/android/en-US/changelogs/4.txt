@@ -1,0 +1,1 @@
+* Edited Fastlane description for F-Droid publish
