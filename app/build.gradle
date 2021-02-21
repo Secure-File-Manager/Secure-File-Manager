@@ -14,7 +14,7 @@ android {
         minSdkVersion rootProject.minSdkVersion
         targetSdkVersion rootProject.targetSdkVersion
         versionCode 4
-        versionName "0.1.2 beta2"
+        versionName "0.1.2-beta2"
     }
 
     buildTypes {
