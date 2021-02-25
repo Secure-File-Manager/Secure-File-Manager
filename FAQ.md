@@ -17,6 +17,7 @@
  - [The application behaves unexpectedly. What should I do now?](https://github.com/Secure-File-Manager/Secure-File-Manager/wiki/Frequently-Asked-Questions/_edit#the-application-behaves-unexpectedly-what-should-i-do-now)
  - [Why the app needs _(specific)_ permission?](https://github.com/Secure-File-Manager/Secure-File-Manager/wiki/Frequently-Asked-Questions/_edit#why-the-app-needs-specific-permission)
  - [Was Secure File manager audited?](https://github.com/Secure-File-Manager/Secure-File-Manager/wiki/Frequently-Asked-Questions/_edit#was-secure-file-manager-audited)
+ - [The app is not working, if I have enabled night light. What can I do?](https://github.com/Secure-File-Manager/Secure-File-Manager/wiki/Frequently-Asked-Questions/_edit#the-app-is-not-working-if-i-have-enabled-night-light-what-can-i-do)
  - [I don't found an answer?](https://github.com/Secure-File-Manager/Secure-File-Manager/wiki/Frequently-Asked-Questions/_edit#i-dont-found-an-answer)
 
 </p>
@@ -88,6 +89,13 @@ The app needs the following permission:
 ### Was Secure File manager audited?
 
 Not yet. We will be pleased if somebody will do it.
+
+
+### The app is not working, if I have enabled night light. What can I do?
+
+If you use  a third-party night light app, you should turn off the night light. Alternatively, you can use native night light mode, if your Android OS supports it.
+
+_Note: The night light is not working, because of the enabled [filterTouchesWhenObscured](https://developer.android.com/reference/android/view/View.html#attr_android:filterTouchesWhenObscured) flag. This flag prevents tapjacking attacks._
 
 ### I don't found an answer?
 
