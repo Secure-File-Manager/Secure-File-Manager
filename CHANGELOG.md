@@ -1,5 +1,9 @@
 # Changelog
 
+#### v0.1.3 - beta
+
+ * Fix SD card issues
+
 #### v0.1.2 - beta2
 
  * Edited Fastlane description for F-Droid publish
