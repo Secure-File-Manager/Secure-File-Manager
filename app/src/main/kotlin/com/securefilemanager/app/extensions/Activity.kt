@@ -17,6 +17,7 @@ import androidx.core.content.FileProvider
 import com.securefilemanager.app.BuildConfig
 import com.securefilemanager.app.R
 import com.securefilemanager.app.activities.BaseAbstractActivity
+import com.securefilemanager.app.dialogs.WritePermissionDialog
 import com.securefilemanager.app.helpers.*
 import com.securefilemanager.app.models.FileDirItem
 import kotlinx.android.synthetic.main.dialog_title.view.*
@@ -232,15 +233,21 @@ fun BaseAbstractActivity.deleteFilesBg(
 
     var wasSuccess = false
 
-    files.forEachIndexed { index, file ->
-        deleteFileBg(file, allowDeleteFolder) {
-            if (it) {
-                wasSuccess = true
-            }
+    handleSAFDialog(files[0].path) {
+        if (!it) {
+            return@handleSAFDialog
+        }
 
-            if (index == files.size - 1) {
-                runOnUiThread {
-                    callback?.invoke(wasSuccess)
+        files.forEachIndexed { index, file ->
+            deleteFileBg(file, allowDeleteFolder) {
+                if (it) {
+                    wasSuccess = true
+                }
+
+                if (index == files.size - 1) {
+                    runOnUiThread {
+                        callback?.invoke(wasSuccess)
+                    }
                 }
             }
         }
@@ -272,7 +279,11 @@ fun BaseAbstractActivity.deleteFileBg(
 
         if (!fileDeleted) {
             if (needsStupidWritePermissions(path)) {
-                trySAFFileDelete(fileDirItem, allowDeleteFolder, callback)
+                handleSAFDialog(path) {
+                    if (it) {
+                        trySAFFileDelete(fileDirItem, allowDeleteFolder, callback)
+                    }
+                }
             }
         }
     }
@@ -311,40 +322,46 @@ fun BaseAbstractActivity.renameFile(
     callback: ((success: Boolean) -> Unit)? = null
 ) {
     if (needsStupidWritePermissions(newPath)) {
-        val document = getSomeDocumentFile(oldPath)
-        if (document == null || (File(oldPath).isDirectory != document.isDirectory)) {
-            runOnUiThread {
-                callback?.invoke(false)
+        handleSAFDialog(newPath) {
+            if (!it) {
+                return@handleSAFDialog
             }
-            return
-        }
 
-        try {
-            ensureBackgroundThread {
-                try {
-                    DocumentsContract.renameDocument(
-                        applicationContext.contentResolver,
-                        document.uri,
-                        newPath.getFilenameFromPath()
-                    )
-                } catch (ignored: FileNotFoundException) {
-                    // FileNotFoundException is thrown in some weird cases, but renaming works just fine
+            val document = getSomeDocumentFile(oldPath)
+            if (document == null || (File(oldPath).isDirectory != document.isDirectory)) {
+                runOnUiThread {
+                    callback?.invoke(false)
                 }
-                updateInMediaStore(oldPath, newPath)
-                rescanPaths(arrayListOf(oldPath, newPath)) {
-                    if (!config.keepLastModified) {
-                        updateLastModified(newPath, System.currentTimeMillis())
-                    }
-                    deleteFromMediaStore(oldPath)
-                    runOnUiThread {
-                        callback?.invoke(true)
-                    }
-                }
+                return@handleSAFDialog
             }
-        } catch (e: Exception) {
-            showErrorToast(e)
-            runOnUiThread {
-                callback?.invoke(false)
+
+            try {
+                ensureBackgroundThread {
+                    try {
+                        DocumentsContract.renameDocument(
+                            applicationContext.contentResolver,
+                            document.uri,
+                            newPath.getFilenameFromPath()
+                        )
+                    } catch (ignored: FileNotFoundException) {
+                        // FileNotFoundException is thrown in some weird cases, but renaming works just fine
+                    }
+                    updateInMediaStore(oldPath, newPath)
+                    rescanPaths(arrayListOf(oldPath, newPath)) {
+                        if (!config.keepLastModified) {
+                            updateLastModified(newPath, System.currentTimeMillis())
+                        }
+                        deleteFromMediaStore(oldPath)
+                        runOnUiThread {
+                            callback?.invoke(true)
+                        }
+                    }
+                }
+            } catch (e: Exception) {
+                showErrorToast(e)
+                runOnUiThread {
+                    callback?.invoke(false)
+                }
             }
         }
     } else if (File(oldPath).renameTo(File(newPath))) {
@@ -502,4 +519,31 @@ fun Activity.deleteAppData() {
     val packageName = this.applicationContext.packageName
     Runtime.getRuntime().exec("pm clear $packageName")
     this.quitApp()
+}
+
+fun BaseAbstractActivity.isShowingSAFDialog(path: String): Boolean {
+    return if (isPathOnSD(path) && !isSDCardSetAsDefaultStorage() && (config.treeUri.isEmpty() || !hasProperStoredTreeUri())) {
+        runOnUiThread {
+            if (!isDestroyed && !isFinishing) {
+                WritePermissionDialog(this) {
+                    Intent(Intent.ACTION_OPEN_DOCUMENT_TREE).apply {
+                        putExtra("android.content.extra.SHOW_ADVANCED", true)
+                        if (resolveActivity(packageManager) == null) {
+                            type = "*/*"
+                        }
+
+                        if (resolveActivity(packageManager) != null) {
+                            checkedDocumentPath = path
+                            startActivityForResult(this, OPEN_DOCUMENT_TREE)
+                        } else {
+                            toast(R.string.unknown_error_occurred)
+                        }
+                    }
+                }
+            }
+        }
+        true
+    } else {
+        false
+    }
 }

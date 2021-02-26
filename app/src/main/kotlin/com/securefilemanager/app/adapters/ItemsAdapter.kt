@@ -50,11 +50,14 @@ class ItemsAdapter(
 
     override fun prepareActionMode(menu: Menu) {
         val isPathOnHidden = isPathOnHidden()
+        val isPathOnSd = isPathOnSd()
         val selectedFileDirItems = getSelectedFileDirItems()
         menu.apply {
             // visibility
             findItem(R.id.cab_decompress).isVisible =
-                selectedFileDirItems.filter { it.path.isZipFile() }.size == selectedFileDirItems.size
+                selectedFileDirItems.filter { it.path.isZipFile() }.size == selectedFileDirItems.size &&
+                    !isPathOnSd
+            findItem(R.id.cab_compress).isVisible = !isPathOnSd
             findItem(R.id.cab_confirm_selection).isVisible = isPickMultipleIntent
             findItem(R.id.cab_copy_path).isVisible = isOneItemSelected()
             findItem(R.id.cab_open_with).isVisible = isOneFileSelected()
@@ -63,9 +66,11 @@ class ItemsAdapter(
             findItem(R.id.cab_hide).isVisible = !isPathOnHidden
             findItem(R.id.cab_unhide).isVisible = isPathOnHidden
             findItem(R.id.cab_encrypt).isVisible =
-                selectedFileDirItems.any { !it.isEncrypted() || it.isDirectory }
+                selectedFileDirItems.any { !it.isEncrypted() || it.isDirectory } &&
+                    !isPathOnSd
             findItem(R.id.cab_decrypt).isVisible =
-                selectedFileDirItems.any { it.isEncrypted() || it.isDirectory }
+                selectedFileDirItems.any { it.isEncrypted() || it.isDirectory } &&
+                    !isPathOnSd
         }
     }
 
@@ -365,6 +370,11 @@ class ItemsAdapter(
             return
         }
 
+        activity.handleSAFDialog(getFirstSelectedItemPath()) {
+            if (!it) {
+                return@handleSAFDialog
+            }
+
             val files = ArrayList<FileDirItem>(selectedKeys.size)
             val positions = ArrayList<Int>()
             selectedKeys.forEach { selectedKey ->
@@ -382,6 +392,7 @@ class ItemsAdapter(
             positions.forEach {
                 listItems.removeAt(it)
             }
+        }
     }
 
     private fun getFirstSelectedItemPath() = getSelectedFileDirItems().first().path
@@ -448,6 +459,10 @@ class ItemsAdapter(
 
     private fun isPathOnHidden(): Boolean {
         return getSelectedFileDirItems().any { activity.isPathOnHidden(it.path) }
+    }
+
+    private fun isPathOnSd(): Boolean {
+        return getSelectedFileDirItems().any { activity.isPathOnSD(it.path) }
     }
 
     companion object {

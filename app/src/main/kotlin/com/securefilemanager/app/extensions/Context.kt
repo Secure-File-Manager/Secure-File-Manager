@@ -428,3 +428,12 @@ fun Context.appLock() {
     }
     this.config.wasAppProtectionHandled = false
 }
+
+fun Context.hasProperStoredTreeUri(): Boolean {
+    val uri = config.treeUri
+    val hasProperUri = contentResolver.persistedUriPermissions.any { it.uri.toString() == uri }
+    if (!hasProperUri) {
+        config.treeUri = ""
+    }
+    return hasProperUri
+}

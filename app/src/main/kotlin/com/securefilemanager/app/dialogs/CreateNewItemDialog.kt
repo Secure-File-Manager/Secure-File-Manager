@@ -57,14 +57,18 @@ class CreateNewItemDialog(
         callback: (Boolean) -> Unit
     ) {
         when {
-            activity.needsStupidWritePermissions(path) -> {
+            activity.needsStupidWritePermissions(path) -> activity.handleSAFDialog(path) {
+                if (!it) {
+                    return@handleSAFDialog
+                }
+
                 val documentFile = activity.getDocumentFile(path.getParentPath())
                 if (documentFile == null) {
                     val error =
                         String.format(activity.getString(R.string.could_not_create_folder), path)
                     activity.showErrorToast(error)
                     callback(false)
-                    return
+                    return@handleSAFDialog
                 }
                 documentFile.createDirectory(path.getFilenameFromPath())
                 success(alertDialog)
@@ -81,6 +85,11 @@ class CreateNewItemDialog(
         try {
             when {
                 activity.needsStupidWritePermissions(path) -> {
+                    activity.handleSAFDialog(path) {
+                        if (!it) {
+                            return@handleSAFDialog
+                        }
+
                         val documentFile = activity.getDocumentFile(path.getParentPath())
                         if (documentFile == null) {
                             val error = String.format(
@@ -89,10 +98,11 @@ class CreateNewItemDialog(
                             )
                             activity.showErrorToast(error)
                             callback(false)
-                            return
+                            return@handleSAFDialog
                         }
                         documentFile.createFile(path.getMimeType(), path.getFilenameFromPath())
                         success(alertDialog)
+                    }
                 }
                 else -> {
                     if (File(path).createNewFile()) {

@@ -35,6 +35,10 @@ abstract class BaseAbstractActivity : AppCompatActivity() {
     var copyMoveCallback: ((destinationPath: String, copiedAll: Boolean) -> Unit)? = null
     var checkedDocumentPath = ""
 
+    companion object {
+        var funAfterSAFPermission: ((success: Boolean) -> Unit)? = null
+    }
+
     private val copyMoveListener = object : CopyMoveListener {
         override fun copySucceeded(
             copyOnly: Boolean,
@@ -105,6 +109,7 @@ abstract class BaseAbstractActivity : AppCompatActivity() {
     }
 
     override fun onDestroy() {
+        funAfterSAFPermission = null
         ProcessLifecycleOwner.get().lifecycle.removeObserver(this.mAuthenticationObserver)
         this.unregisterReceiver(this.lockReceiver)
         super.onDestroy()
@@ -131,12 +136,16 @@ abstract class BaseAbstractActivity : AppCompatActivity() {
                     partition.isEmpty() || resultData.dataString!!.contains(partition)
                 if (isProperSDFolder(resultData.data!!) && isProperPartition) {
                     saveTreeUri(resultData)
+                    funAfterSAFPermission?.invoke(true)
+                    funAfterSAFPermission = null
                 } else {
                     toast(R.string.wrong_root_selected)
                     val intent = Intent(Intent.ACTION_OPEN_DOCUMENT_TREE)
                     startActivityForResult(intent, requestCode)
                 }
             }
+        } else {
+            funAfterSAFPermission?.invoke(false)
         }
     }
 
@@ -181,23 +190,15 @@ abstract class BaseAbstractActivity : AppCompatActivity() {
             return
         }
 
-        copyMoveCallback = callback
-        var fileCountToCopy = fileDirItems.size
-        if (isCopyOperation || !isNotEncryption(encryptionAction)) {
-            startCopyMove(
-                fileDirItems,
-                destination,
-                isCopyOperation,
-                copyPhotoVideoOnly,
-                encryptionAction,
-                hideAction
-            )
-        } else {
-            if (
-                isPathOnSD(source) ||
-                isPathOnSD(destination) ||
-                fileDirItems.first().isDirectory
-            ) {
+        handleSAFDialog(destination) {
+            if (!it) {
+                copyMoveListener.copyFailed()
+                return@handleSAFDialog
+            }
+
+            copyMoveCallback = callback
+            var fileCountToCopy = fileDirItems.size
+            if (isCopyOperation || !isNotEncryption(encryptionAction)) {
                 startCopyMove(
                     fileDirItems,
                     destination,
@@ -207,72 +208,91 @@ abstract class BaseAbstractActivity : AppCompatActivity() {
                     hideAction
                 )
             } else {
-                try {
-                    checkConflicts(
-                        fileDirItems,
-                        destination,
-                        0,
-                        LinkedHashMap(),
-                        encryptionAction
-                    ) { resolutions ->
-                        ensureBackgroundThread {
-                            toast(R.string.moving)
-                            val updatedPaths = ArrayList<String>(fileDirItems.size)
-                            val destinationFolder = File(destination)
-                            for (oldFileDirItem in fileDirItems) {
-                                var newFile = File(destinationFolder, oldFileDirItem.name)
-                                if (newFile.exists()) {
-                                    when {
-                                        getConflictResolution(
-                                            resolutions,
-                                            newFile.absolutePath
-                                        ) == CONFLICT_SKIP -> fileCountToCopy--
-                                        getConflictResolution(
-                                            resolutions,
-                                            newFile.absolutePath
-                                        ) == CONFLICT_KEEP_BOTH -> newFile =
-                                            getAlternativeFile(newFile)
-                                        else ->
-                                            // this file is guaranteed to be on the internal storage, so just delete it this way
-                                            newFile.delete()
+                if (
+                    isPathOnSD(source) ||
+                    isPathOnSD(destination) ||
+                    fileDirItems.first().isDirectory
+                ) {
+                    handleSAFDialog(source) { success ->
+                        if (success) {
+                            startCopyMove(
+                                fileDirItems,
+                                destination,
+                                isCopyOperation,
+                                copyPhotoVideoOnly,
+                                encryptionAction,
+                                hideAction
+                            )
+                        }
+                    }
+                } else {
+                    try {
+                        checkConflicts(
+                            fileDirItems,
+                            destination,
+                            0,
+                            LinkedHashMap(),
+                            encryptionAction
+                        ) { resolutions ->
+                            ensureBackgroundThread {
+                                toast(R.string.moving)
+                                val updatedPaths = ArrayList<String>(fileDirItems.size)
+                                val destinationFolder = File(destination)
+                                for (oldFileDirItem in fileDirItems) {
+                                    var newFile = File(destinationFolder, oldFileDirItem.name)
+                                    if (newFile.exists()) {
+                                        when {
+                                            getConflictResolution(
+                                                resolutions,
+                                                newFile.absolutePath
+                                            ) == CONFLICT_SKIP -> fileCountToCopy--
+                                            getConflictResolution(
+                                                resolutions,
+                                                newFile.absolutePath
+                                            ) == CONFLICT_KEEP_BOTH -> newFile =
+                                                getAlternativeFile(newFile)
+                                            else ->
+                                                // this file is guaranteed to be on the internal storage, so just delete it this way
+                                                newFile.delete()
+                                        }
+                                    }
+
+                                    if (!newFile.exists() && File(oldFileDirItem.path).renameTo(
+                                            newFile
+                                        )
+                                    ) {
+                                        if (!config.keepLastModified) {
+                                            newFile.setLastModified(System.currentTimeMillis())
+                                        }
+                                        updatedPaths.add(newFile.absolutePath)
+                                        deleteFromMediaStore(oldFileDirItem.path)
                                     }
                                 }
 
-                                if (!newFile.exists() && File(oldFileDirItem.path).renameTo(
-                                        newFile
-                                    )
-                                ) {
-                                    if (!config.keepLastModified) {
-                                        newFile.setLastModified(System.currentTimeMillis())
+                                runOnUiThread {
+                                    if (updatedPaths.isEmpty()) {
+                                        copyMoveListener.copySucceeded(
+                                            false,
+                                            fileCountToCopy == 0,
+                                            destination,
+                                            encryptionAction,
+                                            hideAction
+                                        )
+                                    } else {
+                                        copyMoveListener.copySucceeded(
+                                            false,
+                                            fileCountToCopy <= updatedPaths.size,
+                                            destination,
+                                            encryptionAction,
+                                            hideAction
+                                        )
                                     }
-                                    updatedPaths.add(newFile.absolutePath)
-                                    deleteFromMediaStore(oldFileDirItem.path)
-                                }
-                            }
-
-                            runOnUiThread {
-                                if (updatedPaths.isEmpty()) {
-                                    copyMoveListener.copySucceeded(
-                                        false,
-                                        fileCountToCopy == 0,
-                                        destination,
-                                        encryptionAction,
-                                        hideAction
-                                    )
-                                } else {
-                                    copyMoveListener.copySucceeded(
-                                        false,
-                                        fileCountToCopy <= updatedPaths.size,
-                                        destination,
-                                        encryptionAction,
-                                        hideAction
-                                    )
                                 }
                             }
                         }
+                    } catch (e: Exception) {
+                        showErrorToast(e)
                     }
-                } catch (e: Exception) {
-                    showErrorToast(e)
                 }
             }
         }
@@ -474,6 +494,20 @@ abstract class BaseAbstractActivity : AppCompatActivity() {
                 arrayOf(getPermissionString(permissionId)),
                 GENERIC_PERM_HANDLER
             )
+        }
+    }
+
+    // synchronous return value determines only if we are showing the SAF dialog, callback result tells if the SD permission has been granted
+    fun handleSAFDialog(path: String, callback: (success: Boolean) -> Unit): Boolean {
+        return if (!packageName.startsWith("com.securefilemanager")) {
+            callback(true)
+            false
+        } else if (isShowingSAFDialog(path)) {
+            funAfterSAFPermission = callback
+            true
+        } else {
+            callback(true)
+            false
         }
     }
 

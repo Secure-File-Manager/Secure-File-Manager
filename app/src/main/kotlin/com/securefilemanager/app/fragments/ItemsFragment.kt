@@ -158,7 +158,10 @@ class ItemsFragment : Fragment(), ItemOperationsListener, Breadcrumbs.Breadcrumb
             return
         }
 
+        val isOnSdCard = path.startsWith(requireActivity().sdCardPath)
         this.mView.hide_fab.beGoneIf(path.startsWith(requireActivity().hiddenPath))
+        this.mView.camera_fab.beGoneIf(isOnSdCard)
+        this.mView.photo_fab.beGoneIf(isOnSdCard)
 
         var realPath = path.trimEnd('/')
         if (realPath.isEmpty()) {

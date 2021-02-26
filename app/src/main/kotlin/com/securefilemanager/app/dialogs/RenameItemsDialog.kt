@@ -53,42 +53,48 @@ class RenameItemsDialog(
                             return@setOnClickListener
                         }
 
-                        ignoreClicks = true
-                        var pathsCnt = validPaths.size
-                        for (path in validPaths) {
-                            val fullName = path.getFilenameFromPath()
-                            var dotAt = fullName.lastIndexOf(".")
-                            if (dotAt == -1) {
-                                dotAt = fullName.length
+                        activity.handleSAFDialog(sdFilePath) {
+                            if (!it) {
+                                return@handleSAFDialog
                             }
 
-                            val name = fullName.substring(0, dotAt)
-                            val extension =
-                                if (fullName.contains(".")) ".${fullName.getFilenameExtension()}" else ""
+                            ignoreClicks = true
+                            var pathsCnt = validPaths.size
+                            for (path in validPaths) {
+                                val fullName = path.getFilenameFromPath()
+                                var dotAt = fullName.lastIndexOf(".")
+                                if (dotAt == -1) {
+                                    dotAt = fullName.length
+                                }
 
-                            val newName = if (append) {
-                                "$name$valueToAdd$extension"
-                            } else {
-                                "$valueToAdd$fullName"
-                            }
+                                val name = fullName.substring(0, dotAt)
+                                val extension =
+                                    if (fullName.contains(".")) ".${fullName.getFilenameExtension()}" else ""
 
-                            val newPath = "${path.getParentPath()}/$newName"
+                                val newName = if (append) {
+                                    "$name$valueToAdd$extension"
+                                } else {
+                                    "$valueToAdd$fullName"
+                                }
 
-                            if (activity.getDoesFilePathExist(newPath)) {
-                                continue
-                            }
+                                val newPath = "${path.getParentPath()}/$newName"
 
-                            activity.renameFile(path, newPath) {
-                                if (it) {
-                                    pathsCnt--
-                                    if (pathsCnt == 0) {
-                                        callback()
+                                if (activity.getDoesFilePathExist(newPath)) {
+                                    continue
+                                }
+
+                                activity.renameFile(path, newPath) {
+                                    if (it) {
+                                        pathsCnt--
+                                        if (pathsCnt == 0) {
+                                            callback()
+                                            dismiss()
+                                        }
+                                    } else {
+                                        ignoreClicks = false
+                                        activity.toast(R.string.unknown_error_occurred)
                                         dismiss()
                                     }
-                                } else {
-                                    ignoreClicks = false
-                                    activity.toast(R.string.unknown_error_occurred)
-                                    dismiss()
                                 }
                             }
                         }

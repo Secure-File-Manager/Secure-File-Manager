@@ -37,44 +37,50 @@ class SaveAsActivity : BaseAbstractActivity() {
             finishOnBackPress = true,
             callbackNegative = { finish() }
         ) { destination ->
-            this.toast(R.string.saving)
-            ensureBackgroundThread {
-                try {
-                    if (!this.getDoesFilePathExist(destination)) {
-                        if (this.needsStupidWritePermissions(destination)) {
-                            val document = this.getDocumentFile(destination)
-                            document!!.createDirectory(destination.getFilenameFromPath())
-                        } else {
-                            File(destination).mkdirs()
+            handleSAFDialog(destination) {
+                if (!it) {
+                    return@handleSAFDialog
+                }
+
+                this.toast(R.string.saving)
+                ensureBackgroundThread {
+                    try {
+                        if (!this.getDoesFilePathExist(destination)) {
+                            if (this.needsStupidWritePermissions(destination)) {
+                                val document = this.getDocumentFile(destination)
+                                document!!.createDirectory(destination.getFilenameFromPath())
+                            } else {
+                                File(destination).mkdirs()
+                            }
                         }
+
+                        val sources =
+                            if (isMultiple)
+                                intent.getParcelableArrayListExtra<Uri>(Intent.EXTRA_STREAM)
+                            else
+                                arrayListOf(intent.getParcelableExtra(Intent.EXTRA_STREAM))
+
+
+                        val destinationPaths = ArrayList<String>()
+                        for (source in sources!!) {
+                            val mimeType = source!!.toString().getMimeType()
+                            val inputStream = contentResolver.openInputStream(source)
+                            val filename = source.toString().getFilenameFromPath()
+
+                            val destinationPath = "$destination/$filename"
+                            destinationPaths.add(destinationPath)
+                            val outputStream =
+                                this.getFileOutputStreamSync(destinationPath, mimeType, null)!!
+                            inputStream!!.copyTo(outputStream)
+                        }
+
+                        this.rescanPaths(destinationPaths)
+                        this.toast(R.string.file_saved)
+                        this.finish()
+                    } catch (e: Exception) {
+                        this.showErrorToast(e)
+                        this.finish()
                     }
-
-                    val sources =
-                        if (isMultiple)
-                            intent.getParcelableArrayListExtra<Uri>(Intent.EXTRA_STREAM)
-                        else
-                            arrayListOf(intent.getParcelableExtra(Intent.EXTRA_STREAM))
-
-
-                    val destinationPaths = ArrayList<String>()
-                    for (source in sources!!) {
-                        val mimeType = source!!.toString().getMimeType()
-                        val inputStream = contentResolver.openInputStream(source)
-                        val filename = source.toString().getFilenameFromPath()
-
-                        val destinationPath = "$destination/$filename"
-                        destinationPaths.add(destinationPath)
-                        val outputStream =
-                            this.getFileOutputStreamSync(destinationPath, mimeType, null)!!
-                        inputStream!!.copyTo(outputStream)
-                    }
-
-                    this.rescanPaths(destinationPaths)
-                    this.toast(R.string.file_saved)
-                    this.finish()
-                } catch (e: Exception) {
-                    this.showErrorToast(e)
-                    this.finish()
                 }
             }
         }

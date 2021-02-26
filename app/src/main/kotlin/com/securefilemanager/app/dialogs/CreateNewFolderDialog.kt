@@ -46,16 +46,18 @@ class CreateNewFolderDialog(
     private fun createFolder(path: String, alertDialog: AlertDialog) {
         try {
             when {
-                activity.needsStupidWritePermissions(path) -> {
-                    try {
-                        val documentFile = activity.getDocumentFile(path.getParentPath())
-                        if (documentFile?.createDirectory(path.getFilenameFromPath()) != null) {
-                            sendSuccess(alertDialog, path)
-                        } else {
-                            activity.toast(R.string.unknown_error_occurred)
+                activity.needsStupidWritePermissions(path) -> activity.handleSAFDialog(path) {
+                    if (it) {
+                        try {
+                            val documentFile = activity.getDocumentFile(path.getParentPath())
+                            if (documentFile?.createDirectory(path.getFilenameFromPath()) != null) {
+                                sendSuccess(alertDialog, path)
+                            } else {
+                                activity.toast(R.string.unknown_error_occurred)
+                            }
+                        } catch (e: SecurityException) {
+                            activity.showErrorToast(e)
                         }
-                    } catch (e: SecurityException) {
-                        activity.showErrorToast(e)
                     }
                 }
                 File(path).mkdirs() -> sendSuccess(alertDialog, path)
