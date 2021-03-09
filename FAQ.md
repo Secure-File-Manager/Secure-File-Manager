@@ -25,14 +25,13 @@
 
 ---
 
-### Is Secure File Manager for free?
+### Is Secure File Manager free?
 
-Yes, Secure File Manager is forever free.
-
+Yes, Secure File Manager is free forever.
 
 ### Is Secure File Manager open source?
 
-Yes, Secure File Manager is published as open-source under [GPLv3](https://github.com/Secure-File-Manager/Secure-File-Manager/LICENSE). Check out our [GitHub repository](https://github.com/Secure-File-Manager). We welcome you to review the code, to give us feedback, or to contribute!﻿
+Yes, Secure File Manager is published as open-source under [GPLv3](https://github.com/Secure-File-Manager/Secure-File-Manager/LICENSE). Check out our [GitHub repository](https://github.com/Secure-File-Manager). We welcome you to review the code, give us feedback or contribute!﻿
 
 ### Where I can find a privacy policy?
 
@@ -40,7 +39,7 @@ You can read our privacy policy [here](https://github.com/Secure-File-Manager/Se
 
 ### I uninstalled my app and all my hidden files are gone. Also, I can't decrypt encrypted files. What should I do now?
 
-Your hidden files are gone forever. There is no way to get it back. Also, your private keys are gone forever, so you will never be able to decrypt your encrypted files. You were warned! Multiple times...
+Your hidden files are gone forever, there is no way to get them back. Additionally, as your private keys are gone forever you will never be able to decrypt your encrypted files. You were warned! Multiple times...
 
 ### How can I safely uninstall the app?
 
@@ -48,7 +47,7 @@ Unhide all your hidden files and decrypt all encrypted files. After that, you ca
 
 ### How do you store my password?
 
-We do not store your password while you are creating an encrypted Zip file. If you create an app password, your password is hashed, before it is stored. We use the [Argon2](https://en.wikipedia.org/wiki/Argon2) algorithm, more precisely the [Argon2Kt](https://github.com/lambdapioneer/argon2kt) library. We use the following parameters for the hashing algorithm for compromising security and user-friendliness::
+We do not store your password while you are creating an encrypted Zip file. If you create an app password, your password is hashed, before it is stored. We use the [Argon2](https://en.wikipedia.org/wiki/Argon2) algorithm, more precisely the [Argon2Kt](https://github.com/lambdapioneer/argon2kt) library. We use the following parameters for the hashing algorithm as a compromise of security and user-friendliness:
 
 - **Mode:** Argon2id
 - **Salt:** random 258 bits generated with [SecureRandom](https://developer.android.com/reference/java/security/SecureRandom)
@@ -61,7 +60,7 @@ The hashed password is stored encrypted in [EncryptedSharedPreferences](https://
 
 ### How are my files encrypted?
 
-We using [androidx.security.crypto](https://developer.android.com/reference/androidx/security/crypto/package-summary) library, more precisely [EncryptedFile](https://developer.android.com/reference/androidx/security/crypto/EncryptedFile) to encrypt your files. We using AES256-GCM without padding as a key to encrypt your files. If is available, the StrongBox security chip is used. The key is stored in the [Android](https://developer.android.com/training/articles/keystore) keystore. If you are more curious, you can check the source code.
+We use the [androidx.security.crypto](https://developer.android.com/reference/androidx/security/crypto/package-summary) library, more precisely [EncryptedFile](https://developer.android.com/reference/androidx/security/crypto/EncryptedFile) to encrypt your files. We are using AES256-GCM without padding as a key to encrypt your files. If it's available, the StrongBox security chip is used. The key is stored in the [Android](https://developer.android.com/training/articles/keystore) keystore. If you are more curious you can check the source code.
 
 ### Where can I request a new feature?
 
@@ -71,32 +70,29 @@ You can create [a new issue in the Github repository](https://github.com/Secure-
 
 The app code is published on [GitHub](https://github.com/Secure-File-Manager), and we invite security experts to check the code. In case you find a vulnerability in the app, please report it directly to us so we can fix it.
 
-
 ### The application behaves unexpectedly. What should I do now?
 
 Please, create [a new issue in the Github repository](https://github.com/Secure-File-Manager/Secure-File-Manager/issues) or contact us directly so we can fix it.
 
 ### Why the app needs _(specific)_ permission?
 
-The app needs the following permission:
+The app needs the following permissions:
 
  - [READ_EXTERNAL_STORAGE](https://developer.android.com/reference/android/Manifest.permission#READ_EXTERNAL_STORAGE) and [WRITE_EXTERNAL_STORAGE](https://developer.android.com/reference/android/Manifest.permission#WRITE_EXTERNAL_STORAGE) - this is the file manager
  - [FOREGROUND_SERVICE](https://developer.android.com/reference/android/Manifest.permission#FOREGROUND_SERVICE) - needed for creating a notification
  - [RECEIVE_BOOT_COMPLETED](https://developer.android.com/reference/android/Manifest.permission#RECEIVE_BOOT_COMPLETED) - to lock the app after a phone is booted _(if the phone was unexpectedly turned off and the app was in an unlocked state)_
  - [REQUEST_INSTALL_PACKAGES](https://developer.android.com/reference/android/Manifest.permission#REQUEST_INSTALL_PACKAGES) - to install an app if you click on an APK file
 
+### Has Secure File manager been audited?
 
-### Was Secure File manager audited?
+Not yet. We would be pleased if somebody could do it.
 
-Not yet. We will be pleased if somebody will do it.
+### The app doesn't work when I have night light enabled. What can I do?
 
-
-### The app is not working, if I have enabled night light. What can I do?
-
-If you use  a third-party night light app, you should turn off the night light. Alternatively, you can use native night light mode, if your Android OS supports it.
+If you use a third-party night light app, you should turn off the night light. Alternatively, you can use native night light mode if your Android OS supports it.
 
 _Note: The night light is not working, because of the enabled [filterTouchesWhenObscured](https://developer.android.com/reference/android/view/View.html#attr_android:filterTouchesWhenObscured) flag. This flag prevents tapjacking attacks._
 
-### I don't found an answer?
+### I still haven't found an answer?
 
 Please, create [a new issue in the Github repository](https://github.com/Secure-File-Manager/Secure-File-Manager/issues) or contact us directly so we can fix it.
