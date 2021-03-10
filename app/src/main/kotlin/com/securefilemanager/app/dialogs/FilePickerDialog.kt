@@ -205,6 +205,7 @@ class FilePickerDialog(
                 )
             }
 
+            filepicker_list.scheduleLayoutAnimation()
             layoutManager.onRestoreInstanceState(mScrollStates[currPath.trimEnd('/')])
             filepicker_list.onGlobalLayout {
                 filepicker_fastscroller.setScrollToY(filepicker_list.computeVerticalScrollOffset())
