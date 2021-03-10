@@ -5,7 +5,7 @@
 <details><summary>Show</summary>
 <p>
 
- - [Is Secure File Manager for free?](https://github.com/Secure-File-Manager/Secure-File-Manager/wiki/Frequently-Asked-Questions/_edit#is-secure-file-manager-for-free)
+ - [Is Secure File Manager free?](https://github.com/Secure-File-Manager/Secure-File-Manager/wiki/Frequently-Asked-Questions/_edit#is-secure-file-manager-free)
  - [Is Secure File Manager open source?](https://github.com/Secure-File-Manager/Secure-File-Manager/wiki/Frequently-Asked-Questions/_edit#is-secure-file-manager-open-source)
  - [Where I can find a privacy policy?](https://github.com/Secure-File-Manager/Secure-File-Manager/wiki/Frequently-Asked-Questions/_edit#where-i-can-find-a-privacy-policy)
  - [I uninstalled my app and all my hidden files are gone. Also, I can't decrypt encrypted files. What should I do now?](https://github.com/Secure-File-Manager/Secure-File-Manager/wiki/Frequently-Asked-Questions/_edit#i-uninstalled-my-app-and-all-my-hidden-files-are-gone-also-i-cant-decrypt-encrypted-files-what-should-i-do-now)
@@ -16,9 +16,9 @@
  - [Where can I report a security issue or a vulnerability that I found?](https://github.com/Secure-File-Manager/Secure-File-Manager/wiki/Frequently-Asked-Questions/_edit#where-can-i-report-a-security-issue-or-a-vulnerability-that-i-found)
  - [The application behaves unexpectedly. What should I do now?](https://github.com/Secure-File-Manager/Secure-File-Manager/wiki/Frequently-Asked-Questions/_edit#the-application-behaves-unexpectedly-what-should-i-do-now)
  - [Why the app needs _(specific)_ permission?](https://github.com/Secure-File-Manager/Secure-File-Manager/wiki/Frequently-Asked-Questions/_edit#why-the-app-needs-specific-permission)
- - [Was Secure File manager audited?](https://github.com/Secure-File-Manager/Secure-File-Manager/wiki/Frequently-Asked-Questions/_edit#was-secure-file-manager-audited)
- - [The app is not working, if I have enabled night light. What can I do?](https://github.com/Secure-File-Manager/Secure-File-Manager/wiki/Frequently-Asked-Questions/_edit#the-app-is-not-working-if-i-have-enabled-night-light-what-can-i-do)
- - [I don't found an answer?](https://github.com/Secure-File-Manager/Secure-File-Manager/wiki/Frequently-Asked-Questions/_edit#i-dont-found-an-answer)
+ - [Has Secure File manager been audited?](https://github.com/Secure-File-Manager/Secure-File-Manager/wiki/Frequently-Asked-Questions/_edit#has-secure-file-manager-been-audited)
+ - [The app doesn't work when I have night light enabled. What can I do?](https://github.com/Secure-File-Manager/Secure-File-Manager/wiki/Frequently-Asked-Questions/_edit#the-app-doesnt-work-when-i-have-night-light-enabled-what-can-i-do)
+ - [I still haven't found an answer?](https://github.com/Secure-File-Manager/Secure-File-Manager/wiki/Frequently-Asked-Questions/_edit#i-still-havent-found-an-answer)
 
 </p>
 </details>
