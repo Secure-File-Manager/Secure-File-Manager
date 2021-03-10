@@ -307,7 +307,7 @@
 
     <string name="intro_hiding_title">Hiding files feature</string>
     <string name="intro_hiding_summary">This icon means, that selected files will be moved to the hidden storage.</string>
-    <string name="intro_hiding_summary2">The icon means, that selected files will be moved from the hidden storage to a selected destination.</string>
+    <string name="intro_hiding_summary2">This icon means, that selected files will be moved from the hidden storage to a selected destination.</string>
     <string name="intro_hiding_info"><![CDATA[Files in the hidden storage are accessible <b>only</b> to this app.]]></string>
     <string name="intro_hiding_warning">WARNING: If you uninstall this app or clear app storage, you will also remove all your hidden secrets!</string>
 
