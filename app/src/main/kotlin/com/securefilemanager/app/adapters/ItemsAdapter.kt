@@ -232,8 +232,10 @@ class ItemsAdapter(
                 if (copiedAll) {
                     deleteFiles()
                 }
-                listener?.refreshItems()
-                finishActMode()
+                activity.runOnUiThread {
+                    listener?.refreshItems()
+                    finishActMode()
+                }
             }
         }
     }
@@ -248,8 +250,10 @@ class ItemsAdapter(
             copyPhotoVideoOnly = false,
             encryptionAction = encryptionAction
         ) { _: String, _: Boolean ->
-            listener?.refreshItems()
-            finishActMode()
+            activity.runOnUiThread {
+                listener?.refreshItems()
+                finishActMode()
+            }
         }
     }
 
@@ -313,8 +317,10 @@ class ItemsAdapter(
                 isCopyOperation,
                 false
             ) { _: String, _: Boolean ->
-                listener?.refreshItems()
-                finishActMode()
+                activity.runOnUiThread {
+                    listener?.refreshItems()
+                    finishActMode()
+                }
             }
         }
     }
@@ -337,7 +343,9 @@ class ItemsAdapter(
                     putExtra(EXTRA_PASSWORD, password)
                 }
                 activity.startService(startIntent)
+            activity.runOnUiThread {
                 finishActMode()
+            }
         }
     }
 
@@ -351,7 +359,9 @@ class ItemsAdapter(
 
         this.activity.decompressHandle(path, firstPath) { destination, password ->
             this.activity.decompressZip(path, destination, password)
-            finishActMode()
+            activity.runOnUiThread {
+                finishActMode()
+            }
         }
     }
 
