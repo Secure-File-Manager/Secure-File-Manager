@@ -1,6 +1,7 @@
 package com.securefilemanager.app.models
 
 import android.content.Context
+import com.bumptech.glide.signature.ObjectKey
 import com.securefilemanager.app.extensions.*
 import com.securefilemanager.app.helpers.*
 import java.io.File
@@ -94,5 +95,17 @@ open class FileDirItem(
     fun getResolution(context: Context) = context.getResolution(path)
 
     fun isEncrypted() = name.isEncrypted()
+
+    fun getSignature(): String {
+        val lastModified = if (modified > 1) {
+            modified
+        } else {
+            File(path).lastModified()
+        }
+
+        return "$path-$lastModified-$size"
+    }
+
+    fun getKey() = ObjectKey(getSignature())
 
 }

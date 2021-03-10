@@ -5,8 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
 import com.securefilemanager.app.R
 import com.securefilemanager.app.extensions.getVersion
 import com.securefilemanager.app.extensions.openUri

@@ -155,7 +155,7 @@ abstract class ItemAbstractAdapter(
 
     private fun getGlideOptions(listItem: FileDirItem, placeholder: Drawable) =
         RequestOptions()
-            .signature(listItem.path.getFileSignature())
+            .signature(listItem.getKey())
             .diskCacheStrategy(DiskCacheStrategy.RESOURCE)
             .error(placeholder)
             .transform(CenterCrop(), RoundedCorners(10))
