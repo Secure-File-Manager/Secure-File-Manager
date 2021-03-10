@@ -4,6 +4,17 @@ apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 apply plugin: "org.owasp.dependencycheck"
 apply plugin: 'com.mikepenz.aboutlibraries.plugin'
+apply plugin: "com.browserstack.gradle"
+
+static def getSecret(name){
+    Properties props = new Properties()
+    try {
+        props.load(new FileInputStream(new File('secrets.properties')))
+    } catch(ignored) {
+        return ""
+    }
+    return props[name]
+}
 
 android {
     compileSdkVersion rootProject.compileSdkVersion
@@ -57,6 +68,11 @@ dependencyCheck {
     }.collect {
         it.name
     }
+}
+
+browserStackConfig {
+    username = getSecret('BROWSERSTACK_USERNAME')
+    accessKey = getSecret('BROWSERSTACK_ACCESSKEY')
 }
 
 dependencies {
