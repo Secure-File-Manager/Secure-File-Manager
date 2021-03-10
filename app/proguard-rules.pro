@@ -51,3 +51,6 @@
 -keep class androidx.appcompat.widget.ToolbarWidgetWrapper {
   *** mToolbar;
 }
+
+# Keep the BuildConfig
+-keep class com.securefilemanager.app.BuildConfig { *; }
