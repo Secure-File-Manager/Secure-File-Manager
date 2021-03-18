@@ -36,7 +36,6 @@ const val LAST_CONFLICT_RESOLUTION = "last_conflict_resolution"
 const val LAST_CONFLICT_APPLY_TO_ALL = "last_conflict_apply_to_all"
 const val PASSWORD_HASH = "password_hash"
 const val WAS_APP_PROTECTION_HANDLED = "was_app_protection_handled"
-const val IS_APP_PROTECTION_HANDLING = "is_app_protection_handling"
 
 // Settings
 const val SETTINGS_MANAGE_FAVORITES = "settings_manage_favorites"
@@ -72,17 +71,6 @@ const val SORT_DESCENDING = 1024
 // permissions
 const val PERMISSION_READ_STORAGE = 1
 const val PERMISSION_WRITE_STORAGE = 2
-const val PERMISSION_CAMERA = 3
-const val PERMISSION_RECORD_AUDIO = 4
-const val PERMISSION_READ_CONTACTS = 5
-const val PERMISSION_WRITE_CONTACTS = 6
-const val PERMISSION_READ_CALENDAR = 7
-const val PERMISSION_WRITE_CALENDAR = 8
-const val PERMISSION_CALL_PHONE = 9
-const val PERMISSION_READ_CALL_LOG = 10
-const val PERMISSION_WRITE_CALL_LOG = 11
-const val PERMISSION_GET_ACCOUNTS = 12
-const val PERMISSION_READ_SMS = 13
 
 // conflict resolving
 const val CONFLICT_SKIP = 1
@@ -243,17 +231,6 @@ fun isNotHide(hideAction: HideAction): Boolean =
 fun getPermissionString(id: Int) = when (id) {
     PERMISSION_READ_STORAGE -> Manifest.permission.READ_EXTERNAL_STORAGE
     PERMISSION_WRITE_STORAGE -> Manifest.permission.WRITE_EXTERNAL_STORAGE
-    PERMISSION_CAMERA -> Manifest.permission.CAMERA
-    PERMISSION_RECORD_AUDIO -> Manifest.permission.RECORD_AUDIO
-    PERMISSION_READ_CONTACTS -> Manifest.permission.READ_CONTACTS
-    PERMISSION_WRITE_CONTACTS -> Manifest.permission.WRITE_CONTACTS
-    PERMISSION_READ_CALENDAR -> Manifest.permission.READ_CALENDAR
-    PERMISSION_WRITE_CALENDAR -> Manifest.permission.WRITE_CALENDAR
-    PERMISSION_CALL_PHONE -> Manifest.permission.CALL_PHONE
-    PERMISSION_READ_CALL_LOG -> Manifest.permission.READ_CALL_LOG
-    PERMISSION_WRITE_CALL_LOG -> Manifest.permission.WRITE_CALL_LOG
-    PERMISSION_GET_ACCOUNTS -> Manifest.permission.GET_ACCOUNTS
-    PERMISSION_READ_SMS -> Manifest.permission.READ_SMS
     else -> ""
 }
 
