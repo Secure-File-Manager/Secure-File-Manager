@@ -1,5 +1,12 @@
 # Changelog
 
+#### v0.1.4 - beta
+
+ * Update dependencies
+ * Add animations
+ * Improved cache performance
+ * Bug fixes
+
 #### v0.1.3 - beta
 
  * Fix SD card issues

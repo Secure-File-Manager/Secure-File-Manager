@@ -1,0 +1,4 @@
+* Update dependencies
+* Add animations
+* Improved cache performance
+* Bug fixes
