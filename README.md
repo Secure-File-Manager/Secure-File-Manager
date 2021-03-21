@@ -38,6 +38,8 @@
    - set destination for creating media files *(photo / video)*
    - checksum *(MD5, SHA1, SHA256, SHA512)*
 
+:warning:  This app is useless if you have [a rooted device]((https://github.com/Secure-File-Manager/Secure-File-Manager/wiki/Frequently-Asked-Questions#i-have-a-rooted-device-are-there-some-security-implications))!
+
 ### Screenshots
 
 <div style="display:flex;">
