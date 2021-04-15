@@ -158,7 +158,8 @@ class ItemsFragment : Fragment(), ItemOperationsListener, Breadcrumbs.Breadcrumb
             return
         }
 
-        val isOnSdCard = path.startsWith(requireActivity().sdCardPath)
+        val context = this.requireContext()
+        val isOnSdCard = context.isPathOnSD(path)
         this.mView.hide_fab.beGoneIf(path.startsWith(requireActivity().hiddenPath))
         this.mView.camera_fab.beGoneIf(isOnSdCard)
         this.mView.photo_fab.beGoneIf(isOnSdCard)
@@ -175,7 +176,7 @@ class ItemsFragment : Fragment(), ItemOperationsListener, Breadcrumbs.Breadcrumb
                 return@getItems
             }
 
-            FileDirItem.sorting = requireContext().config.getFolderSorting(currentPath)
+            FileDirItem.sorting = context.config.getFolderSorting(currentPath)
             listItems.sort()
             activity?.runOnUiThread {
                 activity?.invalidateOptionsMenu()

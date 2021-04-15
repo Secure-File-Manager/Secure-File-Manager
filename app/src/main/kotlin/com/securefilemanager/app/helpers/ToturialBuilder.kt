@@ -10,6 +10,7 @@ import com.getkeepsafe.taptargetview.TapTarget
 import com.getkeepsafe.taptargetview.TapTargetSequence
 import com.securefilemanager.app.R
 import com.securefilemanager.app.extensions.getDrawableById
+import com.securefilemanager.app.extensions.hasDeviceCamera
 import com.securefilemanager.app.extensions.privateField
 import kotlinx.android.synthetic.main.fragment_items.*
 import java.util.*
@@ -45,17 +46,27 @@ class TapTargetTutorial(activity: AppCompatActivity) {
     fun getTutorialTapTargets(cancellable: Boolean = true): ArrayList<TapTarget> {
         val location = IntArray(2)
         this.getToolbar().getLocationOnScreen(location)
-        return ArrayList<TapTarget>().apply {
+        val tapTargets = ArrayList<TapTarget>().apply {
             add(getBreadcrumbTapTarget(this.size, cancellable))
             add(getFileTapTarget(this.size, cancellable))
             add(getHideTapTarget(this.size, cancellable, mDeviceWith, location))
             add(getEncryptTarget(this.size, cancellable, mDeviceWith, location))
             add(getMoreMenuTapTarget(this.size, cancellable, mDeviceWith, location))
-            add(getVideoTapTarget(this.size, cancellable))
-            add(getPhotoTapTarget(this.size, cancellable))
+        }
+
+        if(this.mActivity.hasDeviceCamera()) {
+            tapTargets.apply {
+                add(getVideoTapTarget(this.size, cancellable))
+                add(getPhotoTapTarget(this.size, cancellable))
+            }
+        }
+
+        tapTargets.apply {
             add(getHideTapTarget(this.size, cancellable))
             add(getItemsTapTarget(this.size, cancellable))
         }
+
+        return tapTargets
     }
 
     private fun getString(id: Int): String =
