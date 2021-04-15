@@ -1,0 +1,2 @@
+* Update dependencies
+* Fix visibility of media icons

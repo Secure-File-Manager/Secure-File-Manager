@@ -1,5 +1,10 @@
 # Changelog
 
+#### v0.1.5 - beta
+
+ * Update dependencies
+ * Fix visibility of media icons
+
 #### v0.1.4 - beta
 
  * Update dependencies
