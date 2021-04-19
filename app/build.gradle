@@ -5,6 +5,7 @@ apply plugin: 'kotlin-kapt'
 apply plugin: "org.owasp.dependencycheck"
 apply plugin: 'com.mikepenz.aboutlibraries.plugin'
 apply plugin: "com.browserstack.gradle"
+apply plugin: "com.github.ben-manes.versions"
 
 static def getSecret(name){
     Properties props = new Properties()
