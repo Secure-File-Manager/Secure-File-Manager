@@ -50,7 +50,7 @@ class IntroActivity : AppIntro2() {
         this.setCustomTransformer(PageTransformerParallax())
         this.setIndicatorColor(
             selectedIndicatorColor = this.getColor(R.color.color_primary_dark),
-            unselectedIndicatorColor = this.getColor(R.color.color_primary)
+            unselectedIndicatorColor = this.getColor(R.color.divider_grey)
         )
 
         this.addSlide(IntroPermissionFragment.newInstance())
