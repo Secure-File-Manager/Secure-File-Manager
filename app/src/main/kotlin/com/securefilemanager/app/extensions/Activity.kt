@@ -13,7 +13,6 @@ import android.view.Window
 import android.view.WindowManager
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
-import androidx.core.content.FileProvider
 import com.securefilemanager.app.BuildConfig
 import com.securefilemanager.app.R
 import com.securefilemanager.app.activities.BaseAbstractActivity
@@ -461,21 +460,7 @@ fun Activity.tryOpenPathIntent(
     forceChooser: Boolean,
     openAsType: Int = OPEN_AS_DEFAULT
 ) {
-    if (!forceChooser && path.isApk()) {
-        val uri =
-            FileProvider.getUriForFile(this, "${BuildConfig.APPLICATION_ID}.provider", File(path))
-
-        Intent().apply {
-            action = Intent.ACTION_VIEW
-            setDataAndType(uri, getMimeTypeFromUri(uri))
-            addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
-            if (resolveActivity(packageManager) != null) {
-                startActivity(this)
-            } else {
-                toast(R.string.no_app_found)
-            }
-        }
-    } else if (path.isZipFile()) {
+    if (path.isZipFile()) {
         this.openZip(path)
     } else {
         this.openPath(path, forceChooser, openAsType)

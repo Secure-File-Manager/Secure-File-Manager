@@ -1,6 +1,5 @@
 package com.securefilemanager.app.adapters
 
-import android.content.pm.PackageManager
 import android.graphics.drawable.Drawable
 import android.view.Menu
 import android.view.View
@@ -132,23 +131,7 @@ abstract class ItemAbstractAdapter(
 
     private fun getImagePathToLoad(path: String): Any? =
         if (this.activity.config.showMediaPreview) {
-            if (path.isApk()) {
-                val packageManager = this.activity.packageManager
-                val packageInfo = packageManager.getPackageArchiveInfo(
-                    path,
-                    PackageManager.GET_ACTIVITIES
-                )
-                if (packageInfo != null) {
-                    val appInfo = packageInfo.applicationInfo
-                    appInfo.sourceDir = path
-                    appInfo.publicSourceDir = path
-                    appInfo.loadIcon(packageManager)
-                } else {
-                    path
-                }
-            } else {
-                path
-            }
+            path
         } else {
             null
         }

@@ -749,6 +749,4 @@ fun String.getFileKey(): String {
     return "${file.absolutePath}${file.lastModified()}"
 }
 
-fun String.isApk() = this.endsWith(".apk", true)
-
 fun String.isEncrypted() = this.endsWith(encryptionExtensionDotted, true)

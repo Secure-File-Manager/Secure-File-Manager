@@ -82,7 +82,6 @@ The app needs the following permissions:
  - [READ_EXTERNAL_STORAGE](https://developer.android.com/reference/android/Manifest.permission#READ_EXTERNAL_STORAGE) and [WRITE_EXTERNAL_STORAGE](https://developer.android.com/reference/android/Manifest.permission#WRITE_EXTERNAL_STORAGE) - this is the file manager
  - [FOREGROUND_SERVICE](https://developer.android.com/reference/android/Manifest.permission#FOREGROUND_SERVICE) - needed for creating a notification
  - [RECEIVE_BOOT_COMPLETED](https://developer.android.com/reference/android/Manifest.permission#RECEIVE_BOOT_COMPLETED) - to lock the app after a phone is booted _(if the phone was unexpectedly turned off and the app was in an unlocked state)_
- - [REQUEST_INSTALL_PACKAGES](https://developer.android.com/reference/android/Manifest.permission#REQUEST_INSTALL_PACKAGES) - to install an app if you click on an APK file
 
 ### Has Secure File manager been audited?
 
