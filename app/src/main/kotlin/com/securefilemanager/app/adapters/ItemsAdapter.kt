@@ -230,7 +230,7 @@ class ItemsAdapter(
                 hideAction = hideAction
             ) { _: String, copiedAll: Boolean ->
                 if (copiedAll) {
-                    deleteFiles()
+                    listener?.deleteFiles(files)
                 }
                 activity.runOnUiThread {
                     listener?.refreshItems()
