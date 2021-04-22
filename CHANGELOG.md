@@ -1,5 +1,11 @@
 # Changelog
 
+#### v0.1.6 - beta
+
+ * Update dependencies
+ * Bug fixes
+ * Removed REQUEST_INSTALL_PACKAGES permission
+
 #### v0.1.5 - beta
 
  * Update dependencies

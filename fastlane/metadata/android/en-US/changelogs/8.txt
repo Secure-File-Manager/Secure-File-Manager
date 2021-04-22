@@ -1,0 +1,3 @@
+* Update dependencies
+* Bug fixes
+* Removed REQUEST_INSTALL_PACKAGES permission
