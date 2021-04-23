@@ -24,6 +24,7 @@ abstract class RecyclerViewAdapter(
     val itemClick: (Any) -> Unit
 ) : RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder>() {
     protected val resources = activity.resources!!
+    protected var adjustedPrimaryColor = activity.getColor(R.color.color_primary)
     private val layoutInflater = activity.layoutInflater
     protected var actModeCallback: MyActionModeCallback
     protected var selectedKeys = LinkedHashSet<Int>()
@@ -257,22 +258,13 @@ abstract class RecyclerViewAdapter(
     }
 
     open inner class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        fun bindView(
-            any: Any,
-            allowSingleClick: Boolean,
-            allowLongClick: Boolean,
-            callback: (itemView: View, adapterPosition: Int) -> Unit
-        ): View {
+        fun bindView(any: Any, allowSingleClick: Boolean, allowLongClick: Boolean, callback: (itemView: View, adapterPosition: Int) -> Unit): View {
             return itemView.apply {
                 callback(this, adapterPosition)
 
                 if (allowSingleClick) {
                     setOnClickListener { viewClicked(any) }
-                    setOnLongClickListener {
-                        if (allowLongClick) viewLongClicked() else viewClicked(
-                            any
-                        ); true
-                    }
+                    setOnLongClickListener { if (allowLongClick) viewLongClicked() else viewClicked(any); true }
                 } else {
                     setOnClickListener(null)
                     setOnLongClickListener(null)

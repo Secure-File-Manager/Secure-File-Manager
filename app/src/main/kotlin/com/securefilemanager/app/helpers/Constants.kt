@@ -294,3 +294,5 @@ fun getFilePlaceholderDrawables(context: Context): HashMap<String, Drawable> {
 
 fun htmlText(text: String): Spanned =
     HtmlCompat.fromHtml(text, HtmlCompat.FROM_HTML_MODE_LEGACY)
+
+val normalizeRegex = "\\p{InCombiningDiacriticalMarks}+".toRegex()

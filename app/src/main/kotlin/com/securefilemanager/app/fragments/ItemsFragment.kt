@@ -181,6 +181,8 @@ class ItemsFragment : Fragment(), ItemOperationsListener, Breadcrumbs.Breadcrumb
             activity?.runOnUiThread {
                 activity?.invalidateOptionsMenu()
                 addItems(listItems, forceRefresh)
+                mView.items_list.adapter = null
+                addItems(storedItems, true)
             }
         }
     }
@@ -190,40 +192,32 @@ class ItemsFragment : Fragment(), ItemOperationsListener, Breadcrumbs.Breadcrumb
         mView.apply {
             activity?.runOnUiThread {
                 items_swipe_refresh?.isRefreshing = false
-                mView.breadcrumbs.setBreadcrumb(currentPath)
-
-                items_empty.apply {
-                    beVisibleIf(items.size == 0)
-                }
-
+                breadcrumbs.setBreadcrumb(currentPath)
                 if (!forceRefresh && items.hashCode() == storedItems.hashCode()) {
                     return@runOnUiThread
                 }
 
                 storedItems = items
-                ItemsAdapter(
-                    activity as BaseAbstractActivity,
-                    storedItems,
-                    this@ItemsFragment,
-                    items_list,
-                    isPickMultipleIntent,
-                    items_fastscroller
-                ) {
-                    itemClicked(it as FileDirItem)
+                if (items_list.adapter == null) {
+                    breadcrumbs.updateFontSize(requireContext().getTextSize())
+                }
+
+                ItemsAdapter(activity as BaseAbstractActivity, storedItems, this@ItemsFragment, items_list, isPickMultipleIntent, items_fastscroller,
+                    items_swipe_refresh) {
+                    if ((it as? ListItem)?.isSectionTitle == true) {
+                        openDirectory(it.mPath)
+                        searchClosed()
+                    } else {
+                        itemClicked(it as FileDirItem)
+                    }
                 }.apply {
                     items_list.adapter = this
                 }
 
                 items_list.scheduleLayoutAnimation()
-                items_fastscroller.setViews(items_list, mView.items_swipe_refresh) {
+                items_fastscroller.setViews(items_list, items_swipe_refresh) {
                     val listItem = getRecyclerAdapter()?.listItems?.getOrNull(it)
-                    items_fastscroller.updateBubbleText(
-                        listItem?.getBubbleText(
-                            context,
-                            storedDateFormat,
-                            storedTimeFormat
-                        ) ?: ""
-                    )
+                    items_fastscroller.updateBubbleText(listItem?.getBubbleText(context, storedDateFormat, storedTimeFormat) ?: "")
                 }
 
                 getRecyclerLayoutManager().onRestoreInstanceState(scrollStates[currentPath])
@@ -233,7 +227,6 @@ class ItemsFragment : Fragment(), ItemOperationsListener, Breadcrumbs.Breadcrumb
             }
         }
     }
-
     private fun getScrollState() = getRecyclerLayoutManager().onSaveInstanceState()
 
     private fun getRecyclerLayoutManager() =
@@ -257,24 +250,35 @@ class ItemsFragment : Fragment(), ItemOperationsListener, Breadcrumbs.Breadcrumb
     ) {
         val items = ArrayList<ListItem>()
         val files = File(path).listFiles()?.filterNotNull()
-        if (context == null) {
+        if (context == null || files == null) {
             callback(path, items)
             return
         }
 
-        val lastModifieds = getFolderLastModifieds(path)
         val isSortingBySize =
             requireContext().config.getFolderSorting(currentPath) and SORT_BY_SIZE != 0
-        if (files != null) {
-            for (file in files) {
-                val fileDirItem = getFileDirItemFromFile(file, isSortingBySize, lastModifieds)
-                if (fileDirItem != null) {
-                    items.add(fileDirItem)
-                }
+        val lastModifieds = requireContext().getFolderLastModifieds(path)
+
+        for (file in files) {
+            val fileDirItem = getFileDirItemFromFile(file, isSortingBySize, lastModifieds)
+            if (fileDirItem != null) {
+                items.add(fileDirItem)
             }
         }
 
+        // send out the initial item list asap, get proper child count asynchronously as it can be slow
         callback(path, items)
+
+        items.filter { it.mIsDirectory }.forEach {
+            if (context != null) {
+                val childrenCount = it.getDirectChildrenCount()
+                if (childrenCount != 0) {
+                    activity?.runOnUiThread {
+                        getRecyclerAdapter()?.updateChildCount(it.mPath, childrenCount)
+                    }
+                }
+            }
+        }
     }
 
     private fun getFileDirItemFromFile(
@@ -304,46 +308,9 @@ class ItemsFragment : Fragment(), ItemOperationsListener, Breadcrumbs.Breadcrumb
         return ListItem(curPath, curName, isDirectory, children, size, lastModified, false)
     }
 
-    private fun getFolderLastModifieds(folder: String): HashMap<String, Long> {
-        val lastModifieds = HashMap<String, Long>()
-        val projection = arrayOf(
-            MediaStore.Images.Media.DISPLAY_NAME,
-            MediaStore.Images.Media.DATE_MODIFIED
-        )
-
-        val uri = MediaStore.Files.getContentUri("external")
-        val selection =
-            "${MediaStore.Images.Media.DATA} LIKE ? AND ${MediaStore.Images.Media.DATA} NOT LIKE ? AND ${MediaStore.Images.Media.MIME_TYPE} IS NOT NULL" // avoid selecting folders
-        val selectionArgs = arrayOf("$folder/%", "$folder/%/%")
-
-        val cursor =
-            requireContext().contentResolver.query(uri, projection, selection, selectionArgs, null)
-        cursor?.use {
-            if (cursor.moveToFirst()) {
-                do {
-                    try {
-                        val lastModified =
-                            cursor.getLongValue(MediaStore.Images.Media.DATE_MODIFIED) * 1000
-                        if (lastModified != 0L) {
-                            val name = cursor.getStringValue(MediaStore.Images.Media.DISPLAY_NAME)
-                            lastModifieds["$folder/$name"] = lastModified
-                        }
-                    } catch (e: Exception) {
-                    }
-                } while (cursor.moveToNext())
-            }
-        }
-
-        return lastModifieds
-    }
-
     private fun itemClicked(item: FileDirItem) {
         if (item.isDirectory) {
-            (activity as? MainActivity)?.apply {
-                skipItemUpdating = isSearchOpen
-                openedDirectory()
-            }
-            openPath(item.path)
+            openDirectory(item.path)
         } else {
             val path = item.path
             if (isGetContentIntent) {
@@ -360,6 +327,14 @@ class ItemsFragment : Fragment(), ItemOperationsListener, Breadcrumbs.Breadcrumb
         }
     }
 
+    private fun openDirectory(path: String) {
+        (activity as? MainActivity)?.apply {
+            skipItemUpdating = isSearchOpen
+            openedDirectory()
+        }
+        openPath(path)
+    }
+
     fun searchQueryChanged(text: String) {
         val searchText = text.trim()
         lastSearchedText = searchText
@@ -367,6 +342,8 @@ class ItemsFragment : Fragment(), ItemOperationsListener, Breadcrumbs.Breadcrumb
             if (context == null) {
                 return@ensureBackgroundThread
             }
+
+            val context = requireContext()
 
             when {
                 searchText.isEmpty() -> activity?.runOnUiThread {
@@ -398,22 +375,23 @@ class ItemsFragment : Fragment(), ItemOperationsListener, Breadcrumbs.Breadcrumb
                     var previousParent = ""
                     files.forEach {
                         val parent = it.mPath.getParentPath()
-                        if (parent != previousParent && context != null) {
-                            listItems.add(
-                                ListItem(
-                                    "",
-                                    requireContext().humanizePath(parent),
-                                    false,
-                                    0,
-                                    0,
-                                    0,
-                                    true
-                                )
-                            )
+                        if (!it.isDirectory && parent != previousParent) {
+                            val sectionTitle = ListItem(parent, context.humanizePath(parent), false, 0, 0, 0, true)
+                            listItems.add(sectionTitle)
                             previousParent = parent
                         }
-                        listItems.add(it)
+
+                        if (it.isDirectory) {
+                            val sectionTitle = ListItem(it.path, context.humanizePath(it.path), true, 0, 0, 0, true)
+                            listItems.add(sectionTitle)
+                            previousParent = parent
+                        }
+
+                        if (!it.isDirectory) {
+                            listItems.add(it)
+                        }
                     }
+
 
                     activity?.runOnUiThread {
                         getRecyclerAdapter()?.updateItems(listItems, text)
@@ -421,6 +399,10 @@ class ItemsFragment : Fragment(), ItemOperationsListener, Breadcrumbs.Breadcrumb
                             items_list.beVisibleIf(listItems.isNotEmpty())
                             items_placeholder.beVisibleIf(listItems.isEmpty())
                             items_placeholder_2.beGone()
+
+                            items_list.onGlobalLayout {
+                                items_fastscroller.setScrollToY(items_list.computeVerticalScrollOffset())
+                            }
                         }
                     }
                 }
@@ -437,25 +419,34 @@ class ItemsFragment : Fragment(), ItemOperationsListener, Breadcrumbs.Breadcrumb
         val sorting = requireContext().config.getFolderSorting(path)
         FileDirItem.sorting = requireContext().config.getFolderSorting(currentPath)
         val isSortingBySize = sorting and SORT_BY_SIZE != 0
-        File(path).listFiles()?.forEach {
+        File(path).listFiles()?.sortedBy { it.isDirectory }?.forEach {
             if (it.isDirectory) {
+                if (it.name.contains(text, true)) {
+                    val fileDirItem =
+                        getFileDirItemFromFile(it, isSortingBySize, HashMap<String, Long>())
+                    if (fileDirItem != null) {
+                        files.add(fileDirItem)
+                    }
+                }
+
                 files.addAll(searchFiles(text, it.absolutePath))
             } else {
                 if (it.name.contains(text, true)) {
-                    val fileDirItem = getFileDirItemFromFile(it, isSortingBySize)
+                    val fileDirItem =
+                        getFileDirItemFromFile(it, isSortingBySize, HashMap<String, Long>())
                     if (fileDirItem != null) {
                         files.add(fileDirItem)
                     }
                 }
             }
         }
-        files.sort()
         return files
     }
 
     fun searchOpened() {
         isSearchOpen = true
         lastSearchedText = ""
+        mView.items_swipe_refresh.isEnabled = false
     }
 
     fun searchClosed() {
@@ -465,6 +456,13 @@ class ItemsFragment : Fragment(), ItemOperationsListener, Breadcrumbs.Breadcrumb
         }
         skipItemUpdating = false
         lastSearchedText = ""
+
+        mView.apply {
+            items_swipe_refresh.isEnabled = true
+            items_list.beVisible()
+            items_placeholder.beGone()
+            items_placeholder_2.beGone()
+        }
     }
 
     private fun createNewItem() {

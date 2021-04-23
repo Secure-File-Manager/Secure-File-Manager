@@ -5,10 +5,16 @@ import android.graphics.BitmapFactory
 import android.graphics.Point
 import android.media.MediaMetadataRetriever
 import android.os.StatFs
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.TextUtils
+import android.text.style.ForegroundColorSpan
 import com.bumptech.glide.signature.ObjectKey
 import com.securefilemanager.app.helpers.*
 import java.io.File
+import java.text.Normalizer
 import java.util.*
+import java.util.regex.Pattern
 
 
 fun String.getFilenameFromPath() = substring(lastIndexOf("/") + 1)
@@ -67,6 +73,51 @@ fun String.getGenericMimeType(): String {
 }
 
 fun String.getParentPath() = removeSuffix("/${getFilenameFromPath()}")
+
+fun String.highlightTextPart(textToHighlight: String, color: Int, highlightAll: Boolean = false, ignoreCharsBetweenDigits: Boolean = false): SpannableString {
+    val spannableString = SpannableString(this)
+    if (textToHighlight.isEmpty()) {
+        return spannableString
+    }
+
+    var startIndex = normalizeString().indexOf(textToHighlight, 0, true)
+    val indexes = ArrayList<Int>()
+    while (startIndex >= 0) {
+        if (startIndex != -1) {
+            indexes.add(startIndex)
+        }
+
+        startIndex = normalizeString().indexOf(textToHighlight, startIndex + textToHighlight.length, true)
+        if (!highlightAll) {
+            break
+        }
+    }
+
+    // handle cases when we search for 643, but in reality the string contains it like 6-43
+    if (ignoreCharsBetweenDigits && indexes.isEmpty()) {
+        try {
+            val regex = TextUtils.join("(\\D*)", textToHighlight.toCharArray().toTypedArray())
+            val pattern = Pattern.compile(regex)
+            val result = pattern.matcher(normalizeString())
+            if (result.find()) {
+                spannableString.setSpan(ForegroundColorSpan(color), result.start(), result.end(), Spannable.SPAN_EXCLUSIVE_INCLUSIVE)
+            }
+        } catch (ignored: Exception) {
+        }
+
+        return spannableString
+    }
+
+    indexes.forEach {
+        val endIndex = Math.min(it + textToHighlight.length, length)
+        try {
+            spannableString.setSpan(ForegroundColorSpan(color), it, endIndex, Spannable.SPAN_EXCLUSIVE_INCLUSIVE)
+        } catch (ignored: IndexOutOfBoundsException) {
+        }
+    }
+
+    return spannableString
+}
 
 fun String.getDuration() = getFileDurationSeconds()?.getFormattedDuration()
 
@@ -134,6 +185,9 @@ fun String.getAvailableStorageB(): Long {
         -1L
     }
 }
+
+// remove diacritics, for example č -> c
+fun String.normalizeString() = Normalizer.normalize(this, Normalizer.Form.NFD).replace(normalizeRegex, "")
 
 fun String.getMimeType(): String {
     val typesMap = HashMap<String, String>().apply {

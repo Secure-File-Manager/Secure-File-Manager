@@ -8,6 +8,7 @@ import android.util.TypedValue
 import android.view.Menu
 import android.view.View
 import android.view.ViewGroup
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.bumptech.glide.Glide
 import com.securefilemanager.app.R
 import com.securefilemanager.app.activities.BaseAbstractActivity
@@ -25,7 +26,9 @@ import com.securefilemanager.app.services.ZipManagerService.Companion.EXTRA_PATH
 import com.securefilemanager.app.views.FastScroller
 import com.securefilemanager.app.views.MyRecyclerView
 import kotlinx.android.synthetic.main.item_list_file_dir.view.*
-import kotlinx.android.synthetic.main.item_list_section.view.*
+import kotlinx.android.synthetic.main.item_list_file_dir.view.item_frame
+import kotlinx.android.synthetic.main.item_list_file_dir.view.item_icon
+import kotlinx.android.synthetic.main.item_section.view.*
 import java.io.File
 
 class ItemsAdapter(
@@ -35,6 +38,7 @@ class ItemsAdapter(
     recyclerView: MyRecyclerView,
     private val isPickMultipleIntent: Boolean,
     fastScroller: FastScroller,
+    private val swipeRefreshLayout: SwipeRefreshLayout,
     itemClick: (Any) -> Unit
 ) :
     ItemAbstractAdapter(activity, listItems, recyclerView, fastScroller, itemClick) {
@@ -105,6 +109,20 @@ class ItemsAdapter(
 
     override fun getIsItemSelectable(position: Int) = !listItems[position].isSectionTitle
 
+    override fun getItemSelectionKey(position: Int) =
+        listItems.getOrNull(position)?.path?.hashCode()
+
+    override fun getItemKeyPosition(key: Int) = listItems.indexOfFirst { it.path.hashCode() == key }
+
+    override fun onActionModeCreated() {
+        swipeRefreshLayout.isRefreshing = false
+        swipeRefreshLayout.isEnabled = false
+    }
+
+    override fun onActionModeDestroyed() {
+        swipeRefreshLayout.isEnabled = true
+    }
+
     override fun getItemViewType(position: Int): Int {
         return if (listItems[position].isSectionTitle) {
             TYPE_SECTION
@@ -115,7 +133,7 @@ class ItemsAdapter(
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val layout =
-            if (viewType == TYPE_SECTION) R.layout.item_list_section else R.layout.item_list_file_dir
+            if (viewType == TYPE_SECTION) R.layout.item_section else R.layout.item_list_file_dir
         return createViewHolder(layout, parent)
     }
 
@@ -123,13 +141,15 @@ class ItemsAdapter(
         val fileDirItem = listItems[position]
         holder.bindView(
             fileDirItem,
-            !fileDirItem.isSectionTitle,
+            true,
             !fileDirItem.isSectionTitle
         ) { itemView, _ ->
             setupView(itemView, fileDirItem)
         }
         bindViewHolder(holder)
     }
+
+    override fun getItemCount() = listItems.size
 
     private fun isOneFileSelected() =
         isOneItemSelected() && getItemWithKey(selectedKeys.first())?.isDirectory == false
@@ -259,10 +279,10 @@ class ItemsAdapter(
 
     private fun addFileUris(path: String, paths: ArrayList<String>) {
         if (activity.getIsPathDirectory(path)) {
-                File(path).listFiles()
-                    ?.forEach {
-                        addFileUris(it.absolutePath, paths)
-                    }
+            File(path).listFiles()
+                ?.forEach {
+                    addFileUris(it.absolutePath, paths)
+                }
         } else {
             paths.add(path)
         }
@@ -335,14 +355,14 @@ class ItemsAdapter(
     private fun compressSelection() {
         val firstPath = getFirstSelectedItemPath()
         CompressAsDialog(activity, firstPath) { destination, password ->
-                val paths = getSelectedFileDirItems().map { it.path }
-                val startIntent = Intent(activity, ZipManagerService::class.java).apply {
-                    action = ZipManagerService.ACTION_COMPRESSION
-                    putStringArrayListExtra(EXTRA_PATH, ArrayList(paths))
-                    putExtra(EXTRA_DESTINATION, destination)
-                    putExtra(EXTRA_PASSWORD, password)
-                }
-                activity.startService(startIntent)
+            val paths = getSelectedFileDirItems().map { it.path }
+            val startIntent = Intent(activity, ZipManagerService::class.java).apply {
+                action = ZipManagerService.ACTION_COMPRESSION
+                putStringArrayListExtra(EXTRA_PATH, ArrayList(paths))
+                putExtra(EXTRA_DESTINATION, destination)
+                putExtra(EXTRA_PASSWORD, password)
+            }
+            activity.startService(startIntent)
             activity.runOnUiThread {
                 finishActMode()
             }
@@ -440,12 +460,20 @@ class ItemsAdapter(
         val isSelected = selectedKeys.contains(fileDirItem.path.hashCode())
         view.apply {
             if (fileDirItem.isSectionTitle) {
-                item_section.text = fileDirItem.mName
+                item_section.text =
+                    if (textToHighlight.isEmpty()) fileDirItem.mName else fileDirItem.mName.highlightTextPart(
+                        textToHighlight,
+                        adjustedPrimaryColor
+                    )
                 item_section.setTextSize(TypedValue.COMPLEX_UNIT_PX, fontSize)
             } else {
                 item_frame.isSelected = isSelected
                 val fileName = fileDirItem.name
-                item_name.text = fileName
+                item_name.text =
+                    if (textToHighlight.isEmpty()) fileName else fileName.highlightTextPart(
+                        textToHighlight,
+                        adjustedPrimaryColor
+                    )
                 item_name.setTextSize(TypedValue.COMPLEX_UNIT_PX, fontSize)
 
                 item_details.setTextSize(TypedValue.COMPLEX_UNIT_PX, fontSize)
@@ -473,6 +501,13 @@ class ItemsAdapter(
 
     private fun isPathOnSd(): Boolean {
         return getSelectedFileDirItems().any { activity.isPathOnSD(it.path) }
+    }
+
+    fun updateChildCount(path: String, count: Int) {
+        val position = getItemKeyPosition(path.hashCode())
+        val item = listItems.getOrNull(position) ?: return
+        item.children = count
+        notifyItemChanged(position, Unit)
     }
 
     companion object {
