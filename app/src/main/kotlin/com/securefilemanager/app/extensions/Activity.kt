@@ -13,6 +13,7 @@ import android.view.Window
 import android.view.WindowManager
 import android.widget.TextView
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatDelegate.setDefaultNightMode
 import com.securefilemanager.app.BuildConfig
 import com.securefilemanager.app.R
 import com.securefilemanager.app.activities.BaseAbstractActivity
@@ -532,3 +533,5 @@ fun BaseAbstractActivity.isShowingSAFDialog(path: String): Boolean {
         false
     }
 }
+
+fun Activity.setTheme() = setDefaultNightMode(this.config.theme)

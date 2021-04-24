@@ -13,6 +13,7 @@ import com.securefilemanager.app.R
 import com.securefilemanager.app.extensions.addFlagsSecure
 import com.securefilemanager.app.extensions.appLock
 import com.securefilemanager.app.extensions.config
+import com.securefilemanager.app.extensions.setTheme
 import com.securefilemanager.app.fragments.intro.*
 import com.securefilemanager.app.observers.AuthenticationObserver
 import com.securefilemanager.app.receivers.LockReceiver
@@ -36,6 +37,7 @@ class IntroActivity : AppIntro2() {
         }
 
         this.addFlagsSecure()
+        this.setTheme()
 
         val isWizardMode = this.intent.extras?.getBoolean(WIZARD_MODE) ?: WIZARD_MODE_DEFAULT
 

@@ -228,6 +228,10 @@
     <string name="use_24_hour_time_format_title_summary_off">24-hour time format is disabled</string>
     <string name="use_24_hour_time_format_title_summary_on">24-hour time format is enabled</string>
     <string name="change_date_and_time_format_title">Change date and time format</string>
+    <string name="theme_title">Theme</string>
+    <string name="theme_light">Light</string>
+    <string name="theme_dark">Dark</string>
+    <string name="theme_system">System default</string>
     <string name="set_app_password_title">Set app password</string>
     <string name="set_app_password_summary_on">Password is set</string>
     <string name="set_app_password_summary_off">Password is not set</string>

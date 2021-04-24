@@ -111,7 +111,7 @@
             android:layout_gravity="bottom|end"
             android:layout_marginEnd="@dimen/activity_margin"
             android:layout_marginBottom="@dimen/activity_margin"
-            android:src="@drawable/ic_camera_white_vector"
+            android:src="@drawable/ic_camera_vector"
             android:contentDescription="@string/photo_title"
             app:fabSize="mini" />
 
@@ -123,7 +123,7 @@
             android:layout_marginEnd="@dimen/activity_margin"
             android:layout_marginBottom="@dimen/activity_margin"
             android:contentDescription="@string/new_file_title"
-            android:src="@drawable/ic_hide_white_vector" />
+            android:src="@drawable/ic_hide_vector" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/items_fab"

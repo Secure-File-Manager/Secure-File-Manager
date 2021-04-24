@@ -99,6 +99,7 @@ abstract class BaseAbstractActivity : AppCompatActivity() {
         }
 
         this.addFlagsSecure()
+        this.setTheme()
 
         super.onCreate(savedInstanceState)
     }

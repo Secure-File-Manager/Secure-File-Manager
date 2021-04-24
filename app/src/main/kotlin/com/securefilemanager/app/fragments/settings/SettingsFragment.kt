@@ -11,6 +11,7 @@ class SettingsFragment : SettingsAbstractFragment() {
         this.initCategoryGeneral(
             screen,
             listOf(
+                this.initTheme(),
                 this.initFavorites(),
                 this.initDateTimeFormat(),
                 this.initChangeHourFormat(),

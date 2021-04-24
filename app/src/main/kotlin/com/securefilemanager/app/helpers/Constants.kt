@@ -5,6 +5,7 @@ import android.content.Context
 import android.graphics.drawable.Drawable
 import android.os.Looper
 import android.text.Spanned
+import androidx.appcompat.app.AppCompatDelegate.*
 import androidx.core.text.HtmlCompat
 import com.securefilemanager.app.BuildConfig
 import com.securefilemanager.app.R
@@ -39,6 +40,7 @@ const val WAS_APP_PROTECTION_HANDLED = "was_app_protection_handled"
 
 // Settings
 const val SETTINGS_MANAGE_FAVORITES = "settings_manage_favorites"
+const val SETTINGS_THEME = "settings_theme"
 const val SETTINGS_CHANGE_DATE_TIME_FORMAT = "settings_change_date_time_format"
 const val SETTINGS_CHANGE_HOUR_FORMAT = "settings_change_hour_format"
 const val SETTINGS_FONT_SIZE = "settings_font_size"
@@ -296,3 +298,16 @@ fun htmlText(text: String): Spanned =
     HtmlCompat.fromHtml(text, HtmlCompat.FROM_HTML_MODE_LEGACY)
 
 val normalizeRegex = "\\p{InCombiningDiacriticalMarks}+".toRegex()
+
+
+fun getThemes(context: Context): HashMap<String, String> {
+    val themes = HashMap<String, String>()
+    hashMapOf<Int, Int>().apply {
+        put(MODE_NIGHT_NO, R.string.theme_light)
+        put(MODE_NIGHT_YES, R.string.theme_dark)
+        put(MODE_NIGHT_FOLLOW_SYSTEM, R.string.theme_system)
+    }.forEach { (key, value) ->
+        themes[key.toString()] = context.getString(value)
+    }
+    return themes
+}

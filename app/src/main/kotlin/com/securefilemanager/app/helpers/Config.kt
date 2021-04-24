@@ -2,6 +2,7 @@ package com.securefilemanager.app.helpers
 
 import android.content.Context
 import android.text.format.DateFormat
+import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
 import com.securefilemanager.app.R
 import com.securefilemanager.app.extensions.*
 import java.io.File
@@ -154,6 +155,10 @@ open class Config(val context: Context) {
         get() = prefs.getString(SETTINGS_CHANGE_DATE_TIME_FORMAT, getDefaultDateFormat())!!
         set(dateFormat) = prefs.edit().putString(SETTINGS_CHANGE_DATE_TIME_FORMAT, dateFormat)
             .apply()
+
+    var theme: Int
+        get() = prefs.getInt(SETTINGS_THEME, MODE_NIGHT_FOLLOW_SYSTEM)
+        set(theme) = prefs.edit().putInt(SETTINGS_THEME, theme).apply()
 
     private fun getDefaultDateFormat(): String {
         val format = DateFormat.getDateFormat(context)

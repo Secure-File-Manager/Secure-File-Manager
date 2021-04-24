@@ -42,6 +42,7 @@ class AuthenticationActivity : AppCompatActivity(), View.OnClickListener {
 
         this.authenticate()
         this.addFlagsSecure()
+        this.setTheme()
     }
 
     override fun onResume() {

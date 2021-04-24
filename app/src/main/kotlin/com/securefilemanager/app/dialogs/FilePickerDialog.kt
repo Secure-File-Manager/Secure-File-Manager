@@ -307,7 +307,7 @@ class FilePickerDialog(
         mDialogView.apply {
             filepicker_favorites_holder.beGone()
             filepicker_files_holder.beVisible()
-            filepicker_fab_show_favorites.setImageResource(R.drawable.ic_star_on_white_vector)
+            filepicker_fab_show_favorites.setImageResource(R.drawable.ic_star_on_vector)
         }
         setHiddenVisibility()
     }

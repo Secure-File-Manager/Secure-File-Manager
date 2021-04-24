@@ -63,7 +63,7 @@
         android:contentDescription="@string/intro_permission_button_settings_text"
         android:text="@string/intro_permission_button_settings_text"
         android:visibility="gone"
-        app:icon="@drawable/ic_settings_white_vector"
+        app:icon="@drawable/ic_settings_vector"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/summary2_text" />

@@ -14,7 +14,7 @@
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/go_to_favorite"
-        android:icon="@drawable/ic_star_on_white_vector"
+        android:icon="@drawable/ic_star_on_vector"
         android:title="@string/go_to_favorite"
         app:showAsAction="ifRoom" />
     <item
@@ -24,12 +24,12 @@
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/add_favorite"
-        android:icon="@drawable/ic_star_off_outline_white_vector"
+        android:icon="@drawable/ic_star_off_outline_vector"
         android:title="@string/add_to_favorites"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/remove_favorite"
-        android:icon="@drawable/ic_star_off_white_vector"
+        android:icon="@drawable/ic_star_off_vector"
         android:title="@string/remove_from_favorites"
         app:showAsAction="ifRoom" />
     <item

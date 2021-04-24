@@ -80,6 +80,28 @@ abstract class SettingsAbstractFragment : PreferenceFragmentCompat() {
     ): PreferenceCategory =
         this.initCategory(screen, R.string.security, preferences)
 
+    protected fun initTheme(): ListPreference =
+        ListPreference(context).apply {
+            val activity = requireActivity()
+            val config = activity.config
+            val theme = config.theme
+            val themes = getThemes(activity)
+            val valueString = theme.toString()
+            key = SETTINGS_THEME
+            title = getString(R.string.theme_title)
+            icon = activity.getDrawableById(R.drawable.ic_pallete_outline_vector)
+            summary = "%s"
+            entries = themes.values.toTypedArray()
+            entryValues = themes.keys.toTypedArray()
+            value = valueString
+            setDefaultValue(valueString)
+            setOnPreferenceChangeListener { _, newValue ->
+                config.theme = newValue.toInt()
+                activity.setTheme()
+                true
+            }
+        }
+
     protected fun initFavorites(): Preference =
         Preference(context).apply {
             val activity = requireActivity()
@@ -460,7 +482,7 @@ abstract class SettingsAbstractFragment : PreferenceFragmentCompat() {
         Preference(context).apply {
             val activity = requireActivity()
             key = SETTINGS_APP_LOCK_INFO
-            icon = activity.getDrawableById(R.drawable.ic_info_blue_vector)
+            icon = activity.getDrawableById(R.drawable.ic_info_vector)
             summary = getString(R.string.app_lock_info_summary)
             isVisible = canShowAppLockInfo()
         }
