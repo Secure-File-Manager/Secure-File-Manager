@@ -10,7 +10,6 @@ import com.getkeepsafe.taptargetview.TapTarget
 import com.getkeepsafe.taptargetview.TapTargetSequence
 import com.securefilemanager.app.R
 import com.securefilemanager.app.extensions.getDrawableById
-import com.securefilemanager.app.extensions.hasDeviceCamera
 import com.securefilemanager.app.extensions.privateField
 import kotlinx.android.synthetic.main.fragment_items.*
 import java.util.*
@@ -46,27 +45,13 @@ class TapTargetTutorial(activity: AppCompatActivity) {
     fun getTutorialTapTargets(cancellable: Boolean = true): ArrayList<TapTarget> {
         val location = IntArray(2)
         this.getToolbar().getLocationOnScreen(location)
-        val tapTargets = ArrayList<TapTarget>().apply {
-            add(getBreadcrumbTapTarget(this.size, cancellable))
-            add(getFileTapTarget(this.size, cancellable))
-            add(getHideTapTarget(this.size, cancellable, mDeviceWith, location))
-            add(getEncryptTarget(this.size, cancellable, mDeviceWith, location))
-            add(getMoreMenuTapTarget(this.size, cancellable, mDeviceWith, location))
+        return ArrayList<TapTarget>().apply {
+            add(getBreadcrumbTapTarget(size, cancellable))
+            add(getFileTapTarget(size, cancellable))
+            add(getHideTapTarget(size, cancellable, mDeviceWith, location))
+            add(getEncryptTarget(size, cancellable, mDeviceWith, location))
+            add(getMoreMenuTapTarget(size, cancellable, mDeviceWith, location))
         }
-
-        if(this.mActivity.hasDeviceCamera()) {
-            tapTargets.apply {
-                add(getVideoTapTarget(this.size, cancellable))
-                add(getPhotoTapTarget(this.size, cancellable))
-            }
-        }
-
-        tapTargets.apply {
-            add(getHideTapTarget(this.size, cancellable))
-            add(getItemsTapTarget(this.size, cancellable))
-        }
-
-        return tapTargets
     }
 
     private fun getString(id: Int): String =
@@ -183,50 +168,6 @@ class TapTargetTutorial(activity: AppCompatActivity) {
             )
             .cancelable(cancellable)
             .icon(this.getDrawable(R.drawable.ic_lock_vector))
-            .id(id)
-
-    private fun getVideoTapTarget(id: Int, cancellable: Boolean): TapTarget =
-        TapTarget
-            .forView(
-                this.mActivity.camera_fab,
-                getString(R.string.video_title),
-                getStringHtml(R.string.video_desc)
-            )
-            .cancelable(cancellable)
-            .tintTarget(false)
-            .id(id)
-
-    private fun getPhotoTapTarget(id: Int, cancellable: Boolean): TapTarget =
-        TapTarget
-            .forView(
-                this.mActivity.photo_fab,
-                getString(R.string.photo_title),
-                getStringHtml(R.string.photo_desc)
-            )
-            .cancelable(cancellable)
-            .tintTarget(false)
-            .id(id)
-
-    private fun getHideTapTarget(id: Int, cancellable: Boolean): TapTarget =
-        TapTarget
-            .forView(
-                this.mActivity.hide_fab,
-                getString(R.string.hide_fab_title),
-                getString(R.string.hide_fab_desc),
-            )
-            .cancelable(cancellable)
-            .tintTarget(false).targetRadius(60)
-            .id(id)
-
-    private fun getItemsTapTarget(id: Int, cancellable: Boolean): TapTarget =
-        TapTarget
-            .forView(
-                this.mActivity.items_fab,
-                getString(R.string.new_file_title),
-                getString(R.string.new_file_desc),
-            )
-            .cancelable(cancellable)
-            .tintTarget(false).targetRadius(60)
             .id(id)
 
 }

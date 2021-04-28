@@ -102,7 +102,7 @@ class FilePickerDialog(
             activity.resources.getDimension(
                 if (showFAB) R.dimen.secondary_fab_bottom_margin else R.dimen.activity_margin
             ).toInt()
-        mDialogView.filepicker_fabs_holder.apply {
+        mDialogView.fabs_holder.apply {
             (layoutParams as CoordinatorLayout.LayoutParams).bottomMargin = secondaryFabBottomMargin
         }
 

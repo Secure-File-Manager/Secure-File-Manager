@@ -35,4 +35,8 @@
     <dimen name="rounded_corner_radius_small">4dp</dimen>
     <dimen name="rounded_corner_radius_big">10dp</dimen>
 
+    <dimen name="fab_move_1">70dp</dimen>
+    <dimen name="fab_move_2">120dp</dimen>
+    <dimen name="fab_move_3">170dp</dimen>
+
 </resources>

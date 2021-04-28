@@ -350,18 +350,6 @@
     <string name="more_menu_title">More file operations</string>
     <string name="more_menu_desc"><![CDATA[After long press on a file, you can find more file operations here.<br/> <small><i>(E.g.: create zip, create encrypted zip, move, copy, rename, etc…)</i></small>]]></string>
 
-    <string name="video_title">Create video</string>
-    <string name="video_desc"><![CDATA[Created video is saved to the current directory.<br/> <small><i>(E.g.: save video directly do hidden storage, to prevent a Google Photos sync)</i></small>]]></string>
-
-    <string name="photo_title">Create photo</string>
-    <string name="photo_desc"><![CDATA[Created photo is saved to the current directory.<br/> <small><i>(E.g.: save photo directly do hidden storage, to prevent a Google Photos sync)</i></small>]]></string>
-
-    <string name="hide_fab_title">Hidden storage</string>
-    <string name="hide_fab_desc">Go to hidden storage</string>
-
-    <string name="new_file_title">Create new</string>
-    <string name="new_file_desc">Create a new file or directory</string>
-
     <!-- Beta warning -->
     <string name="beta_warning">This is a beta version of the app. This means you should not use this app with important files. The developers of this app are not responsible for your data lose or corruption!</string>
 

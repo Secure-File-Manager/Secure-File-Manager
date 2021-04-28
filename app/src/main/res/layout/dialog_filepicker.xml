@@ -76,7 +76,7 @@
     </RelativeLayout>
 
     <LinearLayout
-        android:id="@+id/filepicker_fabs_holder"
+        android:id="@+id/fabs_holder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"

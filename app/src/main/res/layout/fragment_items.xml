@@ -85,55 +85,46 @@
         </RelativeLayout>
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
-    <LinearLayout
-        android:id="@+id/filepicker_fabs_holder"
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/camera_fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
+        android:layout_marginEnd="@dimen/activity_margin"
         android:layout_marginBottom="@dimen/activity_margin"
-        android:orientation="vertical">
+        android:src="@drawable/ic_videocam_vector"
+        android:visibility="gone"
+        app:fabSize="mini" />
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/camera_fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:layout_marginEnd="@dimen/activity_margin"
-            android:layout_marginBottom="@dimen/medium_margin"
-            android:src="@drawable/ic_videocam_vector"
-            android:contentDescription="@string/video_title"
-            app:fabSize="mini" />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/photo_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="@dimen/activity_margin"
+        android:layout_marginBottom="@dimen/activity_margin"
+        android:src="@drawable/ic_camera_vector"
+        android:visibility="gone"
+        app:fabSize="mini" />
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/photo_fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:layout_marginEnd="@dimen/activity_margin"
-            android:layout_marginBottom="@dimen/activity_margin"
-            android:src="@drawable/ic_camera_vector"
-            android:contentDescription="@string/photo_title"
-            app:fabSize="mini" />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/new_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="@dimen/activity_margin"
+        android:layout_marginBottom="@dimen/activity_margin"
+        android:src="@drawable/ic_create_new_folder"
+        android:visibility="gone"
+        app:fabSize="mini" />
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/hide_fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:layout_marginEnd="@dimen/activity_margin"
-            android:layout_marginBottom="@dimen/activity_margin"
-            android:contentDescription="@string/new_file_title"
-            android:src="@drawable/ic_hide_vector" />
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/items_fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:layout_marginEnd="@dimen/activity_margin"
-            android:contentDescription="@string/new_file_title"
-            android:src="@drawable/ic_plus_vector" />
-
-    </LinearLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/show_fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="@dimen/activity_margin"
+        android:layout_marginBottom="@dimen/activity_margin"
+        android:src="@drawable/ic_plus_vector" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,5 +1,7 @@
 package com.securefilemanager.app.fragments
 
+import android.animation.Animator
+import android.animation.Animator.AnimatorListener
 import android.app.Activity.RESULT_OK
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -40,6 +42,7 @@ class ItemsFragment : Fragment(), ItemOperationsListener, Breadcrumbs.Breadcrumb
     var isGetRingtonePicker = false
     var isPickMultipleIntent = false
 
+    private var isFABOpen = false
     private var isFirstResume = true
     private var skipItemUpdating = false
     private var isSearchOpen = false
@@ -72,15 +75,21 @@ class ItemsFragment : Fragment(), ItemOperationsListener, Breadcrumbs.Breadcrumb
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val hasDeviceCamera = context?.hasDeviceCamera()!!
         mView.apply {
             items_swipe_refresh.setOnRefreshListener { refreshItems() }
-            items_fab.setOnClickListener { createNewItem() }
-            hide_fab.setOnClickListener { openPath(requireActivity().hiddenPath, true) }
-            camera_fab.setOnClickListener { takeVideo() }
-            photo_fab.setOnClickListener { takePicture() }
-            camera_fab.isVisible = hasDeviceCamera
-            photo_fab.isVisible = hasDeviceCamera
+            show_fab.setOnClickListener { toggleFabMenu() }
+            new_fab.setOnClickListener {
+                createNewItem()
+                toggleFabMenu()
+            }
+            camera_fab.setOnClickListener {
+                takeVideo()
+                toggleFabMenu()
+            }
+            photo_fab.setOnClickListener {
+                takePicture()
+                toggleFabMenu()
+            }
             breadcrumbs.listener = this@ItemsFragment
             breadcrumbs.updateFontSize(requireContext().getTextSize())
         }
@@ -158,11 +167,7 @@ class ItemsFragment : Fragment(), ItemOperationsListener, Breadcrumbs.Breadcrumb
             return
         }
 
-        val context = this.requireContext()
-        val isOnSdCard = context.isPathOnSD(path)
-        this.mView.hide_fab.beGoneIf(path.startsWith(requireActivity().hiddenPath))
-        this.mView.camera_fab.beGoneIf(isOnSdCard)
-        this.mView.photo_fab.beGoneIf(isOnSdCard)
+        this.toggleFabMenu(true)
 
         var realPath = path.trimEnd('/')
         if (realPath.isEmpty()) {
@@ -176,7 +181,7 @@ class ItemsFragment : Fragment(), ItemOperationsListener, Breadcrumbs.Breadcrumb
                 return@getItems
             }
 
-            FileDirItem.sorting = context.config.getFolderSorting(currentPath)
+            FileDirItem.sorting = this.requireContext().config.getFolderSorting(currentPath)
             listItems.sort()
             activity?.runOnUiThread {
                 activity?.invalidateOptionsMenu()
@@ -202,8 +207,15 @@ class ItemsFragment : Fragment(), ItemOperationsListener, Breadcrumbs.Breadcrumb
                     breadcrumbs.updateFontSize(requireContext().getTextSize())
                 }
 
-                ItemsAdapter(activity as BaseAbstractActivity, storedItems, this@ItemsFragment, items_list, isPickMultipleIntent, items_fastscroller,
-                    items_swipe_refresh) {
+                ItemsAdapter(
+                    activity as BaseAbstractActivity,
+                    storedItems,
+                    this@ItemsFragment,
+                    items_list,
+                    isPickMultipleIntent,
+                    items_fastscroller,
+                    items_swipe_refresh
+                ) {
                     if ((it as? ListItem)?.isSectionTitle == true) {
                         openDirectory(it.mPath)
                         searchClosed()
@@ -217,7 +229,13 @@ class ItemsFragment : Fragment(), ItemOperationsListener, Breadcrumbs.Breadcrumb
                 items_list.scheduleLayoutAnimation()
                 items_fastscroller.setViews(items_list, items_swipe_refresh) {
                     val listItem = getRecyclerAdapter()?.listItems?.getOrNull(it)
-                    items_fastscroller.updateBubbleText(listItem?.getBubbleText(context, storedDateFormat, storedTimeFormat) ?: "")
+                    items_fastscroller.updateBubbleText(
+                        listItem?.getBubbleText(
+                            context,
+                            storedDateFormat,
+                            storedTimeFormat
+                        ) ?: ""
+                    )
                 }
 
                 getRecyclerLayoutManager().onRestoreInstanceState(scrollStates[currentPath])
@@ -227,6 +245,7 @@ class ItemsFragment : Fragment(), ItemOperationsListener, Breadcrumbs.Breadcrumb
             }
         }
     }
+
     private fun getScrollState() = getRecyclerLayoutManager().onSaveInstanceState()
 
     private fun getRecyclerLayoutManager() =
@@ -261,9 +280,7 @@ class ItemsFragment : Fragment(), ItemOperationsListener, Breadcrumbs.Breadcrumb
 
         for (file in files) {
             val fileDirItem = getFileDirItemFromFile(file, isSortingBySize, lastModifieds)
-            if (fileDirItem != null) {
-                items.add(fileDirItem)
-            }
+            items.add(fileDirItem)
         }
 
         // send out the initial item list asap, get proper child count asynchronously as it can be slow
@@ -285,7 +302,7 @@ class ItemsFragment : Fragment(), ItemOperationsListener, Breadcrumbs.Breadcrumb
         file: File,
         isSortingBySize: Boolean,
         lastModifieds: HashMap<String, Long> = HashMap<String, Long>()
-    ): ListItem? {
+    ): ListItem {
         val curPath = file.absolutePath
         val curName = file.name
         val isDirectory = file.isDirectory
@@ -376,13 +393,22 @@ class ItemsFragment : Fragment(), ItemOperationsListener, Breadcrumbs.Breadcrumb
                     files.forEach {
                         val parent = it.mPath.getParentPath()
                         if (!it.isDirectory && parent != previousParent) {
-                            val sectionTitle = ListItem(parent, context.humanizePath(parent), false, 0, 0, 0, true)
+                            val sectionTitle =
+                                ListItem(parent, context.humanizePath(parent), false, 0, 0, 0, true)
                             listItems.add(sectionTitle)
                             previousParent = parent
                         }
 
                         if (it.isDirectory) {
-                            val sectionTitle = ListItem(it.path, context.humanizePath(it.path), true, 0, 0, 0, true)
+                            val sectionTitle = ListItem(
+                                it.path,
+                                context.humanizePath(it.path),
+                                true,
+                                0,
+                                0,
+                                0,
+                                true
+                            )
                             listItems.add(sectionTitle)
                             previousParent = parent
                         }
@@ -424,9 +450,7 @@ class ItemsFragment : Fragment(), ItemOperationsListener, Breadcrumbs.Breadcrumb
                 if (it.name.contains(text, true)) {
                     val fileDirItem =
                         getFileDirItemFromFile(it, isSortingBySize, HashMap<String, Long>())
-                    if (fileDirItem != null) {
-                        files.add(fileDirItem)
-                    }
+                    files.add(fileDirItem)
                 }
 
                 files.addAll(searchFiles(text, it.absolutePath))
@@ -434,9 +458,7 @@ class ItemsFragment : Fragment(), ItemOperationsListener, Breadcrumbs.Breadcrumb
                 if (it.name.contains(text, true)) {
                     val fileDirItem =
                         getFileDirItemFromFile(it, isSortingBySize, HashMap<String, Long>())
-                    if (fileDirItem != null) {
-                        files.add(fileDirItem)
-                    }
+                    files.add(fileDirItem)
                 }
             }
         }
@@ -533,5 +555,52 @@ class ItemsFragment : Fragment(), ItemOperationsListener, Breadcrumbs.Breadcrumb
 
     override fun selectedPaths(paths: ArrayList<String>) {
         (activity as MainActivity).pickedPaths(paths)
+    }
+
+    private fun toggleFabMenu(forceClose: Boolean = false) {
+        if(!forceClose) {
+            mView.apply {
+                show_fab.animate().rotationBy(180f)
+            }
+        }
+
+        if (forceClose || this.isFABOpen) {
+            mView.apply {
+                new_fab.animate().translationY(0f)
+                camera_fab.animate().translationY(0f)
+                photo_fab.animate().translationY(0f)
+                photo_fab.animate().translationY(0f).setListener(object : AnimatorListener {
+                    override fun onAnimationStart(animator: Animator) {}
+                    override fun onAnimationEnd(animator: Animator) {
+                        if(!isFABOpen) {
+                            camera_fab.isVisible = false
+                            photo_fab.isVisible = false
+                            new_fab.isVisible = false
+                        }
+                    }
+                    override fun onAnimationCancel(animator: Animator) {}
+                    override fun onAnimationRepeat(animator: Animator) {}
+                })
+            }
+        } else {
+            val context = this.requireContext()
+            val isOnSdCard = context.isPathOnSD(this.currentPath)
+            val hasDeviceCamera = context.hasDeviceCamera()
+            val showMediaFab = !isOnSdCard && hasDeviceCamera
+            mView.apply {
+                camera_fab.isVisible = showMediaFab
+                photo_fab.isVisible = showMediaFab
+                new_fab.isVisible = true
+                new_fab.animate().translationY(-resources.getDimension(R.dimen.fab_move_1))
+                camera_fab.animate().translationY(-resources.getDimension(R.dimen.fab_move_2))
+                photo_fab.animate().translationY(-resources.getDimension(R.dimen.fab_move_3))
+            }
+        }
+
+        if(forceClose) {
+            this.isFABOpen = false
+        } else {
+            this.isFABOpen = !this.isFABOpen
+        }
     }
 }
