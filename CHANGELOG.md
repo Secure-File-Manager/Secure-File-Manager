@@ -1,5 +1,14 @@
 # Changelog
 
+#### v0.1.7 - beta
+
+ * Add dark theme
+ * Improve search
+ * Add expandable floating action buttons
+ * Update dependencies
+ * Bug fixes
+
+
 #### v0.1.6 - beta
 
  * Update dependencies
