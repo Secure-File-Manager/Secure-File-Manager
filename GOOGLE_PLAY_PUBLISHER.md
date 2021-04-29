@@ -1,6 +1,6 @@
 There is information that is required by [News Policy](https://support.google.com/googleplay/android-developer/answer/9935326) and [Developer Policy Center](https://play.google.com/about/developer-content-policy/).
 
-**This application does not provide any news sources.**
+**This application does not provide any news sources. The app contains only user-generated content with ownership belongs to the user.**
 
 The app is licensed under the [GPLv3](./LICENSE) so all ownership falls under this license.
 
