@@ -1,5 +1,9 @@
 # Changelog
 
+#### v0.1.7 - beta2
+
+ * Update news policy
+
 #### v0.1.7 - beta
 
  * Add dark theme
