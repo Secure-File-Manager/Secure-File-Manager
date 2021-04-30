@@ -1,0 +1,364 @@
+<resources>
+    <string name="ok">OK</string>
+    <string name="cancel">Annuler</string>
+    <string name="checksum">Somme de contrôle</string>
+    <string name="save_as">Enregistrer sous</string>
+    <string name="an_error_occurred">Une erreur s\'est produite: %s</string>
+    <string name="open_with">Ouvrir avec</string>
+    <string name="no_app_found">Aucune application valide trouvée</string>
+    <string name="set_as">Configurer comme</string>
+    <string name="value_copied_to_clipboard">Valeur copiée dans le presse-papiers</string>
+    <string name="download">Téléchargement</string>
+    <string name="folder_empty">Le dossier est vide</string>
+    <string name="description">Gestionnaire de fichiers open source pour garder vos fichiers en sécurité</string>
+    <string name="clear">Nettoyer</string>
+
+    <!-- Favorites -->
+    <string name="favorites">Favoris</string>
+    <string name="add_favorites">Ajouter des favoris</string>
+    <string name="add_to_favorites">Ajouter aux favoris</string>
+    <string name="remove_from_favorites">Retirer des favoris</string>
+    <string name="manage_favorites">Gérer les favoris</string>
+    <string name="go_to_favorite">Aller aux favoris</string>
+    <string name="favorites_activity_placeholder">Vous pouvez ajouter les dossiers fréquemment utilisés à vos favoris pour y accéder aisément depuis n\'importe où.</string>
+
+    <!-- Search -->
+    <string name="search">Recherche</string>
+    <string name="type_2_characters">Saisissez au moins 2 caractères pour lancer la recherche.</string>
+
+    <!-- Filters -->
+    <string name="filter">Filtre</string>
+    <string name="no_items_found">Aucun élément trouvé.</string>
+
+    <!-- Permissions -->
+    <string name="no_storage_permissions">L\'autorisation d\'accès au stockage est nécessaire</string>
+
+    <!-- Renaming -->
+    <string name="source_file_doesnt_exist">Le fichier source %s n\'existe pas</string>
+    <string name="prepend_filenames">Préfixer les noms de fichiers</string>
+    <string name="append_filenames">Ajouter des noms de fichiers</string>
+    <string name="string_to_add">Chaîne à ajouter</string>
+
+    <!-- Copy / Move -->
+    <string name="move">Déplacer</string>
+    <string name="copy_to">Copier vers</string>
+    <string name="move_to">Déplacer vers</string>
+    <string name="invalid_destination">Impossible d\'écrire dans la destination sélectionnée</string>
+    <string name="source_and_destination_same">La source et la destination ne peuvent pas être identiques</string>
+    <string name="copying">Copie…</string>
+    <string name="copying_success">Les fichiers ont été copiés avec succès</string>
+    <string name="copy_move_failed">Une erreur s\'est produite</string>
+    <string name="copying_success_partial">Certains fichiers n\'ont pas pu être copiés</string>
+    <string name="moving">Déplacement…</string>
+    <string name="moving_success">Fichiers déplacés avec succès</string>
+    <string name="moving_success_partial">Certains fichiers n\'ont pas pu être déplacés</string>
+    <string name="encrypting">Chiffrement…</string>
+    <string name="encrypting_success">Fichiers chiffrés avec succès</string>
+    <string name="encryption_failed">Une erreur est survenue</string>
+    <string name="encrypting_success_partial">Certains fichiers n\'ont pas pu être chiffrés</string>
+    <string name="decrypting">Déchiffrement…</string>
+    <string name="decrypting_success">Fichiers déchiffrés avec succès</string>
+    <string name="decryption_failed">Une erreur s\'est produite</string>
+    <string name="decrypting_success_partial">Certains fichiers n\'ont pas pu être déchiffrés</string>
+    <string name="hiding">Occultation…</string>
+    <string name="hiding_success">Fichiers occultés avec succès</string>
+    <string name="hiding_success_partial">Certains fichiers n\'ont pas pu être occultés</string>
+    <string name="unhiding">désoccultation…</string>
+    <string name="unhiding_success">Fichiers désoccultés avec succès</string>
+    <string name="unhiding_success_partial">Certains fichiers n\'ont pas pu être désoccultés</string>
+    <string name="could_not_create_folder">Impossible de créer le dossier %s</string>
+    <string name="could_not_create_file">Impossible de créer le fichier %s</string>
+    <string name="no_space">La destination ne dispose pas d\'assez d’espace disponible.\nNécessaire %1$s, disponible %2$s</string>
+    <string name="saving">Sauvegarde…</string>
+    <string name="file_saved">Fichiers sauvegardés avec succès</string>
+
+    <!-- Create new -->
+    <string name="create_new">Créer un nouveau</string>
+    <string name="folder">Dossier</string>
+    <string name="file">Fichier</string>
+    <string name="create_new_folder">Créer un nouveau dossier</string>
+    <string name="name_taken">Un fichier ou un dossier portant ce nom existe déjà</string>
+    <string name="invalid_name">Le nom contient des caractères invalides</string>
+    <string name="empty_name">Veuillez entrer un nom</string>
+    <string name="unknown_error_occurred">Une erreur inconnue s\'est produite</string>
+
+    <!-- Password authentication -->
+    <string name="invalid_password">Mot de passe invalide</string>
+    <string name="password_not_match">Les mots de passe ne correspondent pas</string>
+    <string name="invalid_password_pattern">Le mot de passe doit contenir 8 caractères et au moins un chiffre et une lettre.</string>
+    <string name="password_hint">Mot de passe</string>
+    <string name="password_again_hint">Vérification du mot de passe</string>
+
+    <!-- File operation conflicts -->
+    <string name="file_already_exists">Le fichier \"%s\" existe déjà</string>
+    <string name="folder_already_exists">Le dossier \"%s\" existe déjà</string>
+    <string name="merge">Fusionner</string>
+    <string name="keep_both">Gardez les deux</string>
+    <string name="overwrite">Écraser</string>
+    <string name="skip">Ignorer</string>
+    <string name="apply_to_all">Appliquer à tous</string>
+
+    <!-- File picker -->
+    <string name="select_folder">Sélectionnez un dossier</string>
+    <string name="select_file">Sélectionnez un fichier</string>
+    <string name="confirm_storage_access_title">Confirmer l\'autorisation d\'accès au stockage externe </string>
+    <string name="confirm_storage_access_text">Veuillez choisir le dossier principal de la carte SD sur l\'écran suivant, pour accorder l\'accès en écriture.</string>
+    <string name="confirm_storage_access_text_sd">Si vous ne voyez pas la carte SD, essayez ceci.</string>
+    <string name="confirm_selection">Confirmer la sélection</string>
+    <string name="tutorial_hide_description"><![CDATA[Ici vous pouvez confirmer la destination des fichiers dans le stockage occulté.<br/> <small><i>Conseil: vous pouvez créer des dossiers dans le stockage occulté pour une meilleure organisation des fichiers occultés</small></i>]]></string>
+
+    <plurals name="items">
+        <item quantity="one">%d élément</item>
+        <item quantity="other">%d éléments</item>
+    </plurals>
+
+    <plurals name="delete_items">
+        <item quantity="one">%d élément</item>
+        <item quantity="other">%d éléments</item>
+    </plurals>
+
+    <!-- Storages -->
+    <string name="select_storage">Sélectionnez le stockage</string>
+    <string name="internal">Interne</string>
+    <string name="hidden">Occulté</string>
+    <string name="sd_card">Carte SD</string>
+    <string name="wrong_root_selected">Mauvais dossier sélectionné, veuillez sélectionner le dossier racine de votre carte SD</string>
+    <string name="sd_card_usb_same">Les chemins de la carte SD et du périphérique USB ne peuvent pas être identiques </string>
+
+    <!-- File properties -->
+    <string name="properties">Propriétés</string>
+    <string name="path">Chemin d\'accès</string>
+    <string name="items_selected">Éléments sélectionnés</string>
+    <string name="direct_children_count">Nombre de sous-éléments directs</string>
+    <string name="files_count">Nombre total de fichiers</string>
+    <string name="resolution">Résolution</string>
+    <string name="duration">Durée</string>
+    <string name="artist">Artistes</string>
+    <string name="album">Album</string>
+    <string name="focal_length">Distance focale</string>
+    <string name="exposure_time">Temps d\'exposition</string>
+    <string name="iso_speed">Vitesse ISO</string>
+    <string name="f_number">F-number</string>
+    <string name="camera">Caméra</string>
+    <string name="exif">EXIF</string>
+    <string name="song_title">titre de la chanson</string>
+    <string name="gps_coordinates">Coordonnées GPS</string>
+    <string name="altitude">Altitude</string>
+
+    <!-- Actionbar items -->
+    <string name="delete">Supprimer</string>
+    <string name="remove">Enlever</string>
+    <string name="rename">Renommer</string>
+    <string name="share">Partager</string>
+    <string name="share_via">Partager via</string>
+    <string name="select_all">Tout sélectionner</string>
+    <string name="hide">Occulté</string>
+    <string name="unhide">désocculter</string>
+    <string name="encrypt">Chiffrer</string>
+    <string name="decrypt">Déchiffrer</string>
+    <string name="maximum_share_reached">Vous ne pouvez pas partager autant de contenu à la fois</string>
+    <string name="create_shortcut">Créer un raccourci</string>
+
+    <!-- Sorting -->
+    <string name="sort_by">Trier par</string>
+    <string name="name">Nom</string>
+    <string name="size">Taille</string>
+    <string name="last_modified">Dernière modification</string>
+    <string name="date_taken">Date de prise</string>
+    <string name="filename">Nom de fichier</string>
+    <string name="extension">Extension</string>
+    <string name="ascending">Ascendant</string>
+    <string name="descending">Descendant</string>
+    <string name="use_for_this_folder">Utiliser uniquement pour ce dossier</string>
+
+    <!-- Confirmation dialog -->
+    <string name="proceed_with_deletion">Êtes-vous sûr de vouloir procéder à la suppression?</string>
+    <string name="deletion_confirmation">Voulez-vous vraiment supprimer %s?</string>
+    <string name="share_hidden_file_confirmation">Voulez-vous vraiment partager %s depuis le stockage occulté?</string>
+    <string name="yes">Oui</string>
+    <string name="no">Non</string>
+
+    <!-- Authentication -->
+    <string name="authenticate">Authentification</string>
+    <string name="app_unlocked_notification">L\'application est déverrouillée. Appuyez pour verrouiller l\'application.</string>
+    <string name="prompt_info_title">L\'application est verrouillée</string>
+    <string name="prompt_info_use_app_password">Utiliser le mot de passe de l\'application </string>
+    <string name="password_setup_title">Configurer le mot de passe de l\'application</string>
+    <string name="password_remove">Retirer</string>
+    <string name="lock_app">Verrouiller l\'application</string>
+    <string name="authentication_service_description">Service gérant le déverrouillage de l\'application</string>
+    <string name="lock_receiver_description">Récepteur pour verrouiller l\'application au démarrage et à l\'arrêt</string>
+
+    <!-- Settings -->
+    <string name="settings">Paramètres</string>
+    <string name="manage_storage">Gérer le stockage</string>
+    <string name="settings_general">Général</string>
+    <string name="font_size">Taille de la police</string>
+    <string name="app_system_settings">Paramètres système de l\'application</string>
+    <string name="small">Petit</string>
+    <string name="medium">Moyen</string>
+    <string name="large">Large</string>
+    <string name="extra_large">Extra large</string>
+    <string name="keep_last_modified_title">Conserver l\'ancienne dernière modification</string>
+    <string name="keep_last_modified_summary_off">La conservation de l\'ancienne valeur de dernière modification lors des opérations sur les fichiers est désactivée</string>
+    <string name="keep_last_modified_summary_on">La conservation de l\'ancienne valeur de dernière modification lors des opérations sur les fichiers est activée</string>
+    <string name="keep_after_encryption_operation_title">Conserver le fichier source</string>
+    <string name="keep_after_encryption_operation_summary_off">Conserver le fichier source après le chiffrement/déchiffrement est désactivé</string>
+    <string name="keep_after_encryption_operation_summary_on">Conserver le fichier source après le chiffrement/déchiffrement est activé</string>
+    <string name="disable_screenshots_title">Bloquer la prise de capture d\'écran</string>
+    <string name="disable_screenshots_summary_off">Bloquage des captures d\'écran dans la liste récente et dans l\'application désactivé</string>
+    <string name="disable_screenshots_summary_on">Bloquage des captures d\'écran dans la liste récente et dans l\'application activé</string>
+    <string name="show_media_thumbnail_title">Afficher les miniatures des médias</string>
+    <string name="show_media_thumbnail_summary_off">Affichage des vignettes multimédias désactivé</string>
+    <string name="show_media_thumbnail_summary_on">Affichage des vignettes multimédias activé</string>
+    <string name="media_thumbnail_clear_title">Effacer le cache des vignettes multimédias</string>
+    <string name="media_thumbnail_clear_cleared">Cache effacé</string>
+    <string name="app_data_cleared">Données d\'application effacées</string>
+    <string name="app_data_error">Une erreur s\'est produite lors de la suppression des données de l\'application</string>
+    <string name="app_lock_title">Verrouiller l\'accès à l\'application</string>
+    <string name="app_lock_summary_off">Le verrouillage de l\'accès à l\'application est désactivé</string>
+    <string name="app_lock_summary_on">Le verrouillage de l\'accès à l\'application est activé</string>
+    <string name="app_lock_summary_on_warning">Le mot de passe ou l\'authentification biométrique n\'est pas défini.</string>
+    <string name="app_lock_summary_on_warning_biometric">L\'authentificateur biométrique n\'est pas spécifié ou disponible</string>
+    <string name="use_biometric_authentication_title">Utiliser la biométrie</string>
+    <string name="use_biometric_authentication_summary_off">L\'utilisation conjointe de l\'authentification biométrique est désactivée</string>
+    <string name="use_biometric_authentication_summary_on">L\'utilisation conjointe de l\'authentification biométrique est activée</string>
+    <string name="use_biometric_authentication_summary_on_warning">L\'authentificateur biométrique n\'est pas spécifié ou disponible</string>
+    <string name="use_24_hour_time_format_title">Utiliser le format horaire sur 24 heures </string>
+    <string name="use_24_hour_time_format_title_summary_off">Le format horaire sur 24 heures est désactivé</string>
+    <string name="use_24_hour_time_format_title_summary_on">Le format horaire sur 24 heures est activé</string>
+    <string name="change_date_and_time_format_title">Modifier le format de date et d\'heure</string>
+    <string name="theme_title">Thème</string>
+    <string name="theme_light">Clair</string>
+    <string name="theme_dark">Obscure</string>
+    <string name="theme_system">Defini par le système</string>
+    <string name="set_app_password_title">Définir le mot de passe de l\'application</string>
+    <string name="set_app_password_summary_on">Le mot de passe est défini</string>
+    <string name="set_app_password_summary_off">Le mot de passe n\'est pas défini</string>
+    <string name="app_open_biometric_settings_summary">L\'authentificateur biométrique n\'est pas spécifié, cliquez pour ouvrir les paramètres.</string>
+    <string name="app_lock_info_summary">L\'authentification biométrique est significativement moins sûre qu\'un mot de passe. Afin d\'améliorer la sécurité de vos fichiers, il est recommandé d\'utiliser uniquement un mot de passe pour restreindre l\'accès aux applications. Mais vous pouvez utiliser les deux.</string>
+
+    <!-- Setting sections -->
+    <string name="security">Sécurité</string>
+    <string name="file_operations">Opérations sur les fichiers</string>
+
+    <string name="app_name">Secure File Manager Bêta</string>
+    <string name="app_launcher_name">Secure File</string>
+    <string name="press_back_again">Appuyez à nouveau sur la touche retour pour sortir</string>
+    <string name="go_to_home_folder">Aller au dossier d\'accueil</string>
+    <string name="set_as_home_folder">Définir comme dossier d\'acceuil</string>
+    <string name="home_folder_updated">Dossier d\'accueil mis à jour</string>
+    <string name="copy_path">Copier le chemin d\'accès dans le presse-papiers</string>
+    <string name="path_copied">chemin d\'accès copié</string>
+    <string name="select_audio_file">Veuillez sélectionner un fichier audio</string>
+
+    <!-- Open as -->
+    <string name="open_as">Ouvrir en tant que</string>
+    <string name="text_file">Fichier texte</string>
+    <string name="image_file">Fichier image</string>
+    <string name="audio_file">Fichier audio</string>
+    <string name="video_file">Fichier vidéo</string>
+    <string name="other_file">autres fichiers</string>
+
+    <!-- Compression -->
+    <string name="password">Mot de passe</string>
+    <string name="compress">Créer une archive zip</string>
+    <string name="decompress">Extraire</string>
+    <string name="compress_as">Créer zip</string>
+    <string name="compressing">Création du zip…</string>
+    <string name="starting">Démarrage…</string>
+    <string name="decompressing">Extraction…</string>
+    <string name="canceling">Annulation…</string>
+    <string name="compression_successful">Création du zip réussi</string>
+    <string name="decompression_successful">Extraction réussie</string>
+    <string name="compressing_failed">Échec de création du zip</string>
+    <string name="decompressing_failed">Échec de l\'extraction</string>
+    <string name="decompress_password_title">Mot de passe pour %s</string>
+    <string name="decompress_conflicts">Impossible d\'extraire le fichier, car le fichier "%s" est en conflit</string>
+    <string name="compression_action_collision">Une seule création de zip est autorisée à la fois</string>
+    <string name="stop">Arrêter</string>
+    <string name="compression_receiver_description">Récepteur pour ZipManagerService afin de gérer les actions de notification.</string>
+    <string name="compression_service_description">Service prenant en charge la création ou l\'extraction de fichier zip</string>
+
+    <!-- About -->
+    <string name="about">À propos</string>
+    <string name="about_tab_about">À propos</string>
+    <string name="about_tab_libraries">Librairies</string>
+    <string name="about_label_changelog">Journal des modifications</string>
+    <string name="about_label_privacy_policy">Politique de confidentialité</string>
+    <string name="about_label_license">Licence</string>
+    <string name="about_label_gnu">Licence GNU</string>
+    <string name="about_label_source">Code source</string>
+    <string name="about_label_version">Version</string>
+    <string name="about_label_faq">FAQ</string>
+    <string name="about_label_contribute">Contribuer</string>
+    <string name="about_label_faq_long">Questions fréquemment posées</string>
+    <string name="about_title_authors">Auteur</string>
+    <string name="about_label_main_developer">Développeur principal</string>
+    <string name="about_label_original_author">Auteur de l\'application originale</string>
+    <string name="about_label_original_app">Application d\'origine</string>
+
+    <!-- Intro -->
+    <string name="introduction">Introduction</string>
+
+    <string name="intro_permission_title">Bienvenue!</string>
+    <string name="intro_permission_summary">Cette application requiert l\'autorisation d\'accès au stockage. Sans cela, l\'application sera inutile.</string>
+    <string name="intro_permission_summary2">Si vous avez cliqué sur "refuser et ne plus demander", vous ne pourrez sélectionner l\'autorisation d\'accès au stockage qu\'à partir des paramètres système de l\'application.</string>
+    <string name="intro_permission_permission_enabled">L\'autorisation d'accès au stokage est activé!</string>
+    <string name="intro_permission_button_permission_text">Autoriser l\'accès au stokage</string>
+    <string name="intro_permission_button_settings_text">Ouvrez les paramètres système de l\'application</string>
+    <string name="intro_permission_illegally_request_next_page">Veuillez permettre l\'accès au stockage pour continuer</string>
+
+    <string name="intro_hiding_title">Fonction d\'occultation des fichiers</string>
+    <string name="intro_hiding_summary">Cette icône signifie que les fichiers sélectionnés seront déplacés vers le stockage occulté.</string>
+    <string name="intro_hiding_summary2">Cette icône signifie que les fichiers sélectionnés seront déplacés du stockage occulté vers la destination choisie.</string>
+    <string name="intro_hiding_info"><![CDATA[Les fichiers dans le stockage occulté sont accessibles <b>uniquement</b> à cette application.]]></string>
+    <string name="intro_hiding_warning">AVERTISSEMENT: Si vous désinstallez cette application ou effacez le stockage de l\'application, vous supprimerez également tous vos secrets occultés!</string>
+
+    <string name="intro_encrypting_title">Fonction de chiffrement des fichiers</string>
+    <string name="intro_encrypting_summary">Cette icône signifie que les fichiers sélectionnés seront chiffrés.</string>
+    <string name="intro_encrypting_summary2">Cette icône signifie que les fichiers sélectionnés seront déchiffrés.</string>
+    <string name="intro_encrypting_info_1"><![CDATA[Les fichiers sont chiffrés <b>sans mot de passe</b> avec la clé enregistrée en toute sécurité dans votre appareil <i>(dans l\'AndroidKeyStore)</i>.]]></string>
+    <string name="intro_encrypting_info_2"><![CDATA[Le chiffrement permet qu\'un fichier ne puisse être lu par une personne non autorisée.]]></string>
+    <string name="intro_encrypting_warning">AVERTISSEMENT: Si vous désinstallez cette application, vous ne pourrez plus jamais déchiffrer vos secrets chiffrés!</string>
+
+    <string name="intro_lock_title">Configuration du verrouillage de l\'application</string>
+    <string name="intro_lock_warning">Il est fortement recommandé d\'activer le verrouillage de l\'accès à l\'application afin de protéger vos secrets.</string>
+
+    <string name="intro_other_title">Autres fonctionnalités</string>
+    <string name="intro_other_feature_encrypted_zip"><![CDATA[Créé, extrayez ou <b>chiffré</b> des fichiers zip.]]></string>
+    <string name="feature_media_saving"><![CDATA[Créer une photo ou une vidéo vers une destination spécifiée.<br/> <small><i>(Par ex: transférer directement un fichier multimédia vers le stockage occulté)</i></small>]]></string>
+
+    <!-- Password prompt dialog -->
+    <string name="password_prompt_title">Entrer le mot de passe</string>
+
+    <!-- Tutorial -->
+    <string name="tutorial">Tutoriel</string>
+
+    <string name="breadcrumb_title">Changer de stockage</string>
+    <string name="breadcrumb_desc"><![CDATA[Ici vous pouvez modifier le stockage.<br/> <small><i>(Par ex: passer au stockage occulté)</i></small>]]></string>
+
+    <string name="file_title">Opérations sur les fichiers</string>
+    <string name="file_desc">Une pression sur le fichier l\'ouvrira. \nUne pression longue sur le fichier déclenchera le mode de manipulation.</string>
+
+    <string name="hide_title">Occulter le fichier</string>
+    <string name="hide_desc">Après une pression longue sur un fichier, vous pouvez l\'occulté avec cette icône.</string>
+
+    <string name="encrypt_title">Chiffrer le fichier</string>
+    <string name="encrypt_desc">Après un appui long sur un fichier, vous pouvez le chiffrer avec cette icône.</string>
+
+    <string name="more_menu_title">Plus d\'opérations sur les fichiers</string>
+    <string name="more_menu_desc"><![CDATA[Après un appui long sur un fichier, vous pouvez trouver plus d\'opérations sur les fichiers ici.<br/> <small><i>(Par ex: créer un zip, créer un zip chiffré, déplacer, copier, renommer, etc.)</i></small>]]></string>
+
+    <!-- Beta warning -->
+    <string name="beta_warning">Ceci est une version bêta de l\'application. Cela signifie que vous ne devez pas utiliser cette application avec des fichiers importants. Les développeurs de cette application ne sont responsables ni de la perte ni de la corruption de vos données!</string>
+
+    <!-- App data confirmation dialog -->
+    <string name="app_data_clear_title">Effacer les données de l\'application</string>
+    <string name="app_data_clear_summary"><![CDATA[Ceci effacera tout vos <b>fichiers occultés</b>, paramètres, cache et autres données d\'application. Vous ne pourrez pas non plus <b>déchiffrer</b> les fichiers chiffrés, qui l\'ont été avec cette application.]]></string>
+    <string name="app_data_clear_confirmation_1">Appuyez à nouveau si vous êtes sûr de vouloir supprimer les fichiers occultés</string>
+    <string name="app_data_clear_confirmation_2">Appuyez à nouveau si vous savez que vous ne pourrez plus déchiffrer les fichiers chiffrés via cette application</string>
+    <string name="app_data_clear_confirmation_3">Appuyez à nouveau si vous êtes sûr de vouloir supprimer les paramètres</string>
+    <string name="app_data_clear_confirmation_4">Appuyez de nouveau pour confirmer la suppression des données de l\'application</string>
+
+</resources>
