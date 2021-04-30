@@ -1,0 +1,79 @@
+<resources>
+
+    <!-- General styles -->
+    <style name="AppTheme" parent="AppBaseTheme" />
+
+    <!-- https://material.io/resources/color/#!/?view.left=0&view.right=0&primary.color=1976D2&primary.text.color=ffffff&secondary.color=FAFAFA -->
+    <style name="AppBaseTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <item name="colorPrimary">@color/color_primary</item>
+        <item name="colorSecondary">@color/md_grey_white</item>
+        <item name="colorPrimaryDark">@color/color_primary_dark</item>
+        <item name="colorAccent">@color/color_accent</item>
+        <item name="colorOnSecondary">@color/default_text_color_light</item>
+        <item name="colorOnSurface">@color/color_primary</item>
+        <item name="android:textColor">@color/default_text_color_light</item>
+        <item name="android:colorBackground">@color/md_grey_white</item>
+        <item name="extendedFloatingActionButtonStyle">
+            @style/Widget.App.ExtendedFloatingActionButton
+        </item>
+        <item name="floatingActionButtonStyle">@style/Widget.App.FloatingActionButton</item>
+    </style>
+
+    <style name="Widget.App.ExtendedFloatingActionButton" parent="Widget.MaterialComponents.ExtendedFloatingActionButton.Icon">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.FloatingActionButton</item>
+    </style>
+
+    <style name="Widget.App.FloatingActionButton" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.FloatingActionButton</item>
+    </style>
+
+    <style name="ThemeOverlay.App.FloatingActionButton" parent="">
+        <item name="colorSecondary">@color/color_primary</item>
+        <item name="colorOnSecondary">@color/md_grey_white</item>
+    </style>
+
+    <!-- Override AppIntro styles -->
+    <style name="AppIntroLayoutStyle">
+        <item name="android:paddingTop">@dimen/appintro_statusbar_height</item>
+        <item name="android:paddingBottom">@dimen/appintro2_bottombar_height</item>
+    </style>
+
+    <style name="AppIntroDefaultHeading" parent="TextAppearance.AppCompat.Display1">
+        <item name="android:textColor">@color/default_text_color_light</item>
+        <item name="android:textSize">@dimen/appintro_headtext_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:padding">@dimen/appintro_head_padding</item>
+        <item name="android:gravity">bottom|center_horizontal</item>
+    </style>
+
+    <style name="AppIntroDefaultText" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:textColor">@color/default_text_color_light</item>
+        <item name="android:textSize">@dimen/appintro_desctext_size</item>
+        <item name="android:padding">@dimen/appintro_desc_padding</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="AppIntroIconText" parent="AppIntroDefaultText">
+        <item name="android:gravity">start</item>
+        <item name="android:drawablePadding">30dp</item>
+    </style>
+
+    <style name="AppIntroInfoText" parent="AppIntroIconText">
+        <item name="drawableStartCompat">@drawable/ic_info_vector</item>
+    </style>
+
+    <style name="AppIntroWarningText" parent="AppIntroIconText">
+        <item name="android:textSize">@dimen/big_text_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/md_orange</item>
+        <item name="drawableStartCompat">@drawable/ic_error_outline_vector</item>
+    </style>
+
+    <style name="AppIntroDangerText" parent="AppIntroIconText">
+        <item name="android:textSize">@dimen/big_text_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/md_red</item>
+        <item name="drawableStartCompat">@drawable/ic_warning_vector</item>
+    </style>
+
+</resources>

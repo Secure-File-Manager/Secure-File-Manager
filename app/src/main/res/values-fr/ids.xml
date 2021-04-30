@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="properties_size" type="id" />
+    <item name="properties_file_count" type="id" />
+    <item name="properties_last_modified" type="id" />
+
+    <item name="properties_md5" type="id" />
+    <item name="properties_sha1" type="id" />
+    <item name="properties_sha256" type="id" />
+    <item name="properties_sha512" type="id" />
+</resources>

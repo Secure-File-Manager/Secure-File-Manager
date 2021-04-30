@@ -1,0 +1,14 @@
+<resources>
+    <string name="package_name">com.securefilemanager.app</string>
+
+    <!-- About -->
+    <string name="about_name_author1">Michal Olenčin (Alfavio)</string>
+    <string name="about_name_author_original">Tibor Kaputa (tibbi)</string>
+
+    <!-- Message digest algorithms -->
+    <string name="md5">MD5</string>
+    <string name="sha1">SHA-1</string>
+    <string name="sha256">SHA-256</string>
+    <string name="sha512">SHA-512</string>
+
+</resources>
