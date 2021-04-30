@@ -11,6 +11,8 @@
 <a href='https://f-droid.org/packages/com.securefilemanager.app'><img src='https://fdroid.gitlab.io/artwork/badge/get-it-on.png' alt='Get it on F-Droid' height='80' /></a>
 <a href='https://github.com/Secure-File-Manager/Secure-File-Manager/releases'><img src='assets/github.png' alt='Get it on Github' height='80' /></a>
 
+### :bangbang: Google Play last release is outdated because updates were rejected [(more here)](https://github.com/Secure-File-Manager/Secure-File-Manager/issues/36)
+
 #### This is a beta version of the app. This means you should not use this app with important files. The developers of this app are not responsible for your data lose or corruption!
 
 **Secure File Manager** is open source file manager for keeping your files in safe. This app is for Android 8.0+.
