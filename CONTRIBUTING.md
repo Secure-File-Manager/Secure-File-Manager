@@ -4,6 +4,7 @@
   - Reporting a bug
   - Discussing the current state of the code
   - Submitting a fix
+  - Performing a translation
   - Proposing new features
   - Becoming a maintainer
 
