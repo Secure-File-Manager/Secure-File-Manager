@@ -11,6 +11,7 @@
  - [I uninstalled my app and all my hidden files are gone. Also, I can't decrypt encrypted files. What should I do now?](https://github.com/Secure-File-Manager/Secure-File-Manager/wiki/Frequently-Asked-Questions/_edit#i-uninstalled-my-app-and-all-my-hidden-files-are-gone-also-i-cant-decrypt-encrypted-files-what-should-i-do-now)
  - [How can I safely uninstall the app?](https://github.com/Secure-File-Manager/Secure-File-Manager/wiki/Frequently-Asked-Questions/_edit#how-can-i-safely-uninstall-the-app)
  - [How do you store my password?](https://github.com/Secure-File-Manager/Secure-File-Manager/wiki/Frequently-Asked-Questions/_edit#how-do-you-store-my-password)
+ - [How can I lock the app?](https://github.com/Secure-File-Manager/Secure-File-Manager/wiki/Frequently-Asked-Questions/_edit#how-can-i-lock-the-app)
  - [How are my files encrypted?](https://github.com/Secure-File-Manager/Secure-File-Manager/wiki/Frequently-Asked-Questions/_edit#how-are-my-files-encrypted)
  - [Where can I request a new feature?](https://github.com/Secure-File-Manager/Secure-File-Manager/wiki/Frequently-Asked-Questions/_edit#where-can-i-request-a-new-feature)
  - [Where can I report a security issue or a vulnerability that I found?](https://github.com/Secure-File-Manager/Secure-File-Manager/wiki/Frequently-Asked-Questions/_edit#where-can-i-report-a-security-issue-or-a-vulnerability-that-i-found)
@@ -58,6 +59,18 @@ We do not store your password while you are creating an encrypted Zip file. If y
 - **Hash length:** 258 bits
 
 The hashed password is stored encrypted in [EncryptedSharedPreferences](https://developer.android.com/reference/androidx/security/crypto/EncryptedSharedPreferences) using [androidx.security.crypto](https://developer.android.com/reference/androidx/security/crypto/package-summary) library. We using AES256-GCM without padding as a key to encrypt the hashed password. If is available, the StrongBox security chip is used. The key is stored in the [Android](https://developer.android.com/training/articles/keystore) keystore. If you are more curious, you are can check the source code.
+
+### How can I lock the app?
+
+To lock the app you must first setup authentication at the settings. After that, the app is locked if one of the conditions is met:
+
+- app was quit
+- app was locked via the notification
+- device was locked
+- app was failed _(some app bug)_
+- device was booted _(if a device was unexpectedly turned off and the app is in unlocked state)_
+
+These requirements are designed for a better user experience.
 
 ### How are my files encrypted?
 
