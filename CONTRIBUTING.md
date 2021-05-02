@@ -4,7 +4,7 @@
   - Reporting a bug
   - Discussing the current state of the code
   - Submitting a fix
-  - Performing a translation
+  - [Performing a translation](https://crowdin.com/project/secure-file-manager)
   - Proposing new features
   - Becoming a maintainer
 

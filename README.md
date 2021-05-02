@@ -1,6 +1,7 @@
 # Secure File Manager
 
 [![Contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](./CONTRIBUTING.md)
+[![Crowdin](https://badges.crowdin.net/secure-file-manager/localized.svg)](https://crowdin.com/project/secure-file-manager)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](./LICENSE)
 [![Privacy Policy](https://img.shields.io/badge/Privacy-Policy-informational.svg)](./PRIVACY_POLICY.md)
 [![FAQ](https://img.shields.io/badge/FAQ-read-informational.svg)](https://github.com/Secure-File-Manager/Secure-File-Manager/wiki/Frequently-Asked-Questions)
@@ -39,6 +40,11 @@
    - clear cached thumbnails
    - set destination for creating media files *(photo / video)*
    - checksum *(MD5, SHA1, SHA256, SHA512)*
+
+### Supported languages
+
+ - English :us:
+ - French :fr: _(thanks to [@Ilithy](https://github.com/Ilithy))_
 
 :warning:  This app is useless if you have [a rooted device](https://github.com/Secure-File-Manager/Secure-File-Manager/wiki/Frequently-Asked-Questions#i-have-a-rooted-device-are-there-some-security-implications)!
 
