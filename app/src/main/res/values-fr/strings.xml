@@ -304,7 +304,7 @@
     <string name="intro_permission_title">Bienvenue!</string>
     <string name="intro_permission_summary">Cette application requiert l\'autorisation d\'accès au stockage. Sans cela, l\'application sera inutile.</string>
     <string name="intro_permission_summary2">Si vous avez cliqué sur "refuser et ne plus demander", vous ne pourrez sélectionner l\'autorisation d\'accès au stockage qu\'à partir des paramètres système de l\'application.</string>
-    <string name="intro_permission_permission_enabled">L\'autorisation d'accès au stokage est activé!</string>
+    <string name="intro_permission_permission_enabled">L\'autorisation d\'accès au stokage est activé!</string>
     <string name="intro_permission_button_permission_text">Autoriser l\'accès au stokage</string>
     <string name="intro_permission_button_settings_text">Ouvrez les paramètres système de l\'application</string>
     <string name="intro_permission_illegally_request_next_page">Veuillez permettre l\'accès au stockage pour continuer</string>
