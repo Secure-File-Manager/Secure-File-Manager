@@ -1,0 +1,17 @@
+Gestionnaire de fichiers pour garder vos fichiers en sécurité.
+
+Fonctionnalités
+    * Occulter des fichiers
+    * Chiffrer des fichiers
+    * Création ou extraction de fichiers Zip chiffrés
+    * Verrouillage de l'application par mot de passe ou authentification biométrique (facultatif).
+    * Désactivation des captures d'écran (facultatif)
+    * Désactivation des vignettes (facultatif)
+    * Effacer les vignettes mises en cache
+    * Définir la destination pour la création de fichiers multimédia (photo / vidéo)
+    * Somme de contrôle (MD5, SHA1, SHA256, SHA512).
+
+Cette application est inutile si vous avez un appareil ayant les privilèges administrateurs!
+
+Clarification des autorisations:
+https://github.com/Secure-File-Manager/Secure-File-Manager/wiki/Frequently-Asked-Questions#why-the-app-needs-specific-permission
