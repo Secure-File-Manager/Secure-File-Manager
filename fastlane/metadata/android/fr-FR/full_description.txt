@@ -15,4 +15,3 @@ Cette application est inutile si vous avez un appareil ayant les privilèges adm
 
 Clarification des autorisations:
 https://github.com/Secure-File-Manager/Secure-File-Manager/wiki/Frequently-Asked-Questions#why-the-app-needs-specific-permission
-© 2021 GitHub, Inc.
