@@ -1,0 +1,3 @@
+* Update dependencies
+* Bug fixes
+* Add French language

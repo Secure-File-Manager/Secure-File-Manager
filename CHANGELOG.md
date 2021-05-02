@@ -1,5 +1,12 @@
 # Changelog
 
+#### v0.1.8 - beta
+
+ * Update dependencies
+ * Bug fixes
+ * Add French language
+
+
 #### v0.1.7 - beta2
 
  * Update news policy

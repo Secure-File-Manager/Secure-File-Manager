@@ -26,8 +26,8 @@ android {
         minSdkVersion rootProject.minSdkVersion
         targetSdkVersion rootProject.targetSdkVersion
         setProperty("archivesBaseName", "secure-file-manager")
-        versionCode 10
-        versionName "0.1.7-beta2"
+        versionCode 11
+        versionName "0.1.8-beta"
     }
 
     buildTypes {
