@@ -8,11 +8,10 @@
 
 <img alt="Logo" src="fastlane/metadata/android/en-US/images/icon.png" width="120" />
 
-<a href='https://play.google.com/store/apps/details?id=com.securefilemanager.app'><img src='https://play.google.com/intl/en_us/badges/images/generic/en-play-badge.png' alt='Get it on Google Play' height='80' /></a>
 <a href='https://f-droid.org/packages/com.securefilemanager.app'><img src='https://fdroid.gitlab.io/artwork/badge/get-it-on.png' alt='Get it on F-Droid' height='80' /></a>
 <a href='https://github.com/Secure-File-Manager/Secure-File-Manager/releases'><img src='assets/github.png' alt='Get it on Github' height='80' /></a>
 
-### :bangbang: Google Play last release is outdated because updates were rejected [(more here)](https://github.com/Secure-File-Manager/Secure-File-Manager/issues/36)
+### :bangbang: Google Play last release is outdated because updates were rejected. For this reason, the app was unpublished from Google Play. [(more here)](https://github.com/Secure-File-Manager/Secure-File-Manager/issues/36)
 
 #### This is a beta version of the app. This means you should not use this app with important files. The developers of this app are not responsible for your data lose or corruption!
 
@@ -84,8 +83,6 @@ This app is based on the [Simple File Manager](https://github.com/SimpleMobileTo
 ## License :copyright:
 
 Licensed under the [GPLv3](./LICENSE).
-
-Google Play logo is trademarks of Google Inc.
 
 F-Droid logo is trademarks of F-Droid Limited.
 
