@@ -5,7 +5,7 @@ import android.os.Build
 import android.security.keystore.KeyGenParameterSpec
 import android.security.keystore.KeyProperties
 import androidx.security.crypto.EncryptedSharedPreferences
-import androidx.security.crypto.MasterKey
+//import androidx.security.crypto.MasterKey
 import java.io.IOException
 import java.security.GeneralSecurityException
 
@@ -18,7 +18,7 @@ class PrefCrypto : Key() {
         private const val ENCRYPTION_BLOCK_MODE = KeyProperties.BLOCK_MODE_GCM
         private const val ENCRYPTION_PADDING = KeyProperties.ENCRYPTION_PADDING_NONE
         private const val PURPOSE = KeyProperties.PURPOSE_ENCRYPT or KeyProperties.PURPOSE_DECRYPT
-        private const val APP_KEY_SIZE = MasterKey.DEFAULT_AES_GCM_MASTER_KEY_SIZE
+        private const val APP_KEY_SIZE = 256
 
         val PREF_KEY_ENCRYPTION_SCHEME =
             EncryptedSharedPreferences.PrefKeyEncryptionScheme.AES256_SIV
@@ -44,9 +44,9 @@ class PrefCrypto : Key() {
                 }
             }.build()
 
-        fun getKey(context: Context): MasterKey {
+        fun getKey(context: Context): String {
             try {
-                return getKey(context, keyStrongBox, key, KEY_ALIAS)
+                return key.keystoreAlias
             } catch (e: Exception) {
                 when (e) {
                     is GeneralSecurityException, is IOException -> {

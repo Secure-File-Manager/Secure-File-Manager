@@ -364,8 +364,8 @@ fun BaseAbstractActivity.getFileOutputStreamSync(
 
 fun Context.getEncryptedFile(file: File): EncryptedFile =
     EncryptedFile.Builder(
-        this,
         file,
+        this,
         FileCrypto.getKey(this),
         FileCrypto.ENCRYPTION_SCHEME
     ).build()

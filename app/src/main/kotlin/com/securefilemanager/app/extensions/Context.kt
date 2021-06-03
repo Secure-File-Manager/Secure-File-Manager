@@ -37,9 +37,9 @@ fun Context.getSharedPrefs(): SharedPreferences =
     getSharedPreferences(PREFS_KEY, Context.MODE_PRIVATE)
 
 fun Context.getEncryptedSharedPrefs() = EncryptedSharedPreferences.create(
-    this,
     PrefCrypto.KEY_ALIAS,
     PrefCrypto.getKey(this),
+    this,
     PrefCrypto.PREF_KEY_ENCRYPTION_SCHEME,
     PrefCrypto.PREF_VALUE_ENCRYPTION_SCHEME
 )
