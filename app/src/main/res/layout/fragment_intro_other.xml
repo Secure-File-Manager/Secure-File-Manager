@@ -1,55 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/main"
-    style="@style/AppIntroLayoutStyle"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <TextView
-        android:id="@+id/title"
-        style="@style/AppIntroDefaultHeading"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/intro_other_title"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/settings_disable_screenshots"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        style="@style/AppIntroLayoutStyle"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title" />
+        android:layout_height="match_parent">
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/settings_show_media_thumbnail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/settings_disable_screenshots" />
+        <TextView
+            android:id="@+id/title"
+            style="@style/AppIntroDefaultHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/intro_other_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/feature_encrypted_zip_text"
-        style="@style/AppIntroIconText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/intro_other_feature_encrypted_zip"
-        app:drawableStartCompat="@drawable/ic_folder_key_vector"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/settings_show_media_thumbnail" />
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/settings_disable_screenshots"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/title" />
 
-    <TextView
-        android:id="@+id/feature_media_saving"
-        style="@style/AppIntroIconText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/feature_media_saving"
-        app:drawableStartCompat="@drawable/ic_camera_vector"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/feature_encrypted_zip_text" />
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/settings_show_media_thumbnail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/settings_disable_screenshots" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/feature_encrypted_zip_text"
+            style="@style/AppIntroIconText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/intro_other_feature_encrypted_zip"
+            app:drawableStartCompat="@drawable/ic_folder_key_vector"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/settings_show_media_thumbnail" />
+
+        <TextView
+            android:id="@+id/feature_media_saving"
+            style="@style/AppIntroIconText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/feature_media_saving"
+            app:drawableStartCompat="@drawable/ic_camera_vector"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/feature_encrypted_zip_text" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
