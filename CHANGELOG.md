@@ -1,12 +1,17 @@
 # Changelog
 
+#### v0.1.9 - beta
+
+* Add Danish language
+* Add Japanese language
+* Add Russian language
+
 #### v0.1.8 - beta
 
  * Update dependencies
  * Bug fixes
  * Add French language
-
-
+ 
 #### v0.1.7 - beta2
 
  * Update news policy
@@ -18,8 +23,7 @@
  * Add expandable floating action buttons
  * Update dependencies
  * Bug fixes
-
-
+ 
 #### v0.1.6 - beta
 
  * Update dependencies
