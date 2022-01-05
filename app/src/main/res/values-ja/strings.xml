@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ok">OK</string>
+    <string name="cancel">キャンセル</string>
+    <string name="checksum">チェックサム</string>
+    <string name="save_as">以下の形式で保存</string>
+    <string name="an_error_occurred">エラーが発生しました: %s</string>
+    <string name="open_with">次のアプリで開く</string>
+    <string name="no_app_found">有効なアプリが見つかりません</string>
+    <string name="set_as">設定</string>
+    <string name="value_copied_to_clipboard">値がクリップボードにコピーされました</string>
+    <string name="download">ダウンロード</string>
+    <string name="folder_empty">フォルダが空です</string>
+    <string name="description">ファイルを安全に管理する事ができるファイルマネージャーです。</string>
+    <string name="clear">クリア</string>
+    <!-- Favorites -->
+    <string name="favorites">お気に入り</string>
+    <string name="add_favorites">お気に入りに追加</string>
+    <string name="add_to_favorites">お気に入りに追加</string>
+    <string name="remove_from_favorites">お気に入りから削除</string>
+    <string name="manage_favorites">お気に入りの管理</string>
+    <string name="go_to_favorite">お気に入りを開く</string>
+    <string name="favorites_activity_placeholder">頻繁に使用するフォルダをお気に入りに追加して、どこからでも簡単にアクセスできます。</string>
+    <!-- Search -->
+    <string name="search">検索</string>
+    <string name="type_2_characters">2文字以上入力してください</string>
+    <!-- Filters -->
+    <string name="filter">フィルタ</string>
+    <string name="no_items_found">アイテムが見つかりませんでした</string>
+    <!-- Permissions -->
+    <string name="no_storage_permissions">ストレージの許可が必要です</string>
+    <!-- Renaming -->
+    <string name="source_file_doesnt_exist">指定したファイル %s が存在しません</string>
+    <string name="prepend_filenames">ファイル名の前に追加</string>
+    <string name="append_filenames">ファイル名の後に追加</string>
+    <string name="string_to_add">追加する文字列</string>
+    <!-- Copy / Move -->
+    <string name="move">移動</string>
+    <string name="copy_to">コピー先</string>
+    <string name="move_to">移動先</string>
+    <string name="invalid_destination">選択した宛先には書き込み権限がありません</string>
+    <string name="source_and_destination_same">元ファイルと宛先ファイルを同じ場所には指定できません</string>
+    <string name="copying">コピー中...</string>
+    <string name="copying_success">ファイルコピーが完了しました</string>
+    <string name="copy_move_failed">エラーが発生しました</string>
+    <string name="copying_success_partial">一部のファイルがコピーできませんでした</string>
+    <string name="moving">移動中...</string>
+    <string name="moving_success">ファイルの移動が完了しました</string>
+    <string name="moving_success_partial">一部のファイルが移動できませんでした</string>
+    <string name="encrypting">暗号化中...</string>
+    <string name="encrypting_success">ファイルの暗号化が完了しました</string>
+    <string name="encryption_failed">エラーが発生しました</string>
+    <string name="encrypting_success_partial">一部のファイルが暗号化できませんでした</string>
+    <string name="decrypting">復号中...</string>
+    <string name="decrypting_success">ファイルの復号が完了しました</string>
+    <string name="decryption_failed">エラーが発生しました</string>
+    <string name="decrypting_success_partial">一部のファイルが復号できませんでした</string>
+    <string name="hiding">隠しファイルに設定しています...</string>
+    <string name="hiding_success">隠しファイルの作成が完了しました</string>
+    <string name="hiding_success_partial">一部のファイルを隠しファイルに変更できませんでした</string>
+    <string name="unhiding">再表示中...</string>
+    <string name="unhiding_success">隠しファイルの再表示が完了しました</string>
+    <string name="unhiding_success_partial">一部のファイルを再表示できませんでした</string>
+    <string name="could_not_create_folder">%s フォルダを作成できませんでした</string>
+    <string name="could_not_create_file">%s ファイルを作成できませんでした</string>
+    <string name="no_space">宛先に十分な空き容量がありません。\n 必要: %1$s, 空き: %2$s</string>
+    <string name="saving">保存中...</string>
+    <string name="file_saved">ファイルの保存が完了しました</string>
+    <!-- Create new -->
+    <string name="create_new">新規作成</string>
+    <string name="folder">フォルダ</string>
+    <string name="file">ファイル</string>
+    <string name="create_new_folder">新しいフォルダを作成</string>
+    <string name="name_taken">ファイルまたはフォルダ名がすでに存在します</string>
+    <string name="invalid_name">名前に使用できない文字が含まれています</string>
+    <string name="empty_name">名前を入力してください</string>
+    <string name="unknown_error_occurred">不明なエラーが発生しました</string>
+    <!-- Password authentication -->
+    <string name="invalid_password">パスワードが無効です</string>
+    <string name="password_not_match">パスワードが一致しません</string>
+    <string name="invalid_password_pattern">パスワードは8文字以上かつ、英数字が1つ以上含まれている必要があります</string>
+    <string name="password_hint">パスワード</string>
+    <string name="password_again_hint">パスワードの再入力</string>
+    <!-- File operation conflicts -->
+    <string name="file_already_exists">ファイル %s は既に存在します</string>
+    <string name="folder_already_exists">フォルダ %s は既に存在します</string>
+    <string name="merge">結合</string>
+    <string name="keep_both">両方を維持する</string>
+    <string name="overwrite">上書き</string>
+    <string name="skip">スキップ</string>
+    <string name="apply_to_all">すべてに適用</string>
+    <!-- File picker -->
+    <string name="select_folder">フォルダを選択</string>
+    <string name="select_file">ファイルを選択</string>
+    <string name="confirm_storage_access_title">外部ストレージのアクセスを確認してください</string>
+    <string name="confirm_storage_access_text">次の画面でSDカードの最上位のフォルダを選択し、アクセスを許可してください。</string>
+    <string name="confirm_storage_access_text_sd">SDカードが表示されない場合、次の手順をお試しください</string>
+    <string name="confirm_selection">選択を確認</string>
+    <string name="tutorial_hide_description"><![CDATA[ここでは隠しストレージ内のファイルの保存先を確認できます。<br/> <small><i>ヒント: 隠しストレージの中にはフォルダを作成する事で隠しファイルの分類分けができます。</small></i>]]></string>
+    <plurals name="items">
+        <item quantity="other">%d 件</item>
+    </plurals>
+    <plurals name="delete_items">
+        <item quantity="other">%d 件</item>
+    </plurals>
+    <!-- Storages -->
+    <string name="select_storage">ストレージを選択</string>
+    <string name="internal">内蔵ストレージ</string>
+    <string name="hidden">隠しストレージ</string>
+    <string name="sd_card">SDカード</string>
+    <string name="wrong_root_selected">間違ったフォルダが選択されました。SDカードのルートフォルダを選択してください。</string>
+    <string name="sd_card_usb_same">SDカードとUSBメモリのパスを同一にすることはできません</string>
+    <!-- File properties -->
+    <string name="properties">詳細</string>
+    <string name="path">パス</string>
+    <string name="items_selected">アイテムが選択されました</string>
+    <string name="direct_children_count">フォルダ内のアイテム数</string>
+    <string name="files_count">総ファイル数</string>
+    <string name="resolution">解像度</string>
+    <string name="duration">期限</string>
+    <string name="artist">アーティスト</string>
+    <string name="album">アルバム</string>
+    <string name="focal_length">焦点距離</string>
+    <string name="exposure_time">露光時間</string>
+    <string name="iso_speed">ISO</string>
+    <string name="f_number">F値</string>
+    <string name="camera">カメラ</string>
+    <string name="exif">EXIF</string>
+    <string name="song_title">曲名</string>
+    <string name="gps_coordinates">GPS座標</string>
+    <string name="altitude">高度</string>
+    <!-- Actionbar items -->
+    <string name="delete">削除</string>
+    <string name="remove">消去</string>
+    <string name="rename">名前の変更</string>
+    <string name="share">共有</string>
+    <string name="share_via">次のアプリで共有</string>
+    <string name="select_all">すべて選択</string>
+    <string name="hide">隠す</string>
+    <string name="unhide">再表示する</string>
+    <string name="encrypt">暗号化</string>
+    <string name="decrypt">復号</string>
+    <string name="maximum_share_reached">一度に大量のファイルを共有する事はできません</string>
+    <string name="create_shortcut">ショートカットを作成</string>
+    <!-- Sorting -->
+    <string name="sort_by">並び替え</string>
+    <string name="name">ファイル名</string>
+    <string name="size">サイズ</string>
+    <string name="last_modified">最終更新</string>
+    <string name="date_taken">撮影日</string>
+    <string name="filename">ファイル名</string>
+    <string name="extension">拡張子</string>
+    <string name="ascending">昇順</string>
+    <string name="descending">降順</string>
+    <string name="use_for_this_folder">このフォルダのみに適用</string>
+    <!-- Confirmation dialog -->
+    <string name="proceed_with_deletion">本当に削除しますか？</string>
+    <string name="deletion_confirmation">本当に %s を削除しますか?</string>
+    <string name="share_hidden_file_confirmation">本当に %s を隠しストレージから削除しますか?</string>
+    <string name="yes">はい</string>
+    <string name="no">いいえ</string>
+    <!-- Authentication -->
+    <string name="authenticate">認証</string>
+    <string name="app_unlocked_notification">アプリがロック解除されています。ここをタップしてロック。</string>
+    <string name="prompt_info_title">アプリがロックされています</string>
+    <string name="prompt_info_use_app_password">パスワードを使用</string>
+    <string name="password_setup_title">パスワードを設定</string>
+    <string name="password_remove">消去</string>
+    <string name="lock_app">アプリをロック</string>
+    <string name="authentication_service_description">アプリのロック解除を制御するサービスです</string>
+    <string name="lock_receiver_description">起動時と終了時にアプリをロックするためのレシーバーです</string>
+    <!-- Settings -->
+    <string name="settings">設定</string>
+    <string name="manage_storage">ストレージの管理</string>
+    <string name="settings_general">一般</string>
+    <string name="font_size">フォントサイズ</string>
+    <string name="app_system_settings">アプリのシステム設定</string>
+    <string name="small">小</string>
+    <string name="medium">中</string>
+    <string name="large">大</string>
+    <string name="extra_large">特大</string>
+    <string name="keep_last_modified_title">ファイルの更新日時を維持する</string>
+    <string name="keep_last_modified_summary_off">ファイルの更新日時を維持する設定が有効になっています</string>
+    <string name="keep_last_modified_summary_on">ファイルの更新日時を維持する設定が有効になっています</string>
+    <string name="keep_after_encryption_operation_title">元のファイルを維持</string>
+    <string name="keep_after_encryption_operation_summary_off">暗号化および複合後に元のファイルを維持する設定が無効になっています</string>
+    <string name="keep_after_encryption_operation_summary_on">暗号化および複合後に元のファイルを維持する設定が有効になっています</string>
+    <string name="disable_screenshots_title">スクリーンショットの禁止</string>
+    <string name="disable_screenshots_summary_off">アプリ内と「最近開いたアプリ」でのスクリーンショットの撮影禁止設定が無効になっています</string>
+    <string name="disable_screenshots_summary_on">アプリ内と「最近開いたアプリ」でのスクリーンショットの撮影禁止設定が有効になっています</string>
+    <string name="show_media_thumbnail_title">サムネイルを表示</string>
+    <string name="show_media_thumbnail_summary_off">サムネイル表示が無効になっています</string>
+    <string name="show_media_thumbnail_summary_on">サムネイル表示が有効になっています</string>
+    <string name="media_thumbnail_clear_title">サムネイルのキャッシュを消去</string>
+    <string name="media_thumbnail_clear_cleared">キャッシュが消去されました</string>
+    <string name="app_data_cleared">アプリのデータが消去されました</string>
+    <string name="app_data_error">アプリのデータを削除している最中にエラーが発生しました</string>
+    <string name="app_lock_title">アプリへのアクセスロック</string>
+    <string name="app_lock_summary_off">アプリへのアクセスロックが無効になっています</string>
+    <string name="app_lock_summary_on">アプリへのアクセスロックが有効になっています</string>
+    <string name="app_lock_summary_on_warning">パスワードまたは生体認証が設定されていません</string>
+    <string name="app_lock_summary_on_warning_biometric">生体認証が利用できません</string>
+    <string name="use_biometric_authentication_title">生体認証を使用</string>
+    <string name="use_biometric_authentication_summary_off">生体認証を使用する設定が無効になっています</string>
+    <string name="use_biometric_authentication_summary_on">生体認証を使用する設定が有効になっています</string>
+    <string name="use_biometric_authentication_summary_on_warning">生体認証が利用できません</string>
+    <string name="use_24_hour_time_format_title">24時間表記の使用</string>
+    <string name="use_24_hour_time_format_title_summary_off">12時間表記が使用されます</string>
+    <string name="use_24_hour_time_format_title_summary_on">24時間表記が使用されます</string>
+    <string name="change_date_and_time_format_title">日時のフォーマットを変更</string>
+    <string name="theme_title">テーマ</string>
+    <string name="theme_light">白</string>
+    <string name="theme_dark">黒</string>
+    <string name="theme_system">システム設定に合わせる</string>
+    <string name="set_app_password_title">アプリパスワードを設定</string>
+    <string name="set_app_password_summary_on">パスワードが設定されています</string>
+    <string name="set_app_password_summary_off">パスワードが設定されていません</string>
+    <string name="app_open_biometric_settings_summary">生体認証が設定されていません。ここをクリックして設定を開く。</string>
+    <string name="app_lock_info_summary">生体認証は、パスワードに比べて安全性が大幅に低下します。ファイルのセキュリティを向上させるためには、アプリのアクセス制限にパスワードのみを使用することをお勧めします。両方を使用することもできます。</string>
+    <!-- Setting sections -->
+    <string name="security">セキュリティ</string>
+    <string name="file_operations">ファイル操作</string>
+    <string name="app_name">Secure File Manager Beta</string>
+    <string name="app_launcher_name">安全なファイル</string>
+    <string name="press_back_again">もう一度戻るボタンを押すと終了します</string>
+    <string name="go_to_home_folder">ホームフォルダに戻る</string>
+    <string name="set_as_home_folder">ホームフォルダに設定</string>
+    <string name="home_folder_updated">ホームフォルダが変更されました</string>
+    <string name="copy_path">パスをクリップボードにコピー</string>
+    <string name="path_copied">パスがコピーされました</string>
+    <string name="select_audio_file">音声ファイルを選択してください</string>
+    <!-- Open as -->
+    <string name="open_as">次のファイルとして開く</string>
+    <string name="text_file">テキスト</string>
+    <string name="image_file">画像</string>
+    <string name="audio_file">音声</string>
+    <string name="video_file">動画</string>
+    <string name="other_file">その他</string>
+    <!-- Compression -->
+    <string name="password">パスワード</string>
+    <string name="compress">zipを作成</string>
+    <string name="decompress">展開</string>
+    <string name="compress_as">zipを作成</string>
+    <string name="compressing">zipを作成しています...</string>
+    <string name="starting">開始中...</string>
+    <string name="decompressing">展開中...</string>
+    <string name="canceling">中止しています...</string>
+    <string name="compression_successful">zipの作成が完了しました</string>
+    <string name="decompression_successful">展開が完了しました</string>
+    <string name="compressing_failed">zipの作成に失敗しました</string>
+    <string name="decompressing_failed">展開に失敗</string>
+    <string name="decompress_password_title">%s のパスワード</string>
+    <string name="decompress_conflicts">%sが競合しているため、展開できませんでした</string>
+    <string name="compression_action_collision">一度に作成できるzipは一つまでです</string>
+    <string name="stop">中止</string>
+    <string name="compression_receiver_description">通知のアクションを制御するためのZipManagerService用レシーバーです</string>
+    <string name="compression_service_description">zipファイルの作成と展開を制御するサービスです</string>
+    <!-- About -->
+    <string name="about">詳細</string>
+    <string name="about_tab_about">詳細</string>
+    <string name="about_tab_libraries">ライブラリ</string>
+    <string name="about_label_changelog">変更履歴</string>
+    <string name="about_label_privacy_policy">プライバシーポリシ</string>
+    <string name="about_label_license">ライセンス</string>
+    <string name="about_label_gnu">GNUライセンス</string>
+    <string name="about_label_source">ソースコード</string>
+    <string name="about_label_version">バージョン</string>
+    <string name="about_label_faq">よくある質問と答え</string>
+    <string name="about_label_contribute">貢献</string>
+    <string name="about_label_faq_long">よくある質問</string>
+    <string name="about_title_authors">作成者</string>
+    <string name="about_label_main_developer">開発者</string>
+    <string name="about_label_original_author">元アプリの作成者</string>
+    <string name="about_label_original_app">元アプリ</string>
+    <!-- Intro -->
+    <string name="introduction">はじめに</string>
+    <string name="intro_permission_title">ようこそ！</string>
+    <string name="intro_permission_summary">このアプリはストレージの権限が必要です。ストレージの権限を許可しないと利用することはできません。</string>
+    <string name="intro_permission_summary2">「拒否 &amp; 再表示しない」を選択した場合、ストレージの許可をシステム設定から行ってください。</string>
+    <string name="intro_permission_permission_enabled">ストレージの許可が有効になりました!</string>
+    <string name="intro_permission_button_permission_text">ストレージの権限を許可する</string>
+    <string name="intro_permission_button_settings_text">アプリのシステム設定を開く</string>
+    <string name="intro_permission_illegally_request_next_page">続けるにはストレージの権限を許可してください</string>
+    <string name="intro_hiding_title">ファイルの非表示機能</string>
+    <string name="intro_hiding_summary">このアイコンが表示されているファイルは隠しストレージに移動されます。</string>
+    <string name="intro_hiding_summary2">このアイコンが表示されているファイルは隠しストレージから選択した場所に移動されます。</string>
+    <string name="intro_hiding_info"><![CDATA[隠しストレージはこのアプリから<b>のみ</b>参照できます。]]></string>
+    <string name="intro_hiding_warning">警告: アプリをアンインストールするかデータを消去した場合、すべての隠しファイルは削除されます。</string>
+    <string name="intro_encrypting_title">ファイルの暗号化機能</string>
+    <string name="intro_encrypting_summary">このアイコンが表示されているファイルは暗号化されます。</string>
+    <string name="intro_encrypting_summary2">このアイコンが表示されているファイルは復号されます。</string>
+    <string name="intro_encrypting_info_1"><![CDATA[ファイルは<b>パスワードなし</b>で暗号化され、鍵は安全な<i>AndroidKeyStore内</i>に格納されます。]]></string>
+    <string name="intro_encrypting_info_2"><![CDATA[暗号化は許可されていない人がファイルを読み取るのを防ぐ事ができます。]]></string>
+    <string name="intro_encrypting_warning">警告: アプリをアンインストールすると暗号化されたファイルは二度と復号できません。</string>
+    <string name="intro_lock_title">ロック機能の設定</string>
+    <string name="intro_lock_warning">あなたの秘密を守るために、ロック機能を有効にすることを強くお勧めします。</string>
+    <string name="intro_other_title">その他の機能</string>
+    <string name="intro_other_feature_encrypted_zip"><![CDATA[<b>暗号化された</b> zip ファイルを作成したり展開したりする事ができます]]></string>
+    <string name="feature_media_saving"><![CDATA[指定した場所に画像や動画ファイルを作成できます。<br/><small><i>(例: メディアファイルを直接隠しストレージに取り込む)</i></small>]]></string>
+    <!-- Password prompt dialog -->
+    <string name="password_prompt_title">パスワードを入力</string>
+    <!-- Tutorial -->
+    <string name="tutorial">チュートリアル</string>
+    <string name="breadcrumb_title">ストレージの変更</string>
+    <string name="breadcrumb_desc"><![CDATA[ここではストレージを変更することができます。<br/> <small><i>(例: 隠しストレージへ変更)</i></small>]]></string>
+    <string name="file_title">ファイル操作</string>
+    <string name="file_desc">ファイルを押すとファイルが開きます。\nファイルを長押しすると操作モードになります。</string>
+    <string name="hide_title">ファイルを隠す</string>
+    <string name="hide_desc">ファイルを長押しすると、このアイコンでファイルを隠すことができます。</string>
+    <string name="encrypt_title">ファイルの暗号化</string>
+    <string name="encrypt_desc">ファイルを長押しすると、このアイコンでファイルを暗号化することができます。</string>
+    <string name="more_menu_title">その他のファイル操作</string>
+    <string name="more_menu_desc"><![CDATA[ファイルを長押しした後、ここでさらにファイル操作を行うことができます。<br/> <small><i>(例：ZIPの作成、暗号化ZIPの作成、移動、コピー、名前の変更など)</i></small>]]></string>
+    <!-- Beta warning -->
+    <string name="beta_warning">これはアプリのベータ版です。重要なファイルでこのアプリを使用しないでください。このアプリの開発者は、あなたのデータの紛失や破損について一切の責任を負うことはありません。</string>
+    <!-- App data confirmation dialog -->
+    <string name="app_data_clear_title">アプリのデータを消去</string>
+    <string name="app_data_clear_summary"><![CDATA[<b>隠しファイル</b>、設定、キャッシュ、その他のデータを含むすべてのデータを削除します。また、このアプリで暗号化されたデータも<b>復号</b>することができなくなります。]]></string>
+    <string name="app_data_clear_confirmation_1">隠しファイルを削除するにはもう一度タップしてください。</string>
+    <string name="app_data_clear_confirmation_2">このアプリで暗号化されたファイルを復号できなくなります。それでも続けるには再度タップしてください。</string>
+    <string name="app_data_clear_confirmation_3">設定を削除するにはもう一度タップしてください。</string>
+    <string name="app_data_clear_confirmation_4">もう一度タップすると、アプリデータの削除が確定します。</string>
+</resources>

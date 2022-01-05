@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ok">Ok</string>
+    <string name="cancel">Annullér</string>
+    <string name="checksum">Checksum</string>
+    <string name="save_as">Gem som</string>
+    <string name="an_error_occurred">En fejl opstod: %s</string>
+    <string name="open_with">Åben med</string>
+    <string name="no_app_found">Ingen gyldig app fundet</string>
+    <string name="set_as">Sæt som</string>
+    <string name="value_copied_to_clipboard">Value copied to clipboard</string>
+    <string name="download">Hent</string>
+    <string name="folder_empty">Mappe er tom</string>
+    <string name="description">Open source file manager for keeping your files in safe</string>
+    <string name="clear">Ryd</string>
+    <!-- Favorites -->
+    <string name="favorites">Favoritter</string>
+    <string name="add_favorites">Tilføj favoritter</string>
+    <string name="add_to_favorites">Tilføj til favoritter</string>
+    <string name="remove_from_favorites">Fjern fra favoritter</string>
+    <string name="manage_favorites">Håndter favoritter</string>
+    <string name="go_to_favorite">Gå til favoritter</string>
+    <string name="favorites_activity_placeholder">You can add frequently used folders to favorites for easy access from anywhere.</string>
+    <!-- Search -->
+    <string name="search">Søg</string>
+    <string name="type_2_characters">Type in at least 2 characters to start the search.</string>
+    <!-- Filters -->
+    <string name="filter">Filter</string>
+    <string name="no_items_found">No items found.</string>
+    <!-- Permissions -->
+    <string name="no_storage_permissions">Storage permission is required</string>
+    <!-- Renaming -->
+    <string name="source_file_doesnt_exist">Source file %s doesn\'t exist</string>
+    <string name="prepend_filenames">Prepend filenames</string>
+    <string name="append_filenames">Append filenames</string>
+    <string name="string_to_add">String to add</string>
+    <!-- Copy / Move -->
+    <string name="move">Flyt</string>
+    <string name="copy_to">Kopier til</string>
+    <string name="move_to">Flyt til</string>
+    <string name="invalid_destination">Could not write to the selected destination</string>
+    <string name="source_and_destination_same">Source and destination cannot be the same</string>
+    <string name="copying">Kopierer…</string>
+    <string name="copying_success">Files copied successfully</string>
+    <string name="copy_move_failed">En fejl opstod</string>
+    <string name="copying_success_partial">Some files could not be copied</string>
+    <string name="moving">Flytter…</string>
+    <string name="moving_success">Files moved successfully</string>
+    <string name="moving_success_partial">Some files could not be moved</string>
+    <string name="encrypting">Krypterer…</string>
+    <string name="encrypting_success">Files encrypted successfully</string>
+    <string name="encryption_failed">En fejl opstod</string>
+    <string name="encrypting_success_partial">Some files could not be encrypted</string>
+    <string name="decrypting">Dekrypterer…</string>
+    <string name="decrypting_success">Files decrypted successfully</string>
+    <string name="decryption_failed">En fejl opstod</string>
+    <string name="decrypting_success_partial">Some files could not be decrypted</string>
+    <string name="hiding">Skjuler…</string>
+    <string name="hiding_success">Files hidden successfully</string>
+    <string name="hiding_success_partial">Some files could not be hidden</string>
+    <string name="unhiding">Unhiding…</string>
+    <string name="unhiding_success">Files unhidden successfully</string>
+    <string name="unhiding_success_partial">Some files could not be unhidden</string>
+    <string name="could_not_create_folder">Kunne ikke oprette mappe %s</string>
+    <string name="could_not_create_file">Kunne ikke oprette fil %s</string>
+    <string name="no_space">The destination does not have enough space available.\nRequired %1$s, available %2$s</string>
+    <string name="saving">Gemmer…</string>
+    <string name="file_saved">File saved successfully</string>
+    <!-- Create new -->
+    <string name="create_new">Opret ny</string>
+    <string name="folder">Mappe</string>
+    <string name="file">Fil</string>
+    <string name="create_new_folder">Opret ny mappe</string>
+    <string name="name_taken">A file or folder with that name already exists</string>
+    <string name="invalid_name">The name contains invalid characters</string>
+    <string name="empty_name">Angiv venligst et navn</string>
+    <string name="unknown_error_occurred">En ukendt fejl opstod</string>
+    <!-- Password authentication -->
+    <string name="invalid_password">Ugyldig adgangskode</string>
+    <string name="password_not_match">Passwords do not match</string>
+    <string name="invalid_password_pattern">Adgangskode skal indeholde 8 karakterer og mindst et nummer og et bogstav</string>
+    <string name="password_hint">Adgangskode</string>
+    <string name="password_again_hint">Password verification</string>
+    <!-- File operation conflicts -->
+    <string name="file_already_exists">Fil \"%s\" eksisterer allerede</string>
+    <string name="folder_already_exists">Mappe \"%s\" eksisterer allerede</string>
+    <string name="merge">Merge</string>
+    <string name="keep_both">Behold begge</string>
+    <string name="overwrite">Overskriv</string>
+    <string name="skip">Spring over</string>
+    <string name="apply_to_all">Apply to all</string>
+    <!-- File picker -->
+    <string name="select_folder">Vælg en mappe</string>
+    <string name="select_file">Vælg en fil</string>
+    <string name="confirm_storage_access_title">Confirm external storage access</string>
+    <string name="confirm_storage_access_text">Please choose the top folder of the SD card on the next screen, to grant write access</string>
+    <string name="confirm_storage_access_text_sd">Hvis du ikke kan se SD kortet, prøv dette</string>
+    <string name="confirm_selection">Bekræft valg</string>
+    <string name="tutorial_hide_description"><![CDATA[Here you can confirm destination for file in the hidden storage.<br/> <small><i>Tip: You can create folders in the hidden storage for better organization of the hidden files</small></i>]]></string>
+    <plurals name="items">
+        <item quantity="one">%d item</item>
+        <item quantity="other">%d items</item>
+    </plurals>
+    <plurals name="delete_items">
+        <item quantity="one">%d item</item>
+        <item quantity="other">%d items</item>
+    </plurals>
+    <!-- Storages -->
+    <string name="select_storage">Select storage</string>
+    <string name="internal">Internt</string>
+    <string name="hidden">Skjult</string>
+    <string name="sd_card">SD kort</string>
+    <string name="wrong_root_selected">Wrong folder selected, please select the root folder of your SD card</string>
+    <string name="sd_card_usb_same">SD card and USB device paths cannot be the same</string>
+    <!-- File properties -->
+    <string name="properties">Egenskaber</string>
+    <string name="path">Sti</string>
+    <string name="items_selected">Items selected</string>
+    <string name="direct_children_count">Direct children count</string>
+    <string name="files_count">Antal filer i alt</string>
+    <string name="resolution">Opløsning</string>
+    <string name="duration">Varighed</string>
+    <string name="artist">Kunstner</string>
+    <string name="album">Album</string>
+    <string name="focal_length">Focal length</string>
+    <string name="exposure_time">Exposure time</string>
+    <string name="iso_speed">ISO speed</string>
+    <string name="f_number">F-number</string>
+    <string name="camera">Kamera</string>
+    <string name="exif">EXIF</string>
+    <string name="song_title">Sangtitel</string>
+    <string name="gps_coordinates">GPS koordinater</string>
+    <string name="altitude">Altitude</string>
+    <!-- Actionbar items -->
+    <string name="delete">Slet</string>
+    <string name="remove">Fjern</string>
+    <string name="rename">Omdøb</string>
+    <string name="share">Del</string>
+    <string name="share_via">Del via</string>
+    <string name="select_all">Vælg alle</string>
+    <string name="hide">Skjul</string>
+    <string name="unhide">Unhide</string>
+    <string name="encrypt">Krypter</string>
+    <string name="decrypt">Dekrypter</string>
+    <string name="maximum_share_reached">You cannot share this much content at once</string>
+    <string name="create_shortcut">Opret genvej</string>
+    <!-- Sorting -->
+    <string name="sort_by">Sortér efter</string>
+    <string name="name">Navn</string>
+    <string name="size">Størrelse</string>
+    <string name="last_modified">Sidst ændret</string>
+    <string name="date_taken">Dato taget</string>
+    <string name="filename">Filnavn</string>
+    <string name="extension">Udvidelse</string>
+    <string name="ascending">Stigende</string>
+    <string name="descending">Faldende</string>
+    <string name="use_for_this_folder">Brug kun for denne mappe</string>
+    <!-- Confirmation dialog -->
+    <string name="proceed_with_deletion">Are you sure you want to proceed with the deletion?</string>
+    <string name="deletion_confirmation">Er du sikker på at du vil slette %s?</string>
+    <string name="share_hidden_file_confirmation">Are you sure you want to share %s from hidden storage?</string>
+    <string name="yes">Ja</string>
+    <string name="no">Nej</string>
+    <!-- Authentication -->
+    <string name="authenticate">Authenticate</string>
+    <string name="app_unlocked_notification">App is unlocked. Tap to lock app.</string>
+    <string name="prompt_info_title">App er låst</string>
+    <string name="prompt_info_use_app_password">Brug app adgangskode</string>
+    <string name="password_setup_title">Opsæt kodeord til app</string>
+    <string name="password_remove">Fjern</string>
+    <string name="lock_app">Lås app</string>
+    <string name="authentication_service_description">Service to handle unlocking of the app</string>
+    <string name="lock_receiver_description">Receiver to lock the app at boot and shutdown</string>
+    <!-- Settings -->
+    <string name="settings">Indstillinger</string>
+    <string name="manage_storage">Manage storage</string>
+    <string name="settings_general">Generelt</string>
+    <string name="font_size">Skrifttype størrelse</string>
+    <string name="app_system_settings">App systemindstillinger</string>
+    <string name="small">Lille</string>
+    <string name="medium">Medium</string>
+    <string name="large">Stor</string>
+    <string name="extra_large">Ekstra stor</string>
+    <string name="keep_last_modified_title">Keep old last-modified</string>
+    <string name="keep_last_modified_summary_off">Keep old last-modified value at file operations is disabled</string>
+    <string name="keep_last_modified_summary_on">Keep old last-modified value at file operations is enabled</string>
+    <string name="keep_after_encryption_operation_title">Keep source file</string>
+    <string name="keep_after_encryption_operation_summary_off">Keep source file after encryption/decryption is disabled</string>
+    <string name="keep_after_encryption_operation_summary_on">Keep source file after encryption/decryption is enabled</string>
+    <string name="disable_screenshots_title">Blokér skærmbilleder</string>
+    <string name="disable_screenshots_summary_off">Block screenshots in the recent list and inside the app is disabled</string>
+    <string name="disable_screenshots_summary_on">Block screenshots in the recent list and inside the app is enabled</string>
+    <string name="show_media_thumbnail_title">Show media thumbnail</string>
+    <string name="show_media_thumbnail_summary_off">Show media thumbnail is disabled</string>
+    <string name="show_media_thumbnail_summary_on">Show media thumbnail is enabled</string>
+    <string name="media_thumbnail_clear_title">Clear media thumbnail cache</string>
+    <string name="media_thumbnail_clear_cleared">Cache ryddet</string>
+    <string name="app_data_cleared">App data ryddet</string>
+    <string name="app_data_error">Error occurred when app data was deleting</string>
+    <string name="app_lock_title">Lock app access</string>
+    <string name="app_lock_summary_off">Lock app access is disabled</string>
+    <string name="app_lock_summary_on">Lock app access is enabled</string>
+    <string name="app_lock_summary_on_warning">Password or biometric authentication is not set</string>
+    <string name="app_lock_summary_on_warning_biometric">Biometric authenticator is not specified or available</string>
+    <string name="use_biometric_authentication_title">Use biometric</string>
+    <string name="use_biometric_authentication_summary_off">Use also biometric authentication is disabled</string>
+    <string name="use_biometric_authentication_summary_on">Use also biometric authentication is enabled</string>
+    <string name="use_biometric_authentication_summary_on_warning">Biometric authenticator is not specified or available</string>
+    <string name="use_24_hour_time_format_title">Brug 24-timers tidsformat</string>
+    <string name="use_24_hour_time_format_title_summary_off">24-timers tidsformat er deaktiveret</string>
+    <string name="use_24_hour_time_format_title_summary_on">24-timers tidsformat er aktiveret</string>
+    <string name="change_date_and_time_format_title">Ændre dato og tidsformat</string>
+    <string name="theme_title">Tema</string>
+    <string name="theme_light">Lys</string>
+    <string name="theme_dark">Mørk</string>
+    <string name="theme_system">Systemets standard</string>
+    <string name="set_app_password_title">Set app password</string>
+    <string name="set_app_password_summary_on">Adgangskode er angivet</string>
+    <string name="set_app_password_summary_off">Adgangskode er ikke angivet</string>
+    <string name="app_open_biometric_settings_summary">Biometric authenticator is not specified, click to open settings</string>
+    <string name="app_lock_info_summary">Biometric authentication is significantly less secure than a password. To improve the security of your files is recommended using only a password to restrict app access. But you can use both.</string>
+    <!-- Setting sections -->
+    <string name="security">Sikkerhed</string>
+    <string name="file_operations">File operations</string>
+    <string name="app_name">Secure File Manager Beta</string>
+    <string name="app_launcher_name">Secure File</string>
+    <string name="press_back_again">Press back again to exit</string>
+    <string name="go_to_home_folder">Gå til hjemmemappe</string>
+    <string name="set_as_home_folder">Set as home folder</string>
+    <string name="home_folder_updated">Hjemmemappe opdateret</string>
+    <string name="copy_path">Copy path to clipboard</string>
+    <string name="path_copied">Sti kopieret</string>
+    <string name="select_audio_file">Vælg venligst en lydfil</string>
+    <!-- Open as -->
+    <string name="open_as">Åben som</string>
+    <string name="text_file">Tekstfil</string>
+    <string name="image_file">Billedfil</string>
+    <string name="audio_file">Lydfil</string>
+    <string name="video_file">Videofil</string>
+    <string name="other_file">Anden fil</string>
+    <!-- Compression -->
+    <string name="password">Adgangskode</string>
+    <string name="compress">Opret zip</string>
+    <string name="decompress">Extract</string>
+    <string name="compress_as">Opret zip</string>
+    <string name="compressing">Opretter zip…</string>
+    <string name="starting">Starter…</string>
+    <string name="decompressing">Extracting…</string>
+    <string name="canceling">Annullérer…</string>
+    <string name="compression_successful">Creating zip successful</string>
+    <string name="decompression_successful">Extraction successful</string>
+    <string name="compressing_failed">Creating zip failed</string>
+    <string name="decompressing_failed">Extraction failed</string>
+    <string name="decompress_password_title">Adgangskode til %s</string>
+    <string name="decompress_conflicts">Can\'t extract file, because file \"%s\" is in conflict</string>
+    <string name="compression_action_collision">Only one creation of zip is allowed at once</string>
+    <string name="stop">Stop</string>
+    <string name="compression_receiver_description">Receiver for ZipManagerService to handle notification actions</string>
+    <string name="compression_service_description">Service to handle zip files creation or extraction of zip</string>
+    <!-- About -->
+    <string name="about">Omkring</string>
+    <string name="about_tab_about">Omkring</string>
+    <string name="about_tab_libraries">Biblioteker</string>
+    <string name="about_label_changelog">Changelog</string>
+    <string name="about_label_privacy_policy">Privatlivspolitik</string>
+    <string name="about_label_license">Licens</string>
+    <string name="about_label_gnu">GNU licens</string>
+    <string name="about_label_source">Source kode</string>
+    <string name="about_label_version">Version</string>
+    <string name="about_label_faq">FAQ</string>
+    <string name="about_label_contribute">Bidrag</string>
+    <string name="about_label_faq_long">Ofte stillede spørgsmål</string>
+    <string name="about_title_authors">Authors</string>
+    <string name="about_label_main_developer">Main developer</string>
+    <string name="about_label_original_author">Author of the original app</string>
+    <string name="about_label_original_app">Original App</string>
+    <!-- Intro -->
+    <string name="introduction">Introduktion</string>
+    <string name="intro_permission_title">Velkommen!</string>
+    <string name="intro_permission_summary">This app requires storage permission. Without this permission, the app will be useless.</string>
+    <string name="intro_permission_summary2">If you clicked \"deny &amp; don\'t ask again\", you can only allow the storage permission from the app system settings.</string>
+    <string name="intro_permission_permission_enabled">Storage permission is enabled!</string>
+    <string name="intro_permission_button_permission_text">Allow storage permission</string>
+    <string name="intro_permission_button_settings_text">Åben app-systemindstillinger</string>
+    <string name="intro_permission_illegally_request_next_page">Please allow the storage permission to continue</string>
+    <string name="intro_hiding_title">Hiding files feature</string>
+    <string name="intro_hiding_summary">This icon means, that selected files will be moved to the hidden storage.</string>
+    <string name="intro_hiding_summary2">This icon means, that selected files will be moved from the hidden storage to a selected destination.</string>
+    <string name="intro_hiding_info"><![CDATA[Files in the hidden storage are accessible <b>only</b> to this app.]]></string>
+    <string name="intro_hiding_warning">WARNING: If you uninstall this app or clear app storage, you will also remove all your hidden secrets!</string>
+    <string name="intro_encrypting_title">Encrypting files feature</string>
+    <string name="intro_encrypting_summary">This icon means, that selected files will be encrypted.</string>
+    <string name="intro_encrypting_summary2">This icon means, that selected files will be decrypted.</string>
+    <string name="intro_encrypting_info_1"><![CDATA[Files are encrypted <b>without password</b> with key saved securely in your device <i>(in the AndroidKeyStore)</i>.]]></string>
+    <string name="intro_encrypting_info_2"><![CDATA[The encryption make possible, that an encrypted files could not be read by an unauthorized person.]]></string>
+    <string name="intro_encrypting_warning">WARNING: If you uninstall this app, you will not be able to decrypt your encrypted secrets never again!</string>
+    <string name="intro_lock_title">Lock app setup</string>
+    <string name="intro_lock_warning">Enabling lock app access is highly recommended to keep your secrets safe.</string>
+    <string name="intro_other_title">Andre funktioner</string>
+    <string name="intro_other_feature_encrypted_zip"><![CDATA[Create or extract zip files or <b>encrypted</b> zip files.]]></string>
+    <string name="feature_media_saving"><![CDATA[Create a photo or video to a specified destination.<br/> <small><i>(E.g.: directly take a media file to hidden storage)</i></small>]]></string>
+    <!-- Password prompt dialog -->
+    <string name="password_prompt_title">Indtast adgangskode</string>
+    <!-- Tutorial -->
+    <string name="tutorial">Vejledning</string>
+    <string name="breadcrumb_title">Change storage</string>
+    <string name="breadcrumb_desc"><![CDATA[Here you can change storage.<br/> <small><i>(E.g.: change to hidden storage)</i></small>]]></string>
+    <string name="file_title">File operations</string>
+    <string name="file_desc">The press on file will open it.\nLong press on it will trigger manipulation mode.</string>
+    <string name="hide_title">Skjul fil</string>
+    <string name="hide_desc">After long press on a file, you can hide it with this icon.</string>
+    <string name="encrypt_title">Krypter fil</string>
+    <string name="encrypt_desc">After long press on a file, you can encrypt it with this icon.</string>
+    <string name="more_menu_title">More file operations</string>
+    <string name="more_menu_desc"><![CDATA[After long press on a file, you can find more file operations here.<br/> <small><i>(E.g.: create zip, create encrypted zip, move, copy, rename, etc…)</i></small>]]></string>
+    <!-- Beta warning -->
+    <string name="beta_warning">This is a beta version of the app. This means you should not use this app with important files. The developers of this app are not responsible for your data lose or corruption!</string>
+    <!-- App data confirmation dialog -->
+    <string name="app_data_clear_title">Ryd app data</string>
+    <string name="app_data_clear_summary"><![CDATA[This will clear all your <b>hidden files</b>, setting, cache, and other app data. Also you will be not able to <b>decrypt</b> encrypted files, which are encrypted with this app.]]></string>
+    <string name="app_data_clear_confirmation_1">Tap again if you are sure you want to delete hidden files</string>
+    <string name="app_data_clear_confirmation_2">Tap again if you know, that you will not be able to decrypt encrypted file with this app</string>
+    <string name="app_data_clear_confirmation_3">Tap again if you are sure you want delete settings</string>
+    <string name="app_data_clear_confirmation_4">Tap again to confirm app data delete</string>
+</resources>

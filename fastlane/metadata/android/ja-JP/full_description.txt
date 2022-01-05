@@ -1,0 +1,17 @@
+ファイルを安全に管理する事ができるファイルマネージャーです。
+
+特徴
+  * ファイルの非表示
+  * ファイルの暗号化
+  * 暗号化されたZipファイルの作成または抽出
+  * パスワードまたは生体認証（オプション）でアプリをロック
+  * スクリーンショットを無効にする（オプション
+  * サムネイルを無効にする（オプション
+  * キャッシュされたサムネイルの消去
+  * メディアファイル（写真/ビデオ）の作成先の設定
+  * チェックサム（MD5、SHA1、SHA256、SHA512）。
+
+このアプリはRoot化された端末では利用できません
+
+パーミッションの説明:
+https://github.com/Secure-File-Manager/Secure-File-Manager/wiki/Frequently-Asked-Questions#why-the-app-needs-specific-permission

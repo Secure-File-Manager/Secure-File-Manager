@@ -1,0 +1,17 @@
+File manager for keeping your files in safe.
+
+Features
+  * hiding files
+  * encrypting files
+  * create or extract encrypted Zip files
+  * lock app with password or biometric authentication (optional)
+  * disable screenshots (optional)
+  * disabling thumbnails (optional)
+  * clear cached thumbnails
+  * set destination for creating media files (photo / video)
+  * checksum (MD5, SHA1, SHA256, SHA512)
+
+This app is useless if you have a rooted device!
+
+Permissions clarification:
+https://github.com/Secure-File-Manager/Secure-File-Manager/wiki/Frequently-Asked-Questions#why-the-app-needs-specific-permission

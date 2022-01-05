@@ -42,8 +42,11 @@
 
 ### Supported languages
 
- - English :us:
- - French :fr: _(thanks to [@Ilithy](https://github.com/Ilithy))_
+- Danish :denmark: _(partial)_
+- English :us:
+- French :fr: _(thanks to [@Ilithy](https://github.com/Ilithy))_
+- Japanese :jp:
+- Russian :ru:
 
 :warning:  This app is useless if you have [a rooted device](https://github.com/Secure-File-Manager/Secure-File-Manager/wiki/Frequently-Asked-Questions#i-have-a-rooted-device-are-there-some-security-implications)!
 
