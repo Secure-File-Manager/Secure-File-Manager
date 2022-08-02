@@ -11,7 +11,7 @@
 <a href='https://f-droid.org/packages/com.securefilemanager.app'><img src='https://fdroid.gitlab.io/artwork/badge/get-it-on.png' alt='Get it on F-Droid' height='80' /></a>
 <a href='https://github.com/Secure-File-Manager/Secure-File-Manager/releases'><img src='assets/github.png' alt='Get it on Github' height='80' /></a>
 
-### :bangbang: Google Play last release is outdated because updates were rejected. For this reason, the app was unpublished from Google Play. [(more here)](https://github.com/Secure-File-Manager/Secure-File-Manager/issues/36)
+### :bangbang: This app is useless if you have [a rooted device](https://github.com/Secure-File-Manager/Secure-File-Manager/wiki/Frequently-Asked-Questions#i-have-a-rooted-device-are-there-some-security-implications)!
 
 #### This is a beta version of the app. This means you should not use this app with important files. The developers of this app are not responsible for your data lose or corruption!
 
@@ -47,8 +47,6 @@
 - French :fr: _(thanks to [@Ilithy](https://github.com/Ilithy))_
 - Japanese :jp:
 - Russian :ru:
-
-:warning:  This app is useless if you have [a rooted device](https://github.com/Secure-File-Manager/Secure-File-Manager/wiki/Frequently-Asked-Questions#i-have-a-rooted-device-are-there-some-security-implications)!
 
 ### Screenshots
 
