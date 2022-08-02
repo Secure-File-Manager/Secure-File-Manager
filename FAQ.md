@@ -110,6 +110,14 @@ _Note: The night light is not working, because of the enabled [filterTouchesWhen
 
 If you have a rooted device, this app is useless. In this case, all security features in this app can be easily exploited.
 
+E.g. feature _"hiding files"_ is designed on the specifics of the android storage. The android have[ 2 main types of storage](https://developer.android.com/training/data-storage):
+- **App-specific storage**: Store files that are meant for your app's use only, either in dedicated directories within an internal storage volume or different dedicated directories within external storage.
+- **Shared storage**: Store files that your app intends to share with other apps, including media, documents, and other files.
+
+When an file is hidden, the file is moved from the *"app-specific storage"* to the *"shared storage"*. When an file is unhidden, the file is moved from the *"shared storage"* to the *"app-specific storage"*.
+
+In case of rooted device, all applications can see the *"app-specific storage"*.
+
 ### I still haven't found an answer?
 
 Please, create [a new issue in the Github repository](https://github.com/Secure-File-Manager/Secure-File-Manager/issues) or contact us directly so we can fix it.
