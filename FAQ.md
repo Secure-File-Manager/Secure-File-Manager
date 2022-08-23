@@ -114,7 +114,7 @@ E.g. feature _"hiding files"_ is designed on the specifics of the android storag
 - **App-specific storage**: Store files that are meant for your app's use only, either in dedicated directories within an internal storage volume or different dedicated directories within external storage.
 - **Shared storage**: Store files that your app intends to share with other apps, including media, documents, and other files.
 
-When an file is hidden, the file is moved from the *"app-specific storage"* to the *"shared storage"*. When an file is unhidden, the file is moved from the *"shared storage"* to the *"app-specific storage"*.
+When an file is hidden, the file is moved from the *"shared storage"* to the *"app-specific storage"*. When an file is unhidden, the file is moved from the *"app-specific storage"* to the *"shared storage"*.
 
 In case of rooted device, all applications can see the *"app-specific storage"*.
 
